@@ -24,11 +24,11 @@
   * Dataplane (NSMD) is based on [VPP](https://wiki.fd.io/view/VPP) and [VPP agent](https://github.com/ligato/vpp-agent). NSMD is very flexible. As long as a dataplane can expose the [NSM dataplane API](Docs/NSM-APIs.md), it can be NSM dataplane.
   * NSM registry is a central repository for registering the Pods (NSC, NSE, NSMD, etc.), which runs in Kubernetes master. Each Kubernetes cluster has one NSM registry. In K8s enviroment, NSM registry is K8s API server because it provides good API machinery so NSM registry takes advantage on that.
 
-* The below are the typical NSM domain:
+* The below are the typical NSM domain and the general NSM Architecture:
    ![Image](img/typical_NSM_domain.png "Figure 1. The typical NSM domain")
    <figcaption align="middle"><strong>Figure 1. The typical NSM domain</strong></figcaption>
 
    
-   and the general NSM Architecture:
-   <figcaption align="middle">![Image](img/general_NSM_architecture.png "Figure 2. The general NSM architecture")</figcaption>
+   
+   ![Image](img/general_NSM_architecture.png "Figure 2. The general NSM architecture")
    <figcaption align="middle"><strong>Figure 2. The general NSM architecture</strong></figcaption>
