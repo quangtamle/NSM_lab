@@ -8,7 +8,7 @@ The origin of the APIs is from [Network Service Mesh](https://github.com/network
 
 * **NetworkServiceRegistry**:
   * The NSE will register to the NSM manager to expose the services (Firewall, VPN gateway,...) it provides and notify that it is ready for providing the services. This API is only for NSE because NSE provides Network service which need to expose to the world through this API.
-  * The code below shows how NSEs register themselves to the NSMgr. The full code can be found [here](https://gitlab.telecom-paristech.fr/jean-louis.rougier/nsm-lab/blob/master/Labs/networkservicemesh/networkservicemesh/controlplane/pkg/apis/registry/registry.proto) 
+  * The code below shows how NSEs register themselves to the NSMgr. The full code can be found [here](https://github.com/quangtamle/NSM_lab/blob/master/Labs/networkservicemesh/networkservicemesh/controlplane/pkg/apis/registry/registry.proto) 
   ```proto
     message NSERegistration {
             NetworkService network_service = 1;
@@ -24,7 +24,7 @@ The origin of the APIs is from [Network Service Mesh](https://github.com/network
 * **Local.NetworkService**:
   * The client will request a network service (Figure 3) to the NSM manager, it will create connection object (Figure 4) and specify the mechanism (kernel int, memIF, vHost,...). Mechanism negotiates between NSC and the next hop in your system (Dataplane in this case).
   * What NSM does is to allow you to specify what kind of **local connection** (the connection between NSC/NSE and the dataplane) you want. For example, for normal app pods need a secure connectivity, you just want a kernel interface or you have cloud-native app then you need some high performance interfaces like memIF…
-  * The full code can be found [here](https://gitlab.telecom-paristech.fr/jean-louis.rougier/nsm-lab/tree/master/Labs/networkservicemesh/networkservicemesh/controlplane/pkg/apis/local) and [ConnectionContext](https://gitlab.telecom-paristech.fr/jean-louis.rougier/nsm-lab/blob/master/Labs/networkservicemesh/networkservicemesh/controlplane/pkg/apis/connectioncontext/connectioncontext.proto)
+  * The full code can be found [here](https://github.com/quangtamle/NSM_lab/tree/master/Labs/networkservicemesh/networkservicemesh/controlplane/pkg/apis/local) and [ConnectionContext](https://github.com/quangtamle/NSM_lab/blob/master/Labs/networkservicemesh/networkservicemesh/controlplane/pkg/apis/connectioncontext/connectioncontext.proto)
   ```proto
     message Connection {
         string id = 1;
@@ -59,7 +59,7 @@ The origin of the APIs is from [Network Service Mesh](https://github.com/network
   ```
 * **Remote.NetworkService**:
   * This remote network service is for the case where NSC and NSE are on the different NSM domains. Thus, the Remote.NetworkService is the negotiation between that two NSM managers. They exchange information to each other (for example: what kind of mechanisms it can provide...). Moreover, a **remote connection** is the connection between 2 dataplane belongs to 2 different NSM domains.
-  * The full code can be found [here](https://gitlab.telecom-paristech.fr/jean-louis.rougier/nsm-lab/tree/master/Labs/networkservicemesh/networkservicemesh/controlplane/pkg/apis/remote)
+  * The full code can be found [here](https://github.com/quangtamle/NSM_lab/tree/master/Labs/networkservicemesh/networkservicemesh/controlplane/pkg/apis/remote)
   ```proto
     message Connection {
         string id = 1;
@@ -100,7 +100,7 @@ The origin of the APIs is from [Network Service Mesh](https://github.com/network
   ```
 * **Dataplane (1) and DataplaneRegistra (2)**:
   * Instead of directly programming on dataplane (VPP,...), the dataplane exposes APIs (DataplaneRegistra) to NSM manager (2) and NSM manager can request the crossconnect between NSCs and NSEs (1). The **crossconnect** is the connection between NSC and NSE. If NSC and NSE are in the same NSM domain, the **crossconnect** is the connection between **local connects** via the dataplane. Otherwise, the **crossconnect** is a connection including **local connects** and **remote connects**.
-  * The full code can be found [here](https://gitlab.telecom-paristech.fr/jean-louis.rougier/nsm-lab/tree/master/Labs/networkservicemesh/networkservicemesh/dataplane/pkg/apis)
+  * The full code can be found [here](https://github.com/quangtamle/NSM_lab/tree/master/Labs/networkservicemesh/networkservicemesh/dataplane/pkg/apis)
   ```proto
     /* Message sent by dataplane module informing NSM of any changes in its
      * operations parameters or constraints
@@ -200,7 +200,7 @@ The origin of the APIs is from [Network Service Mesh](https://github.com/network
   ```
 * **MonitorCrossConnect**:
   * This API exposed by both dataplane and NSM manager. Dataplane exposes this to interact with NSM manager. Meanwhile, NSM manager exposes it in the northbound of NSM so that the other monitor tools like Skydive can interact with NSM.
-  * The full code can be found [here](https://gitlab.telecom-paristech.fr/jean-louis.rougier/nsm-lab/blob/master/Labs/networkservicemesh/networkservicemesh/controlplane/pkg/apis/crossconnect/crossconnect.proto)
+  * The full code can be found [here](https://github.com/quangtamle/NSM_lab/blob/master/Labs/networkservicemesh/networkservicemesh/controlplane/pkg/apis/crossconnect/crossconnect.proto)
   ```proto
     enum CrossConnectEventType {
         INITIAL_STATE_TRANSFER = 0;

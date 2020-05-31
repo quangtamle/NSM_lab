@@ -26,7 +26,7 @@
 
 * The below are the typical NSM domain and the general NSM Architecture:
    <figcaption align="middle">![Image](img/typical_NSM_domain.png "Figure 1. The typical NSM domain")</figcaption>
-        <figcaption align="middle"><strong>Figure 1. The typical NSM domain</strong></figcaption>
+     <figcaption align="middle"><strong>Figure 1. The typical NSM domain</strong></figcaption>
         
    <figcaption align="middle">![Image](img/general_NSM_architecture.png "Figure 2. The general NSM architecture")</figcaption>
-        <figcaption align="middle"><strong>Figure 2. The general NSM architecture</strong></figcaption>
+     <figcaption align="middle"><strong>Figure 2. The general NSM architecture</strong></figcaption>

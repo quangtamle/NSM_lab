@@ -29,9 +29,9 @@ and one analyser to connect to each NSM manager to collect NSM metrics and gathe
      <figcaption align="middle"><strong>Figure 1. Skydive in Network Service Mesh</strong></figcaption>
 #### How to deploy Skydive in Network Service Mesh:
 In order to deploy Skydive in K8s in general and NSM in particular, a YAML file is needed to deployed it.
-To be more detailed, The YAML file is in [here](https://gitlab.telecom-paristech.fr/jean-louis.rougier/nsm-lab/blob/master/Labs/networkservicemesh/networkservicemesh/k8s/conf/skydive.yaml).
-In this file, you can choose the probes you want to run in Agent and Analyser in [here](https://gitlab.telecom-paristech.fr/jean-louis.rougier/nsm-lab/blob/master/Labs/networkservicemesh/networkservicemesh/k8s/conf/skydive.yaml#L47)
-and the Skydive (docker) image in [here](https://gitlab.telecom-paristech.fr/jean-louis.rougier/nsm-lab/blob/master/Labs/networkservicemesh/networkservicemesh/k8s/conf/skydive.yaml#L85).
+To be more detailed, The YAML file is in [here](https://github.com/quangtamle/NSM_lab/blob/master/Labs/networkservicemesh/networkservicemesh/k8s/conf/skydive.yaml).
+In this file, you can choose the probes you want to run in Agent and Analyser in [here](https://github.com/quangtamle/NSM_lab/blob/master/Labs/networkservicemesh/networkservicemesh/k8s/conf/skydive.yaml#L47)
+and the Skydive (docker) image in [here](https://github.com/quangtamle/NSM_lab/blob/master/Labs/networkservicemesh/networkservicemesh/k8s/conf/skydive.yaml#L85).
 Skydive image is very important part to deploy Skydive in NSM and to develop more implementations in Skydive.
 #### Implementations in Skydive:
 I recognized that nsm probe does not report NSM metrics in the metadata. 
@@ -49,22 +49,22 @@ and
           <figcaption align="middle">![Image](img/appd_topo.png "Figure 4. NSM topology displayed in AppDynamics")</figcaption>
           <figcaption align="middle"><strong>Figure 4. NSM topology displayed in AppDynamics</strong></figcaption>
 
-All of my implementations can be found [here](https://gitlab.telecom-paristech.fr/jean-louis.rougier/nsm-lab/tree/master/Labs/skydive/topology/probes/nsm)
+All of my implementations can be found [here](https://github.com/quangtamle/NSM_lab/tree/master/Labs/skydive/topology/probes/nsm)
 
-In case you want to modify the colors, the icons or the movement of the nodes, you can modify in this [folder](https://gitlab.telecom-paris.fr/jean-louis.rougier/nsm-lab/tree/master/Labs/skydive/statics)
+In case you want to modify the colors, the icons or the movement of the nodes, you can modify in this [folder](https://github.com/quangtamle/NSM_lab/tree/master/Labs/skydive/statics)
 
-* For the color of the nodes: you can change the colors of the nodes in this [file](https://gitlab.telecom-paris.fr/jean-louis.rougier/nsm-lab/blob/master/Labs/skydive/statics/css/graph-layout.css)
-* For the icons of the nodes: First, you need to add icons you want into this [folder](https://gitlab.telecom-paris.fr/jean-louis.rougier/nsm-lab/tree/master/Labs/skydive/statics/img). Then you can declare new icons in this [file](https://gitlab.telecom-paris.fr/jean-louis.rougier/nsm-lab/blob/master/Labs/skydive/statics/js/components/layout.js).
-* For the movement of the nodes: you can change the value of this [variable](https://gitlab.telecom-paris.fr/jean-louis.rougier/nsm-lab/blob/master/Labs/skydive/statics/js/components/graph-layout.js#L260). You can read more from [this docmentation](https://github.com/d3/d3-force)
+* For the color of the nodes: you can change the colors of the nodes in this [file](https://github.com/quangtamle/NSM_lab/blob/master/Labs/skydive/statics/css/graph-layout.css)
+* For the icons of the nodes: First, you need to add icons you want into this [folder](https://github.com/quangtamle/NSM_lab/tree/master/Labs/skydive/statics/img). Then you can declare new icons in this [file](https://github.com/quangtamle/NSM_lab/blob/master/Labs/skydive/statics/js/components/layout.js).
+* For the movement of the nodes: you can change the value of this [variable](https://github.com/quangtamle/NSM_lab/blob/master/Labs/skydive/statics/js/components/graph-layout.js#L260). You can read more from [this docmentation](https://github.com/d3/d3-force)
 
-After modifying all the those things, you need to "make .bindata" in [skydive](https://gitlab.telecom-paristech.fr/jean-louis.rougier/nsm-lab/tree/master/Labs/skydive) folder to apply those changes in static folder.
+After modifying all the those things, you need to "make .bindata" in [skydive](https://github.com/quangtamle/NSM_lab/tree/master/Labs/skydive) folder to apply those changes in static folder.
 
 After finishing the implementations, I do some follow steps:
-* "go generate" in [nsm](https://gitlab.telecom-paristech.fr/jean-louis.rougier/nsm-lab/tree/master/Labs/skydive/topology/probes/nsm) folder if you have any changes in metadata.go
-* "go instal" in [skydive](https://gitlab.telecom-paristech.fr/jean-louis.rougier/nsm-lab/tree/master/Labs/skydive) folder to generate binary file.
+* "go generate" in [nsm](https://github.com/quangtamle/NSM_lab/tree/master/Labs/skydive/topology/probes/nsm) folder if you have any changes in metadata.go
+* "go instal" in [skydive](https://github.com/quangtamle/NSM_lab/tree/master/Labs/skydive) folder to generate binary file.
 * "make docker-image" in skydive folder to generate docker image. This command will generate an image named "skydive/skydive:devel"
 * "docker tag skydive/skydive:devel YOUR_DOCKER_ACC/skydive:VERSION" it will tag the new image with the name (for example: tamlq/skydive:stable)
-* "docker push YOUR_DOCKER_ACC/skydive:VERSION" push that image to your docker hub and use it in [YAML file](https://gitlab.telecom-paristech.fr/jean-louis.rougier/nsm-lab/blob/master/Labs/networkservicemesh/networkservicemesh/k8s/conf/skydive.yaml) to deploy skydive in NSM
+* "docker push YOUR_DOCKER_ACC/skydive:VERSION" push that image to your docker hub and use it in [YAML file](https://github.com/quangtamle/NSM_lab/blob/master/Labs/networkservicemesh/networkservicemesh/k8s/conf/skydive.yaml) to deploy skydive in NSM
 
 
 
