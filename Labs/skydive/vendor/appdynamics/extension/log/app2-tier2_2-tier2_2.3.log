@@ -1,0 +1,57 @@
+2019-08-13 14:04:27.360854|    2|httpclient| Not using an HTTP proxy
+2019-08-13 14:04:27.360871|    2|env| Starting AppDynamics Agent 4.5.2.0 (id: )
+2019-08-13 14:04:27.360881|    2|env| Controller: ffavelin@ffavelin.saas.appdynamics.com:443, ssl: 1
+2019-08-13 14:04:27.360889|    2|env| Analytics processor: localhost:9090, ssl: 0
+2019-08-13 14:04:27.360900|    1|agent| Register node property appdynamics.agent.metricLimits: 5000
+2019-08-13 14:04:27.360926|    1|agent| Register node property min-load-per-minute-diagnostic-session-trigger: 10
+2019-08-13 14:04:27.360934|    1|agent| Register node property max-snapshot-reporter-queue-size-kb: 1000
+2019-08-13 14:04:27.360942|    1|agent| Register node property max-error-add-registration-limit: 500
+2019-08-13 14:04:27.360948|    1|agent| Register node property max-async-task-registrations-allowed: 500
+2019-08-13 14:04:27.360966|    1|agent| Register node property max-business-transactions: 50
+2019-08-13 14:04:27.360973|    1|agent| Register node property max-exit-calls-per-snapshot: 2000
+2019-08-13 14:04:27.360980|    1|agent| Register node property max-jdbc-calls-per-snapshot: 500
+2019-08-13 14:04:27.360987|    1|agent| Register node property max-call-elements-per-snapshot: 5000
+2019-08-13 14:04:27.360993|    1|agent| Register node property capture-raw-sql: 0
+2019-08-13 14:04:27.361000|    1|agent| Register node property dev-mode-suspend-cpm: 500
+2019-08-13 14:04:27.361007|    1|agent| Register node property support-thread-addId-chain: 1
+2019-08-13 14:04:27.361015|    1|agent| Register node property max-originating-concurrent-snapshots: 10
+2019-08-13 14:04:27.361022|    1|agent| Register node property max-snapshots-per-minute: 20
+2019-08-13 14:04:27.361029|    1|agent| Register node property max-continuing-concurrent-snapshots: 200
+2019-08-13 14:04:27.361036|    1|agent| Register node property max-continuing-snapshots-per-minute: 100
+2019-08-13 14:04:27.361044|    1|agent| Register node property max-error-snapshots-per-minute: 5
+2019-08-13 14:04:27.361084|    1|agent| Register node property max-discovered-backends: 300
+2019-08-13 14:04:27.361115|    1|agent| Register node property support-federated-app-correlation: 1
+2019-08-13 14:04:27.361276|    1|agent| Register node property enable-instance-monitoring: 0
+2019-08-13 14:04:27.361323|    2|env| Instrumenting process 17960 with working directory /home/vtramier/go/src/appdynamics/extension/example
+2019-08-13 14:04:27.361332|    2|env| Running on OS: Linux (version #60-Ubuntu SMP Tue Jul 2 18:22:20 UTC 2019), CPU architecture x86_64
+2019-08-13 14:04:27.361338|    1|env| Agent type: GOLANG_SDK
+2019-08-13 14:04:27.361344|    2|env| Application name: app2
+2019-08-13 14:04:27.361349|    2|env| Tier name: tier2/2
+2019-08-13 14:04:27.361355|    2|env| Node name: tier2/2
+2019-08-13 14:04:27.361400|    1|agent| Added event: timestamp: 1565697867361 type: "APP_SERVER_RESTART" summary: "Agent was re-started, Node: tier2/2, Tier: tier2/2" notificationSeverity: "INFO"
+2019-08-13 14:04:27.392045|    2|agent| Scheduling new config update request
+2019-08-13 14:04:27.392134|    2|agent| Backend Config 2.0 support disabled, this agent will use legacy backend config
+2019-08-13 14:04:27.392150|    1|agent| UniquehostID from OSInfo is vtramier-ThinkPad-T480
+2019-08-13 14:04:27.399121|    2|httpclient| successfully loaded the default cert file (135 certificates)
+2019-08-13 14:04:28.272259|    2|agent| New Business transaction app2/tier2/2/backend of entry point type WEB known id 403645
+2019-08-13 14:04:28.272306|    2|agent| generating backend identification rules as no backend config received from controller
+2019-08-13 14:04:28.272466|    1|agent| registered backend: parent { id: 22956 } resolutionInfo { exitPointType: "HTTP" properties { name: "APP" value: "centrale" } properties { name: "ID" value: "backend" } exitPointSubtype: "HTTP" }
+2019-08-13 14:04:28.272498|    2|agent| Created backend  of type HTTP/HTTP with properties {APP=centrale ID=backend }
+2019-08-13 14:04:28.272564|    1|agent| resolved backend: parent { id: 22953 version: 0 } resolutionInfo { exitPointType: "CUSTOM" properties { name: "APP" value: "app2" } properties { name: "ID" value: "tier2/2" } exitPointSubtype: "TIER" } applicationComponentId: 8916 destinationApplicationId: 0
+2019-08-13 14:04:28.272571|    1|agent| Backend 22953 marked as resolved by controller, but was never sent for resolution
+2019-08-13 14:04:28.272586|    2|agent| Created backend  of type CUSTOM/TIER with properties {APP=app2 ID=tier2/2 }
+2019-08-13 14:04:28.272627|    1|agent| backend parent { id: 22956 version: 0 } resolutionInfo { exitPointType: "HTTP" properties { name: "APP" value: "centrale" } properties { name: "ID" value: "backend" } exitPointSubtype: "HTTP" } applicationComponentId: 0 destinationApplicationId: 0 is not yet resolved by controller
+2019-08-13 14:04:28.272654|    1|agent| resolved backend: parent { id: 22952 version: 0 } resolutionInfo { exitPointType: "CUSTOM" properties { name: "APP" value: "common" } properties { name: "ID" value: "commonTier" } exitPointSubtype: "TIER" } applicationComponentId: 0 destinationApplicationId: 2110
+2019-08-13 14:04:28.272659|    1|agent| Backend 22952 marked as resolved by controller, but was never sent for resolution
+2019-08-13 14:04:28.272671|    2|agent| Created backend  of type CUSTOM/TIER with properties {APP=common ID=commonTier }
+2019-08-13 14:04:28.272694|    1|agent| Ignoring unchanged property max-jdbc-calls-per-snapshot: 500
+2019-08-13 14:04:28.272739|    1|agent| Ignoring unchanged property capture-raw-sql: 0
+2019-08-13 14:04:28.272746|    1|agent| Ignoring unchanged property max-business-transactions: 50
+2019-08-13 14:04:28.272754|    1|agent| Ignoring unchanged property min-load-per-minute-diagnostic-session-trigger: 10
+2019-08-13 14:04:28.272768|    1|agent| Ignoring unchanged property enable-instance-monitoring: 0
+2019-08-13 14:04:28.272824|    1|agent| BT app2/tier2/2/backend will now use snapshot policy: collectingOnDemandSnapshots: false onDemandSnapshotCollectionDurationInMinutes: 0 onDemandSnapshotCollectionRemainingDurationInMinutes: 0 numberOfOnDemandSnapshotsToCollect: 0 collectSnapshotOnSLAViolationEnabled: true onWarningThresholdViolation: true collectOutliersOnlyOnSLAViolation: true maxAttemptsForOutliersOnSLAViolation: 20 onSLAViolationSnapshotCollectionDurationInMinutes: 5 numberOfSnapshotsToCollectOnSLAViolation: 5 occuranceSnapshotCollectionEnabled: false nthOccurance: 100 collectSnapshotForEveryNMinutesEnabled: true minuteFrequency: 10 automaticCollectionEnabled: true automaticSlowVolumePercentageThreshold: 10 automaticErrorVolumePercentageThreshold: 10
+2019-08-13 14:04:28.272843|    1|agent| Using error configuration 
+2019-08-13 14:04:28.272911|    1|agent| Passing 0 info point gatherer configs to info point registry
+2019-08-13 14:04:28.272921|    2|agent| Initial config update completed
+2019-08-13 14:04:28.273133|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:04:28.273140|    1|agent| Skipping top summary stats request as no new data is available

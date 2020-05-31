@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://skydive.network/schemas/edge.json",
+  "type": "object",
+  "definitions": {
+    "graphElement": {
+      "properties": {
+        "ID": {
+          "type": "string",
+          "minLength": 1
+        },
+        "Host": {
+          "type": "string"
+        },
+        "Origin": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer"
+        },
+        "UpdatedAt": {
+          "type": "integer"
+        },
+        "Metadata": {
+          "allOf": [
+            {
+              "properties": {
+                "RelationType": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [ "RelationType" ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "ID", "Metadata"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "#/definitions/graphElement"
+    },
+    {
+      "properties": {
+        "Child": {
+          "type": "string",
+          "minLength": 1
+        },
+        "Parent": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [ "Child", "Parent" ]
+    }
+  ]
+}

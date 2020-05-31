@@ -1,0 +1,9 @@
+2019-08-13 14:04:23.160473|    2|Agent| Initializing AppDynamics Native SDK 4.5.2.0
+2019-08-13 14:04:23.160515|    2|Agent| Platform endpoint configuration: ControllerInfo { host=ffavelin.saas.appdynamics.com, port=443, account=ffavelin, ssl=true, sslCertificateDir=, sslCertificateFile= }
+2019-08-13 14:04:23.160545|    2|Agent| Creating default agent tenant: AgentInfo[GOLANG_SDK] { app=centrale, tier=Agent, node=Agent }
+2019-08-13 14:04:23.168146|    2|Agent| Creating agent tenant tier1/1 with: AgentInfo[GOLANG_SDK] { app=app1, tier=tier1/1, node=tier1/1 }
+2019-08-13 14:04:23.176935|    2|Agent| Creating agent tenant cenrale2 with: AgentInfo[GOLANG_SDK] { app=centrale, tier=cenrale2, node=cenrale2 }
+2019-08-13 14:04:23.183633|    2|Agent| Creating agent tenant centrale1 with: AgentInfo[GOLANG_SDK] { app=centrale, tier=centrale1, node=centrale1 }
+2019-08-13 14:04:23.190270|    2|Agent| Waiting for agents to be ready
+2019-08-13 14:04:23.190287|    1|Agent| waitUntilReady: waiting 1000ms for 4 agents
+2019-08-13 14:04:24.190941|    2|Agent| Waited 1000ms, but not every agent was ready -- proceeding, but some BTs may be skipped

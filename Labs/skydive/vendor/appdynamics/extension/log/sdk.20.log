@@ -1,0 +1,54 @@
+2019-08-13 14:05:15.163170|    2|Agent| Initializing AppDynamics Native SDK 4.5.2.0
+2019-08-13 14:05:15.163208|    2|Agent| Platform endpoint configuration: ControllerInfo { host=ffavelin.saas.appdynamics.com, port=443, account=ffavelin, ssl=true, sslCertificateDir=, sslCertificateFile= }
+2019-08-13 14:05:15.163226|    2|Agent| Creating default agent tenant: AgentInfo[GOLANG_SDK] { app=centrale, tier=Agent, node=Agent }
+2019-08-13 14:05:15.181204|    2|Agent| Creating agent tenant tier1/1 with: AgentInfo[GOLANG_SDK] { app=app1, tier=tier1/1, node=tier1/1 }
+2019-08-13 14:05:15.200104|    2|Agent| Creating agent tenant backend with: AgentInfo[GOLANG_SDK] { app=centrale, tier=backend, node=backend }
+2019-08-13 14:05:15.216690|    2|Agent| Creating agent tenant cenrale2 with: AgentInfo[GOLANG_SDK] { app=centrale, tier=cenrale2, node=cenrale2 }
+2019-08-13 14:05:15.233166|    2|Agent| Creating agent tenant tier1/2 with: AgentInfo[GOLANG_SDK] { app=app1, tier=tier1/2, node=tier1/2 }
+2019-08-13 14:05:15.252713|    2|Agent| Creating agent tenant centrale1 with: AgentInfo[GOLANG_SDK] { app=centrale, tier=centrale1, node=centrale1 }
+2019-08-13 14:05:15.277670|    2|Agent| Creating agent tenant commonTier with: AgentInfo[GOLANG_SDK] { app=common, tier=commonTier, node=commonTier }
+2019-08-13 14:05:15.301825|    2|Agent| Creating agent tenant tier2/2 with: AgentInfo[GOLANG_SDK] { app=app2, tier=tier2/2, node=tier2/2 }
+2019-08-13 14:05:15.326313|    2|Agent| Creating agent tenant tier2/1 with: AgentInfo[GOLANG_SDK] { app=app2, tier=tier2/1, node=tier2/1 }
+2019-08-13 14:05:15.351981|    2|Agent| Waiting for agents to be ready
+2019-08-13 14:05:15.351994|    1|Agent| waitUntilReady: waiting 1000ms for 9 agents
+2019-08-13 14:05:16.352214|    2|Agent| Waited 1000ms, but not every agent was ready -- proceeding, but some BTs may be skipped
+2019-08-13 14:05:16.352465|    4|Agent| appd_backend_add: E_INVALID: validation failed for backend backend
+2019-08-13 14:05:16.352680|    1|Agent| appd_bt_begin_with_app_context: E_SKIPPED: libagent returned null handle for BT name=centrale/centrale1/cenrale2
+2019-08-13 14:05:16.352753|    1|Agent| appd_exitcall_begin: E_SKIPPED: null BT
+2019-08-13 14:05:16.352796|    3|Agent| appd_exitcall_get_correlation_header: E_NO_EXITCALL: called for already ended or invalid exit call
+2019-08-13 14:05:16.352869|    1|Agent| appd_bt_begin_with_app_context: E_SKIPPED: libagent returned null handle for BT name=centrale/centrale1/cenrale2
+2019-08-13 14:05:16.352950|    1|Agent| appd_bt_begin_with_app_context: E_SKIPPED: libagent returned null handle for BT name=centrale/cenrale2/backend
+2019-08-13 14:05:16.353003|    1|Agent| appd_exitcall_begin: E_SKIPPED: null BT
+2019-08-13 14:05:16.353059|    1|Agent| appd_bt_begin_with_app_context: E_SKIPPED: libagent returned null handle for BT name=centrale/centrale1/commonTier
+2019-08-13 14:05:16.353096|    1|Agent| appd_exitcall_begin: E_SKIPPED: null BT
+2019-08-13 14:05:16.353132|    3|Agent| appd_exitcall_get_correlation_header: E_NO_EXITCALL: called for already ended or invalid exit call
+2019-08-13 14:05:16.353199|    1|Agent| appd_bt_begin_with_app_context: E_SKIPPED: libagent returned null handle for BT name=centrale/centrale1/commonTier
+2019-08-13 14:05:16.353294|    1|Agent| appd_bt_begin_with_app_context: E_SKIPPED: libagent returned null handle for BT name=cenrale2:UserData
+2019-08-13 14:05:16.363506|    3|Agent| appd_exitcall_end: E_NO_EXITCALL: called for already ended or invalid exit call
+2019-08-13 14:05:16.363548|    3|Agent| appd_exitcall_end: E_NO_EXITCALL: called for already ended or invalid exit call
+2019-08-13 14:05:16.363569|    3|Agent| appd_exitcall_end: E_NO_EXITCALL: called for already ended or invalid exit call
+2019-08-13 14:05:16.414002|    1|Agent| appd_bt_begin_with_app_context: E_SKIPPED: libagent returned null handle for BT name=centrale/centrale1/cenrale2
+2019-08-13 14:05:16.414058|    1|Agent| appd_exitcall_begin: E_SKIPPED: null BT
+2019-08-13 14:05:16.414081|    3|Agent| appd_exitcall_get_correlation_header: E_NO_EXITCALL: called for already ended or invalid exit call
+2019-08-13 14:05:16.414116|    1|Agent| appd_bt_begin_with_app_context: E_SKIPPED: libagent returned null handle for BT name=centrale/centrale1/cenrale2
+2019-08-13 14:05:16.414155|    1|Agent| appd_bt_begin_with_app_context: E_SKIPPED: libagent returned null handle for BT name=centrale/cenrale2/backend
+2019-08-13 14:05:16.414173|    1|Agent| appd_exitcall_begin: E_SKIPPED: null BT
+2019-08-13 14:05:16.414196|    1|Agent| appd_bt_begin_with_app_context: E_SKIPPED: libagent returned null handle for BT name=centrale/centrale1/commonTier
+2019-08-13 14:05:16.414212|    1|Agent| appd_exitcall_begin: E_SKIPPED: null BT
+2019-08-13 14:05:16.414228|    3|Agent| appd_exitcall_get_correlation_header: E_NO_EXITCALL: called for already ended or invalid exit call
+2019-08-13 14:05:16.414263|    1|Agent| appd_bt_begin_with_app_context: E_SKIPPED: libagent returned null handle for BT name=centrale/centrale1/commonTier
+2019-08-13 14:05:16.414316|    1|Agent| appd_bt_begin_with_app_context: E_SKIPPED: libagent returned null handle for BT name=cenrale2:UserData
+2019-08-13 14:05:16.424453|    3|Agent| appd_exitcall_end: E_NO_EXITCALL: called for already ended or invalid exit call
+2019-08-13 14:05:16.424476|    3|Agent| appd_exitcall_end: E_NO_EXITCALL: called for already ended or invalid exit call
+2019-08-13 14:05:16.424486|    3|Agent| appd_exitcall_end: E_NO_EXITCALL: called for already ended or invalid exit call
+2019-08-13 14:05:16.474776|    1|Agent| appd_bt_begin_with_app_context: E_SKIPPED: libagent returned null handle for BT name=centrale/centrale1/cenrale2
+2019-08-13 14:05:16.474828|    1|Agent| appd_exitcall_begin: E_SKIPPED: null BT
+2019-08-13 14:05:16.474853|    3|Agent| appd_exitcall_get_correlation_header: E_NO_EXITCALL: called for already ended or invalid exit call
+2019-08-13 14:05:16.474923|    1|Agent| appd_bt_begin_with_app_context: E_SKIPPED: libagent returned null handle for BT name=centrale/centrale1/cenrale2
+2019-08-13 14:05:16.475473|    1|Agent| appd_bt_begin_with_app_context: E_SKIPPED: libagent returned null handle for BT name=centrale/centrale1/commonTier
+2019-08-13 14:05:16.475503|    1|Agent| appd_exitcall_begin: E_SKIPPED: null BT
+2019-08-13 14:05:16.475526|    3|Agent| appd_exitcall_get_correlation_header: E_NO_EXITCALL: called for already ended or invalid exit call
+2019-08-13 14:05:16.475566|    1|Agent| appd_bt_begin_with_app_context: E_SKIPPED: libagent returned null handle for BT name=centrale/centrale1/commonTier
+2019-08-13 14:05:16.486165|    3|Agent| appd_exitcall_end: E_NO_EXITCALL: called for already ended or invalid exit call
+2019-08-13 14:05:16.486348|    3|Agent| appd_exitcall_end: E_NO_EXITCALL: called for already ended or invalid exit call
+2019-08-13 14:05:16.537216|    1|Agent| appd_bt_begin_with_app_context: E_SKIPPED: libagent returned null handle for BT name=centrale/centrale1/commonTier

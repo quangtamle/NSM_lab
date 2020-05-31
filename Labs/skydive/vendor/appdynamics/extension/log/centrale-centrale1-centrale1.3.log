@@ -1,0 +1,40 @@
+2019-08-13 14:03:49.590339|    2|httpclient| Not using an HTTP proxy
+2019-08-13 14:03:49.590369|    2|env| Starting AppDynamics Agent 4.5.2.0 (id: )
+2019-08-13 14:03:49.590390|    2|env| Controller: ffavelin@ffavelin.saas.appdynamics.com:443, ssl: 1
+2019-08-13 14:03:49.590407|    2|env| Analytics processor: localhost:9090, ssl: 0
+2019-08-13 14:03:49.590430|    1|agent| Register node property appdynamics.agent.metricLimits: 5000
+2019-08-13 14:03:49.590471|    1|agent| Register node property min-load-per-minute-diagnostic-session-trigger: 10
+2019-08-13 14:03:49.590489|    1|agent| Register node property max-snapshot-reporter-queue-size-kb: 1000
+2019-08-13 14:03:49.590505|    1|agent| Register node property max-error-add-registration-limit: 500
+2019-08-13 14:03:49.590521|    1|agent| Register node property max-async-task-registrations-allowed: 500
+2019-08-13 14:03:49.590562|    1|agent| Register node property max-business-transactions: 50
+2019-08-13 14:03:49.590578|    1|agent| Register node property max-exit-calls-per-snapshot: 2000
+2019-08-13 14:03:49.590595|    1|agent| Register node property max-jdbc-calls-per-snapshot: 500
+2019-08-13 14:03:49.590611|    1|agent| Register node property max-call-elements-per-snapshot: 5000
+2019-08-13 14:03:49.590627|    1|agent| Register node property capture-raw-sql: 0
+2019-08-13 14:03:49.590642|    1|agent| Register node property dev-mode-suspend-cpm: 500
+2019-08-13 14:03:49.590658|    1|agent| Register node property support-thread-addId-chain: 1
+2019-08-13 14:03:49.590678|    1|agent| Register node property max-originating-concurrent-snapshots: 10
+2019-08-13 14:03:49.590694|    1|agent| Register node property max-snapshots-per-minute: 20
+2019-08-13 14:03:49.590709|    1|agent| Register node property max-continuing-concurrent-snapshots: 200
+2019-08-13 14:03:49.590724|    1|agent| Register node property max-continuing-snapshots-per-minute: 100
+2019-08-13 14:03:49.590745|    1|agent| Register node property max-error-snapshots-per-minute: 5
+2019-08-13 14:03:49.590816|    1|agent| Register node property max-discovered-backends: 300
+2019-08-13 14:03:49.590856|    1|agent| Register node property support-federated-app-correlation: 1
+2019-08-13 14:03:49.591119|    1|agent| Register node property enable-instance-monitoring: 0
+2019-08-13 14:03:49.591215|    2|env| Instrumenting process 17689 with working directory /home/vtramier/go/src/appdynamics/extension/example
+2019-08-13 14:03:49.591238|    2|env| Running on OS: Linux (version #60-Ubuntu SMP Tue Jul 2 18:22:20 UTC 2019), CPU architecture x86_64
+2019-08-13 14:03:49.591255|    1|env| Agent type: GOLANG_SDK
+2019-08-13 14:03:49.591268|    2|env| Application name: centrale
+2019-08-13 14:03:49.591280|    2|env| Tier name: centrale1
+2019-08-13 14:03:49.591293|    2|env| Node name: centrale1
+2019-08-13 14:03:49.591363|    1|agent| Added event: timestamp: 1565697829591 type: "APP_SERVER_RESTART" summary: "Agent was re-started, Node: centrale1, Tier: centrale1" notificationSeverity: "INFO"
+2019-08-13 14:03:49.621648|    2|agent| Scheduling new config update request
+2019-08-13 14:03:49.621680|    2|agent| Backend Config 2.0 support disabled, this agent will use legacy backend config
+2019-08-13 14:03:49.621700|    1|agent| UniquehostID from OSInfo is vtramier-ThinkPad-T480
+2019-08-13 14:03:49.631328|    2|httpclient| successfully loaded the default cert file (135 certificates)
+2019-08-13 14:03:50.459319|    2|Agent| Scheduler stopped
+2019-08-13 14:03:50.460819|    2|httpclient| request cancelled
+2019-08-13 14:03:50.460855|    1|Agent| Agent Stopped, dropping http response
+2019-08-13 14:03:50.460930|    2|Agent| Cancelled pending http requests
+2019-08-13 14:03:50.463936|    2|agent| Stopping AppDynamics Agent

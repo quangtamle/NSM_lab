@@ -1,0 +1,501 @@
+2019-08-13 14:10:59.418463|    2|httpclient| Not using an HTTP proxy
+2019-08-13 14:10:59.418475|    2|env| Starting AppDynamics Agent 4.5.2.0 (id: )
+2019-08-13 14:10:59.418482|    2|env| Controller: ffavelin@ffavelin.saas.appdynamics.com:443, ssl: 1
+2019-08-13 14:10:59.418486|    2|env| Analytics processor: localhost:9090, ssl: 0
+2019-08-13 14:10:59.418495|    1|agent| Register node property appdynamics.agent.metricLimits: 5000
+2019-08-13 14:10:59.418513|    1|agent| Register node property min-load-per-minute-diagnostic-session-trigger: 10
+2019-08-13 14:10:59.418519|    1|agent| Register node property max-snapshot-reporter-queue-size-kb: 1000
+2019-08-13 14:10:59.418523|    1|agent| Register node property max-error-add-registration-limit: 500
+2019-08-13 14:10:59.418527|    1|agent| Register node property max-async-task-registrations-allowed: 500
+2019-08-13 14:10:59.418540|    1|agent| Register node property max-business-transactions: 50
+2019-08-13 14:10:59.418544|    1|agent| Register node property max-exit-calls-per-snapshot: 2000
+2019-08-13 14:10:59.418547|    1|agent| Register node property max-jdbc-calls-per-snapshot: 500
+2019-08-13 14:10:59.418551|    1|agent| Register node property max-call-elements-per-snapshot: 5000
+2019-08-13 14:10:59.418554|    1|agent| Register node property capture-raw-sql: 0
+2019-08-13 14:10:59.418558|    1|agent| Register node property dev-mode-suspend-cpm: 500
+2019-08-13 14:10:59.418563|    1|agent| Register node property support-thread-addId-chain: 1
+2019-08-13 14:10:59.418569|    1|agent| Register node property max-originating-concurrent-snapshots: 10
+2019-08-13 14:10:59.418573|    1|agent| Register node property max-snapshots-per-minute: 20
+2019-08-13 14:10:59.418578|    1|agent| Register node property max-continuing-concurrent-snapshots: 200
+2019-08-13 14:10:59.418584|    1|agent| Register node property max-continuing-snapshots-per-minute: 100
+2019-08-13 14:10:59.418589|    1|agent| Register node property max-error-snapshots-per-minute: 5
+2019-08-13 14:10:59.418616|    1|agent| Register node property max-discovered-backends: 300
+2019-08-13 14:10:59.418627|    1|agent| Register node property support-federated-app-correlation: 1
+2019-08-13 14:10:59.418733|    1|agent| Register node property enable-instance-monitoring: 0
+2019-08-13 14:10:59.418767|    2|env| Instrumenting process 20806 with working directory /home/vtramier/go/src/appdynamics/extension/example
+2019-08-13 14:10:59.418778|    2|env| Running on OS: Linux (version #60-Ubuntu SMP Tue Jul 2 18:22:20 UTC 2019), CPU architecture x86_64
+2019-08-13 14:10:59.418785|    1|env| Agent type: GOLANG_SDK
+2019-08-13 14:10:59.418789|    2|env| Application name: centrale
+2019-08-13 14:10:59.418793|    2|env| Tier name: cenrale2
+2019-08-13 14:10:59.418797|    2|env| Node name: cenrale2
+2019-08-13 14:10:59.418834|    1|agent| Added event: timestamp: 1565698259418 type: "APP_SERVER_RESTART" summary: "Agent was re-started, Node: cenrale2, Tier: cenrale2" notificationSeverity: "INFO"
+2019-08-13 14:10:59.449023|    2|agent| Scheduling new config update request
+2019-08-13 14:10:59.449042|    2|agent| Backend Config 2.0 support disabled, this agent will use legacy backend config
+2019-08-13 14:10:59.449056|    1|agent| UniquehostID from OSInfo is vtramier-ThinkPad-T480
+2019-08-13 14:10:59.454813|    2|httpclient| successfully loaded the default cert file (135 certificates)
+2019-08-13 14:11:00.345290|    2|agent| New Business transaction cenrale2:UserData of entry point type WEB known id 403639
+2019-08-13 14:11:00.345310|    2|agent| New Business transaction centrale/cenrale2/backend of entry point type WEB known id 403643
+2019-08-13 14:11:00.345318|    2|agent| generating backend identification rules as no backend config received from controller
+2019-08-13 14:11:00.345404|    1|agent| registered backend: parent { id: 22951 } resolutionInfo { exitPointType: "HTTP" properties { name: "APP" value: "centrale" } properties { name: "ID" value: "backend" } exitPointSubtype: "HTTP" }
+2019-08-13 14:11:00.345436|    2|agent| Created backend  of type HTTP/HTTP with properties {APP=centrale ID=backend }
+2019-08-13 14:11:00.345490|    1|agent| resolved backend: parent { id: 22955 version: 0 } resolutionInfo { exitPointType: "CUSTOM" properties { name: "APP" value: "centrale" } properties { name: "ID" value: "cenrale2" } exitPointSubtype: "TIER" } applicationComponentId: 8915 destinationApplicationId: 0
+2019-08-13 14:11:00.345498|    1|agent| Backend 22955 marked as resolved by controller, but was never sent for resolution
+2019-08-13 14:11:00.345515|    2|agent| Created backend  of type CUSTOM/TIER with properties {APP=centrale ID=cenrale2 }
+2019-08-13 14:11:00.345553|    1|agent| backend parent { id: 22951 version: 0 } resolutionInfo { exitPointType: "HTTP" properties { name: "APP" value: "centrale" } properties { name: "ID" value: "backend" } exitPointSubtype: "HTTP" } applicationComponentId: 0 destinationApplicationId: 0 is not yet resolved by controller
+2019-08-13 14:11:00.345577|    1|agent| resolved backend: parent { id: 22954 version: 0 } resolutionInfo { exitPointType: "CUSTOM" properties { name: "APP" value: "common" } properties { name: "ID" value: "commonTier" } exitPointSubtype: "TIER" } applicationComponentId: 0 destinationApplicationId: 2110
+2019-08-13 14:11:00.345584|    1|agent| Backend 22954 marked as resolved by controller, but was never sent for resolution
+2019-08-13 14:11:00.345601|    2|agent| Created backend  of type CUSTOM/TIER with properties {APP=common ID=commonTier }
+2019-08-13 14:11:00.345622|    1|agent| Ignoring unchanged property max-jdbc-calls-per-snapshot: 500
+2019-08-13 14:11:00.345651|    1|agent| Ignoring unchanged property capture-raw-sql: 0
+2019-08-13 14:11:00.345659|    1|agent| Ignoring unchanged property max-business-transactions: 50
+2019-08-13 14:11:00.345665|    1|agent| Ignoring unchanged property min-load-per-minute-diagnostic-session-trigger: 10
+2019-08-13 14:11:00.345677|    1|agent| Ignoring unchanged property enable-instance-monitoring: 0
+2019-08-13 14:11:00.345723|    1|agent| BT cenrale2:UserData will now use snapshot policy: collectingOnDemandSnapshots: false onDemandSnapshotCollectionDurationInMinutes: 0 onDemandSnapshotCollectionRemainingDurationInMinutes: 0 numberOfOnDemandSnapshotsToCollect: 0 collectSnapshotOnSLAViolationEnabled: true onWarningThresholdViolation: true collectOutliersOnlyOnSLAViolation: true maxAttemptsForOutliersOnSLAViolation: 20 onSLAViolationSnapshotCollectionDurationInMinutes: 5 numberOfSnapshotsToCollectOnSLAViolation: 5 occuranceSnapshotCollectionEnabled: false nthOccurance: 100 collectSnapshotForEveryNMinutesEnabled: true minuteFrequency: 10 automaticCollectionEnabled: true automaticSlowVolumePercentageThreshold: 10 automaticErrorVolumePercentageThreshold: 10
+2019-08-13 14:11:00.345752|    1|agent| BT centrale/cenrale2/backend will now use snapshot policy: collectingOnDemandSnapshots: false onDemandSnapshotCollectionDurationInMinutes: 0 onDemandSnapshotCollectionRemainingDurationInMinutes: 0 numberOfOnDemandSnapshotsToCollect: 0 collectSnapshotOnSLAViolationEnabled: true onWarningThresholdViolation: true collectOutliersOnlyOnSLAViolation: true maxAttemptsForOutliersOnSLAViolation: 20 onSLAViolationSnapshotCollectionDurationInMinutes: 5 numberOfSnapshotsToCollectOnSLAViolation: 5 occuranceSnapshotCollectionEnabled: false nthOccurance: 100 collectSnapshotForEveryNMinutesEnabled: true minuteFrequency: 10 automaticCollectionEnabled: true automaticSlowVolumePercentageThreshold: 10 automaticErrorVolumePercentageThreshold: 10
+2019-08-13 14:11:00.345766|    1|agent| Using error configuration 
+2019-08-13 14:11:00.345791|    1|agent| Passing 0 info point gatherer configs to info point registry
+2019-08-13 14:11:00.345798|    2|agent| Initial config update completed
+2019-08-13 14:11:00.345934|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:11:00.345944|    1|agent| Skipping top summary stats request as no new data is available
+2019-08-13 14:11:00.393019|    2|agent| Found pre-registered Business transaction: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:00.393033|    1|agent| Converted Business transaction from controller: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:00.393055|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.393077|    1|agent| starting transaction  id: 0x7f33780012a0 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:00.393133|    1|agent| Created exit call 0x129fc90 of type HTTP/HTTP, category , addKey "", addId -1 for transaction 0x7f33780012a0
+2019-08-13 14:11:00.393160|    1|agent| Added property app=centrale to exit call 0x129fc90
+2019-08-13 14:11:00.393172|    1|agent| Added property id=backend to exit call 0x129fc90
+2019-08-13 14:11:00.393180|    1|agent| Disabling agent resolution to exit call 0x129fc90
+2019-08-13 14:11:00.393188|    1|agent| Started exit call 0x129fc90 with properties {APP=centrale ID=backend }
+2019-08-13 14:11:00.393228|    2|agent| Business transaction centrale/cenrale2/backend has exit call to backend backend
+2019-08-13 14:11:00.393323|    2|agent| Found pre-registered Business transaction: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:00.393335|    1|agent| Converted Business transaction from controller: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:00.393349|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.393361|    1|agent| starting transaction  id: 0x11ac130 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:00.393391|    1|agent| Setting snapshot URL to cenrale2:UserData for transaction 0x11ac130
+2019-08-13 14:11:00.393410|    1|agent| Stopping transaction  id: 0x11ac130 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:00.403675|    1|agent| Stopped exit call 0x129fc90
+2019-08-13 14:11:00.403705|    1|agent| Stopping transaction  id: 0x7f33780012a0 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:00.454340|    1|agent| Found registered transaction: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:00.454394|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.454441|    1|agent| starting transaction  id: 0x11ac130 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:00.454559|    1|agent| Created exit call 0x12850e0 of type HTTP/HTTP, category , addKey "", addId -1 for transaction 0x11ac130
+2019-08-13 14:11:00.454612|    1|agent| Added property app=centrale to exit call 0x12850e0
+2019-08-13 14:11:00.454663|    1|agent| Added property id=backend to exit call 0x12850e0
+2019-08-13 14:11:00.454699|    1|agent| Disabling agent resolution to exit call 0x12850e0
+2019-08-13 14:11:00.454734|    1|agent| Started exit call 0x12850e0 with properties {APP=centrale ID=backend }
+2019-08-13 14:11:00.455094|    1|agent| Found registered transaction: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:00.455133|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.455169|    1|agent| starting transaction  id: 0x1180870 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:00.455236|    1|agent| Setting snapshot URL to cenrale2:UserData for transaction 0x1180870
+2019-08-13 14:11:00.455304|    1|agent| Stopping transaction  id: 0x1180870 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:00.468242|    1|agent| Stopped exit call 0x12850e0
+2019-08-13 14:11:00.468342|    1|agent| Stopping transaction  id: 0x11ac130 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:00.518768|    1|agent| Found registered transaction: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:00.518794|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.518816|    1|agent| starting transaction  id: 0x7f338c0865e0 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:00.518877|    1|agent| Created exit call 0x7f338c08c430 of type HTTP/HTTP, category , addKey "", addId -1 for transaction 0x7f338c0865e0
+2019-08-13 14:11:00.518896|    1|agent| Added property app=centrale to exit call 0x7f338c08c430
+2019-08-13 14:11:00.518914|    1|agent| Added property id=backend to exit call 0x7f338c08c430
+2019-08-13 14:11:00.518926|    1|agent| Disabling agent resolution to exit call 0x7f338c08c430
+2019-08-13 14:11:00.518940|    1|agent| Started exit call 0x7f338c08c430 with properties {APP=centrale ID=backend }
+2019-08-13 14:11:00.519153|    1|agent| Found registered transaction: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:00.519169|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.519187|    1|agent| starting transaction  id: 0x7f338c0933b0 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:00.519220|    1|agent| Setting snapshot URL to cenrale2:UserData for transaction 0x7f338c0933b0
+2019-08-13 14:11:00.519253|    1|agent| Stopping transaction  id: 0x7f338c0933b0 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:00.529468|    1|agent| Stopped exit call 0x7f338c08c430
+2019-08-13 14:11:00.529507|    1|agent| Stopping transaction  id: 0x7f338c0865e0 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:00.579863|    1|agent| Found registered transaction: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:00.579880|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.579897|    1|agent| starting transaction  id: 0x7f3270003620 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:00.579947|    1|agent| Created exit call 0x7f3270000ee0 of type HTTP/HTTP, category , addKey "", addId -1 for transaction 0x7f3270003620
+2019-08-13 14:11:00.579961|    1|agent| Added property app=centrale to exit call 0x7f3270000ee0
+2019-08-13 14:11:00.579972|    1|agent| Added property id=backend to exit call 0x7f3270000ee0
+2019-08-13 14:11:00.579980|    1|agent| Disabling agent resolution to exit call 0x7f3270000ee0
+2019-08-13 14:11:00.579991|    1|agent| Started exit call 0x7f3270000ee0 with properties {APP=centrale ID=backend }
+2019-08-13 14:11:00.580113|    1|agent| Found registered transaction: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:00.580127|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.580137|    1|agent| starting transaction  id: 0x7f3270004730 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:00.580164|    1|agent| Setting snapshot URL to cenrale2:UserData for transaction 0x7f3270004730
+2019-08-13 14:11:00.580192|    1|agent| Stopping transaction  id: 0x7f3270004730 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:00.590403|    1|agent| Stopped exit call 0x7f3270000ee0
+2019-08-13 14:11:00.590434|    1|agent| Stopping transaction  id: 0x7f3270003620 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:00.641081|    2|agent| New remote registered business transaction id 403646
+2019-08-13 14:11:00.641111|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.641125|    1|agent| starting transaction  id: 0x11a9ed0 (bt=:)
+2019-08-13 14:11:00.641171|    1|agent| Found registered transaction: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:00.641188|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.641206|    1|agent| starting transaction  id: 0x11aba80 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:00.641271|    1|agent| Created exit call 0x117d380 of type HTTP/HTTP, category , addKey "", addId -1 for transaction 0x11aba80
+2019-08-13 14:11:00.641296|    1|agent| Added property app=centrale to exit call 0x117d380
+2019-08-13 14:11:00.641315|    1|agent| Added property id=backend to exit call 0x117d380
+2019-08-13 14:11:00.641329|    1|agent| Disabling agent resolution to exit call 0x117d380
+2019-08-13 14:11:00.641344|    1|agent| Started exit call 0x117d380 with properties {APP=centrale ID=backend }
+2019-08-13 14:11:00.642054|    1|agent| Found registered transaction: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:00.642067|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.642078|    1|agent| starting transaction  id: 0x119b340 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:00.642102|    1|agent| Setting snapshot URL to cenrale2:UserData for transaction 0x119b340
+2019-08-13 14:11:00.642129|    1|agent| Stopping transaction  id: 0x119b340 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:00.652659|    1|agent| Stopping transaction  id: 0x11a9ed0 (bt=:)
+2019-08-13 14:11:00.653032|    1|agent| Stopped exit call 0x117d380
+2019-08-13 14:11:00.653052|    1|agent| Stopping transaction  id: 0x11aba80 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:00.703747|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.703768|    1|agent| starting transaction  id: 0x1192cf0 (bt=:)
+2019-08-13 14:11:00.703796|    1|agent| Found registered transaction: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:00.703805|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.703814|    1|agent| starting transaction  id: 0x11aba80 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:00.703853|    1|agent| Created exit call 0x117d380 of type HTTP/HTTP, category , addKey "", addId -1 for transaction 0x11aba80
+2019-08-13 14:11:00.703866|    1|agent| Added property app=centrale to exit call 0x117d380
+2019-08-13 14:11:00.703879|    1|agent| Added property id=backend to exit call 0x117d380
+2019-08-13 14:11:00.703889|    1|agent| Disabling agent resolution to exit call 0x117d380
+2019-08-13 14:11:00.703898|    1|agent| Started exit call 0x117d380 with properties {APP=centrale ID=backend }
+2019-08-13 14:11:00.704137|    1|agent| Found registered transaction: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:00.704148|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.704162|    1|agent| starting transaction  id: 0x7f338c0865e0 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:00.704187|    1|agent| Setting snapshot URL to cenrale2:UserData for transaction 0x7f338c0865e0
+2019-08-13 14:11:00.704211|    1|agent| Stopping transaction  id: 0x7f338c0865e0 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:00.714393|    1|agent| Stopping transaction  id: 0x1192cf0 (bt=:)
+2019-08-13 14:11:00.714496|    1|agent| Stopped exit call 0x117d380
+2019-08-13 14:11:00.714515|    1|agent| Stopping transaction  id: 0x11aba80 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:00.765427|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.765465|    1|agent| starting transaction  id: 0x11a9ed0 (bt=:)
+2019-08-13 14:11:00.765535|    1|agent| Found registered transaction: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:00.765562|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.765585|    1|agent| starting transaction  id: 0x11aba80 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:00.765651|    1|agent| Created exit call 0x117d380 of type HTTP/HTTP, category , addKey "", addId -1 for transaction 0x11aba80
+2019-08-13 14:11:00.765681|    1|agent| Added property app=centrale to exit call 0x117d380
+2019-08-13 14:11:00.765710|    1|agent| Added property id=backend to exit call 0x117d380
+2019-08-13 14:11:00.765761|    1|agent| Disabling agent resolution to exit call 0x117d380
+2019-08-13 14:11:00.765784|    1|agent| Started exit call 0x117d380 with properties {APP=centrale ID=backend }
+2019-08-13 14:11:00.766400|    1|agent| Found registered transaction: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:00.766431|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.766456|    1|agent| starting transaction  id: 0x7f338c0865e0 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:00.766503|    1|agent| Setting snapshot URL to cenrale2:UserData for transaction 0x7f338c0865e0
+2019-08-13 14:11:00.766573|    1|agent| Stopping transaction  id: 0x7f338c0865e0 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:00.778275|    1|agent| Stopping transaction  id: 0x11a9ed0 (bt=:)
+2019-08-13 14:11:00.778539|    1|agent| Stopped exit call 0x117d380
+2019-08-13 14:11:00.778610|    1|agent| Stopping transaction  id: 0x11aba80 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:00.829808|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.829863|    1|agent| starting transaction  id: 0x1179010 (bt=:)
+2019-08-13 14:11:00.829942|    1|agent| Found registered transaction: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:00.829975|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.830009|    1|agent| starting transaction  id: 0x11998c0 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:00.830104|    1|agent| Created exit call 0x11a9650 of type HTTP/HTTP, category , addKey "", addId -1 for transaction 0x11998c0
+2019-08-13 14:11:00.830138|    1|agent| Added property app=centrale to exit call 0x11a9650
+2019-08-13 14:11:00.830172|    1|agent| Added property id=backend to exit call 0x11a9650
+2019-08-13 14:11:00.830199|    1|agent| Disabling agent resolution to exit call 0x11a9650
+2019-08-13 14:11:00.830227|    1|agent| Started exit call 0x11a9650 with properties {APP=centrale ID=backend }
+2019-08-13 14:11:00.831099|    1|agent| Found registered transaction: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:00.831131|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.831164|    1|agent| starting transaction  id: 0x129cf60 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:00.831230|    1|agent| Setting snapshot URL to cenrale2:UserData for transaction 0x129cf60
+2019-08-13 14:11:00.831303|    1|agent| Stopping transaction  id: 0x129cf60 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:00.841861|    1|agent| Stopping transaction  id: 0x1179010 (bt=:)
+2019-08-13 14:11:00.842075|    1|agent| Stopped exit call 0x11a9650
+2019-08-13 14:11:00.842133|    1|agent| Stopping transaction  id: 0x11998c0 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:00.894809|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.894850|    1|agent| starting transaction  id: 0x7f3384011030 (bt=:)
+2019-08-13 14:11:00.894924|    1|agent| Found registered transaction: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:00.894983|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.895022|    1|agent| starting transaction  id: 0x7f3384011570 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:00.895108|    1|agent| Created exit call 0x7f3384009d50 of type HTTP/HTTP, category , addKey "", addId -1 for transaction 0x7f3384011570
+2019-08-13 14:11:00.895149|    1|agent| Added property app=centrale to exit call 0x7f3384009d50
+2019-08-13 14:11:00.895188|    1|agent| Added property id=backend to exit call 0x7f3384009d50
+2019-08-13 14:11:00.895224|    1|agent| Disabling agent resolution to exit call 0x7f3384009d50
+2019-08-13 14:11:00.895262|    1|agent| Started exit call 0x7f3384009d50 with properties {APP=centrale ID=backend }
+2019-08-13 14:11:00.896162|    1|agent| Found registered transaction: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:00.896217|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.896260|    1|agent| starting transaction  id: 0x7f3384014c70 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:00.896492|    1|agent| Setting snapshot URL to cenrale2:UserData for transaction 0x7f3384014c70
+2019-08-13 14:11:00.896867|    1|agent| Stopping transaction  id: 0x7f3384014c70 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:00.907095|    1|agent| Stopping transaction  id: 0x7f3384011030 (bt=:)
+2019-08-13 14:11:00.907317|    1|agent| Stopped exit call 0x7f3384009d50
+2019-08-13 14:11:00.907358|    1|agent| Stopping transaction  id: 0x7f3384011570 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:00.957893|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.957914|    1|agent| starting transaction  id: 0x7f338400aa60 (bt=:)
+2019-08-13 14:11:00.957942|    1|agent| Found registered transaction: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:00.957954|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.957965|    1|agent| starting transaction  id: 0x7f3384008490 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:00.957998|    1|agent| Created exit call 0x7f3384000c30 of type HTTP/HTTP, category , addKey "", addId -1 for transaction 0x7f3384008490
+2019-08-13 14:11:00.958010|    1|agent| Added property app=centrale to exit call 0x7f3384000c30
+2019-08-13 14:11:00.958023|    1|agent| Added property id=backend to exit call 0x7f3384000c30
+2019-08-13 14:11:00.958033|    1|agent| Disabling agent resolution to exit call 0x7f3384000c30
+2019-08-13 14:11:00.958044|    1|agent| Started exit call 0x7f3384000c30 with properties {APP=centrale ID=backend }
+2019-08-13 14:11:00.958370|    1|agent| Found registered transaction: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:00.958382|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.958399|    1|agent| starting transaction  id: 0x11ad910 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:00.958425|    1|agent| Setting snapshot URL to cenrale2:UserData for transaction 0x11ad910
+2019-08-13 14:11:00.958449|    1|agent| Stopping transaction  id: 0x11ad910 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:00.968613|    1|agent| Stopping transaction  id: 0x7f338400aa60 (bt=:)
+2019-08-13 14:11:00.968744|    1|agent| Stopped exit call 0x7f3384000c30
+2019-08-13 14:11:00.968767|    1|agent| Stopping transaction  id: 0x7f3384008490 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.019521|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.019550|    1|agent| starting transaction  id: 0x7f33780012a0 (bt=:)
+2019-08-13 14:11:01.019599|    1|agent| Found registered transaction: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:01.019610|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.019623|    1|agent| starting transaction  id: 0x7f3384008490 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.019669|    1|agent| Created exit call 0x7f3384000c30 of type HTTP/HTTP, category , addKey "", addId -1 for transaction 0x7f3384008490
+2019-08-13 14:11:01.019684|    1|agent| Added property app=centrale to exit call 0x7f3384000c30
+2019-08-13 14:11:01.019694|    1|agent| Added property id=backend to exit call 0x7f3384000c30
+2019-08-13 14:11:01.019702|    1|agent| Disabling agent resolution to exit call 0x7f3384000c30
+2019-08-13 14:11:01.019711|    1|agent| Started exit call 0x7f3384000c30 with properties {APP=centrale ID=backend }
+2019-08-13 14:11:01.020046|    1|agent| Found registered transaction: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:01.020063|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.020077|    1|agent| starting transaction  id: 0x11ad910 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.020140|    1|agent| Setting snapshot URL to cenrale2:UserData for transaction 0x11ad910
+2019-08-13 14:11:01.020173|    1|agent| Stopping transaction  id: 0x11ad910 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.030352|    1|agent| Stopping transaction  id: 0x7f33780012a0 (bt=:)
+2019-08-13 14:11:01.030472|    1|agent| Stopped exit call 0x7f3384000c30
+2019-08-13 14:11:01.030496|    1|agent| Stopping transaction  id: 0x7f3384008490 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.081076|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.081095|    1|agent| starting transaction  id: 0x128d890 (bt=:)
+2019-08-13 14:11:01.081118|    1|agent| Found registered transaction: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:01.081125|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.081132|    1|agent| starting transaction  id: 0x1192cf0 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.081156|    1|agent| Created exit call 0x1186db0 of type HTTP/HTTP, category , addKey "", addId -1 for transaction 0x1192cf0
+2019-08-13 14:11:01.081168|    1|agent| Added property app=centrale to exit call 0x1186db0
+2019-08-13 14:11:01.081176|    1|agent| Added property id=backend to exit call 0x1186db0
+2019-08-13 14:11:01.081183|    1|agent| Disabling agent resolution to exit call 0x1186db0
+2019-08-13 14:11:01.081191|    1|agent| Started exit call 0x1186db0 with properties {APP=centrale ID=backend }
+2019-08-13 14:11:01.081414|    1|agent| Found registered transaction: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:01.081422|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.081429|    1|agent| starting transaction  id: 0x129cf60 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.081448|    1|agent| Setting snapshot URL to cenrale2:UserData for transaction 0x129cf60
+2019-08-13 14:11:01.081465|    1|agent| Stopping transaction  id: 0x129cf60 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.091628|    1|agent| Stopping transaction  id: 0x128d890 (bt=:)
+2019-08-13 14:11:01.091738|    1|agent| Stopped exit call 0x1186db0
+2019-08-13 14:11:01.091757|    1|agent| Stopping transaction  id: 0x1192cf0 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.142196|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.142214|    1|agent| starting transaction  id: 0x1180870 (bt=:)
+2019-08-13 14:11:01.142239|    1|agent| Found registered transaction: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:01.142249|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.142258|    1|agent| starting transaction  id: 0x1192cf0 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.142287|    1|agent| Created exit call 0x1186db0 of type HTTP/HTTP, category , addKey "", addId -1 for transaction 0x1192cf0
+2019-08-13 14:11:01.142302|    1|agent| Added property app=centrale to exit call 0x1186db0
+2019-08-13 14:11:01.142316|    1|agent| Added property id=backend to exit call 0x1186db0
+2019-08-13 14:11:01.142327|    1|agent| Disabling agent resolution to exit call 0x1186db0
+2019-08-13 14:11:01.142342|    1|agent| Started exit call 0x1186db0 with properties {APP=centrale ID=backend }
+2019-08-13 14:11:01.142600|    1|agent| Found registered transaction: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:01.142612|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.142623|    1|agent| starting transaction  id: 0x129cf60 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.142648|    1|agent| Setting snapshot URL to cenrale2:UserData for transaction 0x129cf60
+2019-08-13 14:11:01.142674|    1|agent| Stopping transaction  id: 0x129cf60 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.152827|    1|agent| Stopping transaction  id: 0x1180870 (bt=:)
+2019-08-13 14:11:01.152933|    1|agent| Stopped exit call 0x1186db0
+2019-08-13 14:11:01.152951|    1|agent| Stopping transaction  id: 0x1192cf0 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.203424|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.203443|    1|agent| starting transaction  id: 0x7f3270005610 (bt=:)
+2019-08-13 14:11:01.203469|    1|agent| Found registered transaction: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:01.203480|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.203491|    1|agent| starting transaction  id: 0x7f3270005cc0 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.203521|    1|agent| Created exit call 0x117d380 of type HTTP/HTTP, category , addKey "", addId -1 for transaction 0x7f3270005cc0
+2019-08-13 14:11:01.203537|    1|agent| Added property app=centrale to exit call 0x117d380
+2019-08-13 14:11:01.203551|    1|agent| Added property id=backend to exit call 0x117d380
+2019-08-13 14:11:01.203562|    1|agent| Disabling agent resolution to exit call 0x117d380
+2019-08-13 14:11:01.203573|    1|agent| Started exit call 0x117d380 with properties {APP=centrale ID=backend }
+2019-08-13 14:11:01.203854|    1|agent| Found registered transaction: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:01.203870|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.203883|    1|agent| starting transaction  id: 0x7f3270007e30 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.203907|    1|agent| Setting snapshot URL to cenrale2:UserData for transaction 0x7f3270007e30
+2019-08-13 14:11:01.203934|    1|agent| Stopping transaction  id: 0x7f3270007e30 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.214092|    1|agent| Stopping transaction  id: 0x7f3270005610 (bt=:)
+2019-08-13 14:11:01.214196|    1|agent| Stopped exit call 0x117d380
+2019-08-13 14:11:01.214216|    1|agent| Stopping transaction  id: 0x7f3270005cc0 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.265280|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.265352|    1|agent| starting transaction  id: 0x7f3390010f80 (bt=:)
+2019-08-13 14:11:01.265429|    1|agent| Found registered transaction: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:01.265459|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.265487|    1|agent| starting transaction  id: 0x7f3390017c60 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.265567|    1|agent| Created exit call 0x7f33900019a0 of type HTTP/HTTP, category , addKey "", addId -1 for transaction 0x7f3390017c60
+2019-08-13 14:11:01.265600|    1|agent| Added property app=centrale to exit call 0x7f33900019a0
+2019-08-13 14:11:01.265628|    1|agent| Added property id=backend to exit call 0x7f33900019a0
+2019-08-13 14:11:01.265649|    1|agent| Disabling agent resolution to exit call 0x7f33900019a0
+2019-08-13 14:11:01.265668|    1|agent| Started exit call 0x7f33900019a0 with properties {APP=centrale ID=backend }
+2019-08-13 14:11:01.266344|    1|agent| Found registered transaction: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:01.266389|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.266424|    1|agent| starting transaction  id: 0x7f3270007e30 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.266505|    1|agent| Setting snapshot URL to cenrale2:UserData for transaction 0x7f3270007e30
+2019-08-13 14:11:01.266580|    1|agent| Stopping transaction  id: 0x7f3270007e30 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.276960|    1|agent| Stopping transaction  id: 0x7f3390010f80 (bt=:)
+2019-08-13 14:11:01.277275|    1|agent| Stopped exit call 0x7f33900019a0
+2019-08-13 14:11:01.277349|    1|agent| Stopping transaction  id: 0x7f3390017c60 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.328522|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.328564|    1|agent| starting transaction  id: 0x7f3384011030 (bt=:)
+2019-08-13 14:11:01.328625|    1|agent| Found registered transaction: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:01.328649|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.328674|    1|agent| starting transaction  id: 0x7f3384011570 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.328744|    1|agent| Created exit call 0x7f3270002ef0 of type HTTP/HTTP, category , addKey "", addId -1 for transaction 0x7f3384011570
+2019-08-13 14:11:01.328777|    1|agent| Added property app=centrale to exit call 0x7f3270002ef0
+2019-08-13 14:11:01.328805|    1|agent| Added property id=backend to exit call 0x7f3270002ef0
+2019-08-13 14:11:01.328833|    1|agent| Disabling agent resolution to exit call 0x7f3270002ef0
+2019-08-13 14:11:01.328855|    1|agent| Started exit call 0x7f3270002ef0 with properties {APP=centrale ID=backend }
+2019-08-13 14:11:01.329462|    1|agent| Found registered transaction: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:01.329489|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.329510|    1|agent| starting transaction  id: 0x7f3270003620 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.329555|    1|agent| Setting snapshot URL to cenrale2:UserData for transaction 0x7f3270003620
+2019-08-13 14:11:01.329602|    1|agent| Stopping transaction  id: 0x7f3270003620 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.339952|    1|agent| Stopping transaction  id: 0x7f3384011030 (bt=:)
+2019-08-13 14:11:01.340248|    1|agent| Stopped exit call 0x7f3270002ef0
+2019-08-13 14:11:01.340380|    1|agent| Stopping transaction  id: 0x7f3384011570 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.391581|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.391637|    1|agent| starting transaction  id: 0x7f33840142a0 (bt=:)
+2019-08-13 14:11:01.391725|    1|agent| Found registered transaction: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:01.391758|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.391816|    1|agent| starting transaction  id: 0x7f3384011570 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.391943|    1|agent| Created exit call 0x7f3270002ef0 of type HTTP/HTTP, category , addKey "", addId -1 for transaction 0x7f3384011570
+2019-08-13 14:11:01.391998|    1|agent| Added property app=centrale to exit call 0x7f3270002ef0
+2019-08-13 14:11:01.392068|    1|agent| Added property id=backend to exit call 0x7f3270002ef0
+2019-08-13 14:11:01.392126|    1|agent| Disabling agent resolution to exit call 0x7f3270002ef0
+2019-08-13 14:11:01.392172|    1|agent| Started exit call 0x7f3270002ef0 with properties {APP=centrale ID=backend }
+2019-08-13 14:11:01.393239|    1|agent| Found registered transaction: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:01.393277|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.393321|    1|agent| starting transaction  id: 0x7f3270003620 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.393378|    1|agent| Setting snapshot URL to cenrale2:UserData for transaction 0x7f3270003620
+2019-08-13 14:11:01.393444|    1|agent| Stopping transaction  id: 0x7f3270003620 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.403723|    1|agent| Stopping transaction  id: 0x7f33840142a0 (bt=:)
+2019-08-13 14:11:01.403928|    1|agent| Stopped exit call 0x7f3270002ef0
+2019-08-13 14:11:01.403971|    1|agent| Stopping transaction  id: 0x7f3384011570 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.454932|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.455031|    1|agent| starting transaction  id: 0x7f3270007e30 (bt=:)
+2019-08-13 14:11:01.455133|    1|agent| Found registered transaction: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:01.455145|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.455156|    1|agent| starting transaction  id: 0x7f327000bd40 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.455194|    1|agent| Created exit call 0x7f3270002ef0 of type HTTP/HTTP, category , addKey "", addId -1 for transaction 0x7f327000bd40
+2019-08-13 14:11:01.455206|    1|agent| Added property app=centrale to exit call 0x7f3270002ef0
+2019-08-13 14:11:01.455217|    1|agent| Added property id=backend to exit call 0x7f3270002ef0
+2019-08-13 14:11:01.455225|    1|agent| Disabling agent resolution to exit call 0x7f3270002ef0
+2019-08-13 14:11:01.455246|    1|agent| Started exit call 0x7f3270002ef0 with properties {APP=centrale ID=backend }
+2019-08-13 14:11:01.455534|    1|agent| Found registered transaction: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:01.455544|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.455569|    1|agent| starting transaction  id: 0x7f3270042410 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.455589|    1|agent| Setting snapshot URL to cenrale2:UserData for transaction 0x7f3270042410
+2019-08-13 14:11:01.455612|    1|agent| Stopping transaction  id: 0x7f3270042410 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.465737|    1|agent| Stopping transaction  id: 0x7f3270007e30 (bt=:)
+2019-08-13 14:11:01.465821|    1|agent| Stopped exit call 0x7f3270002ef0
+2019-08-13 14:11:01.465835|    1|agent| Stopping transaction  id: 0x7f327000bd40 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.516442|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.516455|    1|agent| starting transaction  id: 0x7f338c0933b0 (bt=:)
+2019-08-13 14:11:01.516475|    1|agent| Found registered transaction: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:01.516483|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.516495|    1|agent| starting transaction  id: 0x7f338c09ffe0 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.516525|    1|agent| Created exit call 0x7f33840121f0 of type HTTP/HTTP, category , addKey "", addId -1 for transaction 0x7f338c09ffe0
+2019-08-13 14:11:01.516534|    1|agent| Added property app=centrale to exit call 0x7f33840121f0
+2019-08-13 14:11:01.516542|    1|agent| Added property id=backend to exit call 0x7f33840121f0
+2019-08-13 14:11:01.516550|    1|agent| Disabling agent resolution to exit call 0x7f33840121f0
+2019-08-13 14:11:01.516557|    1|agent| Started exit call 0x7f33840121f0 with properties {APP=centrale ID=backend }
+2019-08-13 14:11:01.516750|    1|agent| Found registered transaction: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:01.516758|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.516767|    1|agent| starting transaction  id: 0x7f3270042410 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.516782|    1|agent| Setting snapshot URL to cenrale2:UserData for transaction 0x7f3270042410
+2019-08-13 14:11:01.516799|    1|agent| Stopping transaction  id: 0x7f3270042410 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.526926|    1|agent| Stopping transaction  id: 0x7f338c0933b0 (bt=:)
+2019-08-13 14:11:01.526991|    1|agent| Stopped exit call 0x7f33840121f0
+2019-08-13 14:11:01.527005|    1|agent| Stopping transaction  id: 0x7f338c09ffe0 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.577512|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.577526|    1|agent| starting transaction  id: 0x7f3270009250 (bt=:)
+2019-08-13 14:11:01.577552|    1|agent| Found registered transaction: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:01.577562|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.577575|    1|agent| starting transaction  id: 0x1174390 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.577602|    1|agent| Created exit call 0x7f3270012510 of type HTTP/HTTP, category , addKey "", addId -1 for transaction 0x1174390
+2019-08-13 14:11:01.577617|    1|agent| Added property app=centrale to exit call 0x7f3270012510
+2019-08-13 14:11:01.577627|    1|agent| Added property id=backend to exit call 0x7f3270012510
+2019-08-13 14:11:01.577634|    1|agent| Disabling agent resolution to exit call 0x7f3270012510
+2019-08-13 14:11:01.577643|    1|agent| Started exit call 0x7f3270012510 with properties {APP=centrale ID=backend }
+2019-08-13 14:11:01.577907|    1|agent| Found registered transaction: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:01.577923|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.577937|    1|agent| starting transaction  id: 0x1179010 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.577955|    1|agent| Setting snapshot URL to cenrale2:UserData for transaction 0x1179010
+2019-08-13 14:11:01.577972|    1|agent| Stopping transaction  id: 0x1179010 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.588099|    1|agent| Stopping transaction  id: 0x7f3270009250 (bt=:)
+2019-08-13 14:11:01.588167|    1|agent| Stopped exit call 0x7f3270012510
+2019-08-13 14:11:01.588180|    1|agent| Stopping transaction  id: 0x1174390 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.639775|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.639831|    1|agent| starting transaction  id: 0x1285e40 (bt=:)
+2019-08-13 14:11:01.639913|    1|agent| Found registered transaction: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:01.639958|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.640003|    1|agent| starting transaction  id: 0x7f338c0933b0 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.640100|    1|agent| Created exit call 0x1287ad0 of type HTTP/HTTP, category , addKey "", addId -1 for transaction 0x7f338c0933b0
+2019-08-13 14:11:01.640150|    1|agent| Added property app=centrale to exit call 0x1287ad0
+2019-08-13 14:11:01.640201|    1|agent| Added property id=backend to exit call 0x1287ad0
+2019-08-13 14:11:01.640238|    1|agent| Disabling agent resolution to exit call 0x1287ad0
+2019-08-13 14:11:01.640274|    1|agent| Started exit call 0x1287ad0 with properties {APP=centrale ID=backend }
+2019-08-13 14:11:01.641159|    1|agent| Found registered transaction: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:01.641206|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.641250|    1|agent| starting transaction  id: 0x7f338c0a2880 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.641323|    1|agent| Setting snapshot URL to cenrale2:UserData for transaction 0x7f338c0a2880
+2019-08-13 14:11:01.641716|    1|agent| Stopping transaction  id: 0x7f338c0a2880 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.651988|    1|agent| Stopping transaction  id: 0x1285e40 (bt=:)
+2019-08-13 14:11:01.652209|    1|agent| Stopped exit call 0x1287ad0
+2019-08-13 14:11:01.652260|    1|agent| Stopping transaction  id: 0x7f338c0933b0 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.703376|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.703430|    1|agent| starting transaction  id: 0x7f3384009040 (bt=:)
+2019-08-13 14:11:01.703511|    1|agent| Found registered transaction: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:01.703564|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.703600|    1|agent| starting transaction  id: 0x119ea80 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.703706|    1|agent| Created exit call 0x117d380 of type HTTP/HTTP, category , addKey "", addId -1 for transaction 0x119ea80
+2019-08-13 14:11:01.703748|    1|agent| Added property app=centrale to exit call 0x117d380
+2019-08-13 14:11:01.703784|    1|agent| Added property id=backend to exit call 0x117d380
+2019-08-13 14:11:01.703816|    1|agent| Disabling agent resolution to exit call 0x117d380
+2019-08-13 14:11:01.703850|    1|agent| Started exit call 0x117d380 with properties {APP=centrale ID=backend }
+2019-08-13 14:11:01.704892|    1|agent| Found registered transaction: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:01.704936|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.704969|    1|agent| starting transaction  id: 0x129cf60 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.705035|    1|agent| Setting snapshot URL to cenrale2:UserData for transaction 0x129cf60
+2019-08-13 14:11:01.705103|    1|agent| Stopping transaction  id: 0x129cf60 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.715473|    1|agent| Stopping transaction  id: 0x7f3384009040 (bt=:)
+2019-08-13 14:11:01.715815|    1|agent| Stopped exit call 0x117d380
+2019-08-13 14:11:01.715881|    1|agent| Stopping transaction  id: 0x119ea80 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.766822|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.766852|    1|agent| starting transaction  id: 0x7f33900195e0 (bt=:)
+2019-08-13 14:11:01.766905|    1|agent| Found registered transaction: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:01.766930|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.766948|    1|agent| starting transaction  id: 0x7f3390019ce0 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.767006|    1|agent| Created exit call 0x7f3270012510 of type HTTP/HTTP, category , addKey "", addId -1 for transaction 0x7f3390019ce0
+2019-08-13 14:11:01.767027|    1|agent| Added property app=centrale to exit call 0x7f3270012510
+2019-08-13 14:11:01.767054|    1|agent| Added property id=backend to exit call 0x7f3270012510
+2019-08-13 14:11:01.767072|    1|agent| Disabling agent resolution to exit call 0x7f3270012510
+2019-08-13 14:11:01.767084|    1|agent| Started exit call 0x7f3270012510 with properties {APP=centrale ID=backend }
+2019-08-13 14:11:01.767557|    1|agent| Found registered transaction: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:01.767577|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.767597|    1|agent| starting transaction  id: 0x7f3390011300 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.767638|    1|agent| Setting snapshot URL to cenrale2:UserData for transaction 0x7f3390011300
+2019-08-13 14:11:01.767673|    1|agent| Stopping transaction  id: 0x7f3390011300 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.777881|    1|agent| Stopping transaction  id: 0x7f33900195e0 (bt=:)
+2019-08-13 14:11:01.777993|    1|agent| Stopped exit call 0x7f3270012510
+2019-08-13 14:11:01.778016|    1|agent| Stopping transaction  id: 0x7f3390019ce0 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.828527|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.828543|    1|agent| starting transaction  id: 0x7f3384009040 (bt=:)
+2019-08-13 14:11:01.828565|    1|agent| Found registered transaction: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:01.828574|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.828584|    1|agent| starting transaction  id: 0x7f3270043f70 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.828615|    1|agent| Created exit call 0x7f3270043590 of type HTTP/HTTP, category , addKey "", addId -1 for transaction 0x7f3270043f70
+2019-08-13 14:11:01.828625|    1|agent| Added property app=centrale to exit call 0x7f3270043590
+2019-08-13 14:11:01.828634|    1|agent| Added property id=backend to exit call 0x7f3270043590
+2019-08-13 14:11:01.828642|    1|agent| Disabling agent resolution to exit call 0x7f3270043590
+2019-08-13 14:11:01.828651|    1|agent| Started exit call 0x7f3270043590 with properties {APP=centrale ID=backend }
+2019-08-13 14:11:01.828929|    1|agent| Found registered transaction: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:01.828937|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.828944|    1|agent| starting transaction  id: 0x7f3390011300 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.828962|    1|agent| Setting snapshot URL to cenrale2:UserData for transaction 0x7f3390011300
+2019-08-13 14:11:01.828982|    1|agent| Stopping transaction  id: 0x7f3390011300 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.839152|    1|agent| Stopping transaction  id: 0x7f3384009040 (bt=:)
+2019-08-13 14:11:01.839258|    1|agent| Stopped exit call 0x7f3270043590
+2019-08-13 14:11:01.839276|    1|agent| Stopping transaction  id: 0x7f3270043f70 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.889729|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.889744|    1|agent| starting transaction  id: 0x7f3384011570 (bt=:)
+2019-08-13 14:11:01.889768|    1|agent| Found registered transaction: name [centrale/cenrale2/backend] id [403643]
+2019-08-13 14:11:01.889778|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.889791|    1|agent| starting transaction  id: 0x7f338400aa60 (bt=WEB:centrale/cenrale2/backend)
+2019-08-13 14:11:01.889822|    1|agent| Created exit call 0x7f3384007fa0 of type HTTP/HTTP, category , addKey "", addId -1 for transaction 0x7f338400aa60
+2019-08-13 14:11:01.889834|    1|agent| Added property app=centrale to exit call 0x7f3384007fa0
+2019-08-13 14:11:01.889847|    1|agent| Added property id=backend to exit call 0x7f3384007fa0
+2019-08-13 14:11:01.889858|    1|agent| Disabling agent resolution to exit call 0x7f3384007fa0
+2019-08-13 14:11:01.889867|    1|agent| Started exit call 0x7f3384007fa0 with properties {APP=centrale ID=backend }
+2019-08-13 14:11:01.890165|    1|agent| Found registered transaction: name [cenrale2:UserData] id [403639]
+2019-08-13 14:11:01.890177|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.890189|    1|agent| starting transaction  id: 0x7f3384018110 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.890212|    1|agent| Setting snapshot URL to cenrale2:UserData for transaction 0x7f3384018110
+2019-08-13 14:11:01.890235|    1|agent| Stopping transaction  id: 0x7f3384018110 (bt=WEB:cenrale2:UserData)
+2019-08-13 14:11:01.900368|    1|agent| Stopping transaction  id: 0x7f3384011570 (bt=:)
+2019-08-13 14:11:01.900446|    1|agent| Stopped exit call 0x7f3384007fa0
+2019-08-13 14:11:01.900458|    1|agent| Stopping transaction  id: 0x7f338400aa60 (bt=WEB:centrale/cenrale2/backend)

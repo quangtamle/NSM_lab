@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://skydive.network/schemas/node.json",
+  "definitions": {
+    "graphElement": {
+      "properties": {
+        "ID": {
+          "type": "string",
+          "minLength": 1
+        },
+        "Host": {
+          "type": "string"
+        },
+        "Origin": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer"
+        },
+        "UpdatedAt": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "ID", "Metadata"
+      ]
+    },
+    "nsMetadata": {
+      "properties": {
+        "Path": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [ "Path", "Name" ]
+    },
+    "ovsMetadata": {
+      "properties": {
+        "UUID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [ "UUID", "Name" ]
+    }
+  },
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "#/definitions/graphElement"
+    },
+    {
+      "anyOf": [
+        {
+          "properties": {
+            "Metadata": {
+              "allOf": [
+                {
+                  "properties": {
+                    "Type": {
+                      "type": "string",
+                      "minLength": 1,
+                      "not": { "enum": [ "netns", "ovsport" ] }
+                    },
+                    "Name": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [ "Type" ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "properties": {
+            "Metadata": {
+              "allOf": [
+                {
+                  "properties": {
+                    "Type": {
+                      "type": "string",
+                      "enum": [ "netns" ]
+                    }
+                  }
+                },
+                {
+                  "$ref": "#/definitions/nsMetadata"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "properties": {
+            "Metadata": {
+              "allOf": [
+                {
+                  "properties": {
+                    "Type": {
+                      "type": "string",
+                      "enum": [ "ovsport" ]
+                    }
+                  }
+                },
+                {
+                  "$ref": "#/definitions/ovsMetadata"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+require 'vagrant-openstack-provider'
+
+ADDR_PREFIX=ENV.fetch("ADDR_PREFIX", "192.168.50")
+AGENT_COUNT=ENV.fetch("AGENT_COUNT", "2").to_i
+ANALYZER_COUNT=ENV.fetch("ANALYZER_COUNT", "1").to_i
+ELASTICSEARCH_COUNT=ENV.fetch("ELASTICSEARCH_COUNT", "0").to_i
+
+DEPLOYMENT_MODE = ENV.fetch("DEPLOYMENT_MODE", "binary")
+DEVMODE = ENV.fetch("DEVMODE", "") == "true" ? true : false
+
+AGENT_EXTRA_PROVISION_SCRIPT=ENV.fetch("AGENT_EXTRA_PROVISION_SCRIPT", "")
+ANALYZER_EXTRA_PROVISION_SCRIPT=ENV.fetch("ANALYZER_EXTRA_PROVISION_SCRIPT", "")
+
+ANSIBLE_EXTRA_CONFIG=ENV.fetch("ANSIBLE_EXTRA_CONFIG", "{}")
+ANSIBLE_SKIP_TAGS=ENV.fetch("ANSIBLE_SKIP_TAGS", "skydive_functional_tests").split
+
+$skydive_extra_config = eval(ANSIBLE_EXTRA_CONFIG)
+$skydive_extra_config["http.ws.pong_timeout"] = 10
+$skydive_extra_config["agent.topology.probes"] = ["ovsdb", "docker"]
+$skydive_extra_config["agent.topology.netlink.metrics_update"] = 5
+$skydive_extra_config["analyzer.topology.ovn.address"] = "tcp://127.0.0.1:6641"
+
+if DEVMODE then
+  # default config from tests/tests.go:testConfig
+  $skydive_extra_config["flow.expire"] = "600"
+  $skydive_extra_config["flow.update"] = "10"
+  $skydive_extra_config["agent.metadata"] = {
+    "mydict": {
+      "value": 123
+    },
+    "myarrays": {
+      "integers": [1,2,3],
+      "bools": [true, true],
+      "strings": ["dog", "cat", "frog"]
+    }
+  }
+  $skydive_extra_config["agent.topology.probes"] = "netlink netns ovsdb docker lldp runc socketinfo lxd"
+  $skydive_extra_config["agent.topology.metrics_update"] = "5"
+  $skydive_extra_config["analyzer.topology.probes"] = "ovn"
+  $skydive_extra_config["analyzer.startup.capture_gremlin"] = "g.V().Has('Name','startup-vm2')"
+  $skydive_extra_config["ovs.oflow.enable"] = "true"
+  $skydive_extra_config["logging.level"] = "DEBUG"
+end
+
+def ifcfg_config(interface, network, netmask, ip)
+  ifcfg_template = <<-IFCFG
+cat > /etc/sysconfig/network-scripts/ifcfg-#{interface} <<EOF
+BOOTPROTO=none
+DEVICE=#{interface}
+ONBOOT=yes
+TYPE=Ethernet
+USERCTL=no
+NETWORK=#{network}
+NETMASK=#{netmask}
+IPADDR=#{ip}
+EOF
+sudo /sbin/ifup #{interface}
+IFCFG
+  return ifcfg_template
+end
+
+def populate_os_config(os, ip)
+  os.openstack_auth_url = ENV.fetch("OS_AUTH_URL", "'http://keystone-server.net/v2.0/tokens'")
+  os.username = ENV.fetch("OS_USERNAME", "openstackUser")
+  os.password = ENV.fetch("OS_PASSWORD", "openstackPassword")
+  os.tenant_name = ENV.fetch("OS_TENANT_NAME", "myTenant")
+  os.flavor = ENV.fetch("OS_FLAVOR", "m1.large")
+  os.image = ENV.fetch("OS_CENTOS_IMAGE", "centos")
+  os.floating_ip_pool = ENV.fetch("OS_PUBLIC_IP_POOL", "8.0.0.0/8")
+  os.networks = [
+    'private',
+    {
+      name: 'vagrant',
+      address: ip,
+    },
+  ]
+end
+
+def provision_es(vm, hosts)
+  vm.provision "elasticsearch", type: "ansible" do |ansible|
+    ansible.playbook = "playbook-es.yml"
+    ansible.groups = { "elasticsearch": hosts.map { |h| h["name"] } }
+    ansible.limit = "all"
+    ansible.galaxy_role_file = 'requirements.yml'
+    ansible.become = true
+    ansible.skip_tags = ["xpack"] + ANSIBLE_SKIP_TAGS
+  end
+
+  $skydive_extra_config["analyzer.flow.backend"] = "elasticsearch"
+  $skydive_extra_config["analyzer.topology.backend"] = "elasticsearch"
+  $skydive_extra_config["storage.elasticsearch.host"] = "#{hosts[0]['ip']}:9200"
+end
+
+Vagrant.configure(2) do |config|
+  config.ssh.username = 'centos'
+
+  (1..AGENT_COUNT).each do |i|
+    ip = "#{ADDR_PREFIX}.#{(i+ANALYZER_COUNT+ELASTICSEARCH_COUNT)*10}"
+
+    config.vm.define "agent#{i}" do |agent|
+      agent.vm.provider :openstack do |os|
+        populate_os_config(os, ip)
+      end
+
+      agent.vm.provider :libvirt do |domain, override|
+        domain.memory = 2560
+        override.vm.box = "centos/7"
+        override.ssh.username = 'vagrant'
+      end
+
+      agent.vm.hostname = "agent#{i}"
+      agent.vm.network "private_network", ip: ip
+      agent.vm.synced_folder ".", "/vagrant", :disabled => true
+      agent.vm.provision "networking", type: "shell", inline: ifcfg_config("eth1", "#{ADDR_PREFIX}.0", "255.255.255.0", ip)
+      agent.vm.provision "common", type: "shell", path: "setup-common.sh"
+
+      if AGENT_EXTRA_PROVISION_SCRIPT != ""
+        agent.vm.provision "extra", type: "shell", path: AGENT_EXTRA_PROVISION_SCRIPT
+      end
+    end
+  end
+
+  (1..ELASTICSEARCH_COUNT).each do |i|
+    ip = "#{ADDR_PREFIX}.#{(i+ANALYZER_COUNT)*10}"
+
+    config.vm.define "elasticsearch#{i}" do |es|
+      es.vm.provider :openstack do |os|
+        populate_os_config(os, ip)
+      end
+
+      es.vm.provider :libvirt do |domain, override|
+        override.vm.box = "centos/7"
+        override.ssh.username = 'vagrant'
+      end
+
+      es.vm.hostname = "elasticsearch#{i}"
+      es.vm.network "private_network", ip: ip
+      es.vm.synced_folder ".", "/vagrant", :disabled => true
+
+      es.vm.provision "networking", type: "shell", inline: ifcfg_config("eth1", "#{ADDR_PREFIX}.0", "255.255.255.0", ip)
+      es.vm.provision "common", type: "shell", path: "setup-common.sh"
+      provision_es(es.vm, Array.new(ELASTICSEARCH_COUNT){ |i| { "ip" => "#{ADDR_PREFIX}.#{(i+1+ANALYZER_COUNT)*10}", "name" => "elasticsearch#{(i+1).to_s}" } })
+    end
+  end
+
+  analyzers = Array.new(ANALYZER_COUNT){ |i| "analyzer#{(i+1).to_s}" }
+  agents = Array.new(AGENT_COUNT){ |i| "agent#{(i+1).to_s}" }
+
+  (1..ANALYZER_COUNT).each do |i|
+    ip = "#{ADDR_PREFIX}.#{i*10}"
+
+    config.vm.define "analyzer#{i}" do |analyzer|
+      analyzer.vm.hostname = "analyzer#{i}"
+      analyzer.vm.network "private_network", ip: ip
+      analyzer.vm.synced_folder ".", "/vagrant", :disabled => true
+      analyzer.vm.provision "networking", type: "shell", inline: ifcfg_config("eth1", "#{ADDR_PREFIX}.0", "255.255.255.0", ip)
+      analyzer.vm.provision "common", type: "shell", path: "setup-common.sh"
+      if i == 1 then
+        if ELASTICSEARCH_COUNT == 0
+          provision_es(analyzer.vm, Array.new(ANALYZER_COUNT){ |i| { "ip" => "#{ADDR_PREFIX}.#{(i+1)*10}", "name" => "analyzer#{(i+1).to_s}" } })
+        end
+
+        analyzer.vm.provision "dev", type: "ansible" do |ansible|
+          ansible.playbook = "playbook-dev.yml"
+          ansible.groups = {
+            "analyzers" => analyzers,
+            "agents" => agents,
+          }
+          ansible.limit = "all"
+          ansible.verbose = true
+          ansible.skip_tags = ANSIBLE_SKIP_TAGS
+        end
+
+        analyzer.vm.provision "deploy", type: "ansible" do |ansible|
+          ansible_extra_vars = {
+            "skydive_deployment_mode" => DEPLOYMENT_MODE,
+            "skydive_extra_config" => $skydive_extra_config,
+            "skydive_nic" => "ansible_eth1",
+            "skydive_fabric_default_interface" => "eth1",
+            "skydive_listen_ip" => "0.0.0.0"
+          }
+          if ENV.fetch("SKYDIVE_RELEASE", "") != "" then
+            ansible_extra_vars["skydive_release"] = ENV.fetch("SKYDIVE_RELEASE")
+          end
+
+          if DEVMODE then
+            if DEPLOYMENT_MODE == "binary" then
+              ansible_extra_vars["skydive_binary_remote_location"] = "file://" + ENV.fetch("GOPATH") + "/bin/skydive"
+            elsif DEPLOYMENT_MODE == "package" then
+              ansible_extra_vars["skydive_package_location"] = "file://" + ENV.fetch("GOPATH") + "/src/github.com/skydive-project/skydive/rpmbuild/RPMS/"
+            elsif DEPLOYMENT_MODE == "container" then
+              ansible_extra_vars["skydive_load_docker_image"] = "file://" + ENV.fetch("GOPATH") + "/src/github.com/skydive-project/skydive/skydive-docker-devel.tar"
+            end
+          end
+
+          ansible.playbook = "provisioning/playbook.yml.sample"
+          ansible.extra_vars = ansible_extra_vars
+          ansible.groups = {
+            "analyzers" => analyzers,
+            "agents" => analyzers + agents,
+          }
+          ansible.limit = "all"
+          ansible.verbose = true
+          ansible.skip_tags = ANSIBLE_SKIP_TAGS
+        end
+      end
+
+      if ANALYZER_EXTRA_PROVISION_SCRIPT != ""
+        analyzer.vm.provision "extra", type: "shell", path: ANALYZER_EXTRA_PROVISION_SCRIPT
+      end
+
+      analyzer.vm.provider :openstack do |os|
+        populate_os_config(os, ip)
+        os.security_groups = [ 'skydive' ]
+      end
+
+      analyzer.vm.provider :libvirt do |domain, override|
+        domain.memory = 4096
+        domain.graphics_type = "none"
+        override.vm.box = "centos/7"
+        override.ssh.username = 'vagrant'
+      end
+    end
+  end
+end

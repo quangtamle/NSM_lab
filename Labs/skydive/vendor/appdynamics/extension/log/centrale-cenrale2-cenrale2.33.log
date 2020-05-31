@@ -1,0 +1,62 @@
+2019-08-13 14:10:56.200221|    2|httpclient| Not using an HTTP proxy
+2019-08-13 14:10:56.200237|    2|env| Starting AppDynamics Agent 4.5.2.0 (id: )
+2019-08-13 14:10:56.200244|    2|env| Controller: ffavelin@ffavelin.saas.appdynamics.com:443, ssl: 1
+2019-08-13 14:10:56.200249|    2|env| Analytics processor: localhost:9090, ssl: 0
+2019-08-13 14:10:56.200258|    1|agent| Register node property appdynamics.agent.metricLimits: 5000
+2019-08-13 14:10:56.200284|    1|agent| Register node property min-load-per-minute-diagnostic-session-trigger: 10
+2019-08-13 14:10:56.200299|    1|agent| Register node property max-snapshot-reporter-queue-size-kb: 1000
+2019-08-13 14:10:56.200304|    1|agent| Register node property max-error-add-registration-limit: 500
+2019-08-13 14:10:56.200308|    1|agent| Register node property max-async-task-registrations-allowed: 500
+2019-08-13 14:10:56.200321|    1|agent| Register node property max-business-transactions: 50
+2019-08-13 14:10:56.200324|    1|agent| Register node property max-exit-calls-per-snapshot: 2000
+2019-08-13 14:10:56.200328|    1|agent| Register node property max-jdbc-calls-per-snapshot: 500
+2019-08-13 14:10:56.200332|    1|agent| Register node property max-call-elements-per-snapshot: 5000
+2019-08-13 14:10:56.200335|    1|agent| Register node property capture-raw-sql: 0
+2019-08-13 14:10:56.200339|    1|agent| Register node property dev-mode-suspend-cpm: 500
+2019-08-13 14:10:56.200342|    1|agent| Register node property support-thread-addId-chain: 1
+2019-08-13 14:10:56.200351|    1|agent| Register node property max-originating-concurrent-snapshots: 10
+2019-08-13 14:10:56.200355|    1|agent| Register node property max-snapshots-per-minute: 20
+2019-08-13 14:10:56.200360|    1|agent| Register node property max-continuing-concurrent-snapshots: 200
+2019-08-13 14:10:56.200364|    1|agent| Register node property max-continuing-snapshots-per-minute: 100
+2019-08-13 14:10:56.200370|    1|agent| Register node property max-error-snapshots-per-minute: 5
+2019-08-13 14:10:56.200403|    1|agent| Register node property max-discovered-backends: 300
+2019-08-13 14:10:56.200416|    1|agent| Register node property support-federated-app-correlation: 1
+2019-08-13 14:10:56.200540|    1|agent| Register node property enable-instance-monitoring: 0
+2019-08-13 14:10:56.200577|    2|env| Instrumenting process 20806 with working directory /home/vtramier/go/src/appdynamics/extension/example
+2019-08-13 14:10:56.200582|    2|env| Running on OS: Linux (version #60-Ubuntu SMP Tue Jul 2 18:22:20 UTC 2019), CPU architecture x86_64
+2019-08-13 14:10:56.200585|    1|env| Agent type: GOLANG_SDK
+2019-08-13 14:10:56.200589|    2|env| Application name: centrale
+2019-08-13 14:10:56.200592|    2|env| Tier name: cenrale2
+2019-08-13 14:10:56.200595|    2|env| Node name: cenrale2
+2019-08-13 14:10:56.200631|    1|agent| Added event: timestamp: 1565698256200 type: "APP_SERVER_RESTART" summary: "Agent was re-started, Node: cenrale2, Tier: cenrale2" notificationSeverity: "INFO"
+2019-08-13 14:10:56.230846|    2|agent| Scheduling new config update request
+2019-08-13 14:10:56.230878|    2|agent| Backend Config 2.0 support disabled, this agent will use legacy backend config
+2019-08-13 14:10:56.230898|    1|agent| UniquehostID from OSInfo is vtramier-ThinkPad-T480
+2019-08-13 14:10:56.243210|    2|httpclient| successfully loaded the default cert file (135 certificates)
+2019-08-13 14:10:57.078640|    2|agent| New Business transaction cenrale2:UserData of entry point type WEB known id 403639
+2019-08-13 14:10:57.078704|    2|agent| New Business transaction centrale/cenrale2/backend of entry point type WEB known id 403643
+2019-08-13 14:10:57.078733|    2|agent| generating backend identification rules as no backend config received from controller
+2019-08-13 14:10:57.079015|    1|agent| registered backend: parent { id: 22951 } resolutionInfo { exitPointType: "HTTP" properties { name: "APP" value: "centrale" } properties { name: "ID" value: "backend" } exitPointSubtype: "HTTP" }
+2019-08-13 14:10:57.079132|    2|agent| Created backend  of type HTTP/HTTP with properties {APP=centrale ID=backend }
+2019-08-13 14:10:57.079340|    1|agent| resolved backend: parent { id: 22955 version: 0 } resolutionInfo { exitPointType: "CUSTOM" properties { name: "APP" value: "centrale" } properties { name: "ID" value: "cenrale2" } exitPointSubtype: "TIER" } applicationComponentId: 8915 destinationApplicationId: 0
+2019-08-13 14:10:57.079372|    1|agent| Backend 22955 marked as resolved by controller, but was never sent for resolution
+2019-08-13 14:10:57.079439|    2|agent| Created backend  of type CUSTOM/TIER with properties {APP=centrale ID=cenrale2 }
+2019-08-13 14:10:57.079621|    1|agent| backend parent { id: 22951 version: 0 } resolutionInfo { exitPointType: "HTTP" properties { name: "APP" value: "centrale" } properties { name: "ID" value: "backend" } exitPointSubtype: "HTTP" } applicationComponentId: 0 destinationApplicationId: 0 is not yet resolved by controller
+2019-08-13 14:10:57.079747|    1|agent| resolved backend: parent { id: 22954 version: 0 } resolutionInfo { exitPointType: "CUSTOM" properties { name: "APP" value: "common" } properties { name: "ID" value: "commonTier" } exitPointSubtype: "TIER" } applicationComponentId: 0 destinationApplicationId: 2110
+2019-08-13 14:10:57.079779|    1|agent| Backend 22954 marked as resolved by controller, but was never sent for resolution
+2019-08-13 14:10:57.079847|    2|agent| Created backend  of type CUSTOM/TIER with properties {APP=common ID=commonTier }
+2019-08-13 14:10:57.079934|    1|agent| Ignoring unchanged property max-jdbc-calls-per-snapshot: 500
+2019-08-13 14:10:57.080006|    1|agent| Ignoring unchanged property capture-raw-sql: 0
+2019-08-13 14:10:57.080031|    1|agent| Ignoring unchanged property max-business-transactions: 50
+2019-08-13 14:10:57.080049|    1|agent| Ignoring unchanged property min-load-per-minute-diagnostic-session-trigger: 10
+2019-08-13 14:10:57.080093|    1|agent| Ignoring unchanged property enable-instance-monitoring: 0
+2019-08-13 14:10:57.080221|    1|agent| BT cenrale2:UserData will now use snapshot policy: collectingOnDemandSnapshots: false onDemandSnapshotCollectionDurationInMinutes: 0 onDemandSnapshotCollectionRemainingDurationInMinutes: 0 numberOfOnDemandSnapshotsToCollect: 0 collectSnapshotOnSLAViolationEnabled: true onWarningThresholdViolation: true collectOutliersOnlyOnSLAViolation: true maxAttemptsForOutliersOnSLAViolation: 20 onSLAViolationSnapshotCollectionDurationInMinutes: 5 numberOfSnapshotsToCollectOnSLAViolation: 5 occuranceSnapshotCollectionEnabled: false nthOccurance: 100 collectSnapshotForEveryNMinutesEnabled: true minuteFrequency: 10 automaticCollectionEnabled: true automaticSlowVolumePercentageThreshold: 10 automaticErrorVolumePercentageThreshold: 10
+2019-08-13 14:10:57.080368|    1|agent| BT centrale/cenrale2/backend will now use snapshot policy: collectingOnDemandSnapshots: false onDemandSnapshotCollectionDurationInMinutes: 0 onDemandSnapshotCollectionRemainingDurationInMinutes: 0 numberOfOnDemandSnapshotsToCollect: 0 collectSnapshotOnSLAViolationEnabled: true onWarningThresholdViolation: true collectOutliersOnlyOnSLAViolation: true maxAttemptsForOutliersOnSLAViolation: 20 onSLAViolationSnapshotCollectionDurationInMinutes: 5 numberOfSnapshotsToCollectOnSLAViolation: 5 occuranceSnapshotCollectionEnabled: false nthOccurance: 100 collectSnapshotForEveryNMinutesEnabled: true minuteFrequency: 10 automaticCollectionEnabled: true automaticSlowVolumePercentageThreshold: 10 automaticErrorVolumePercentageThreshold: 10
+2019-08-13 14:10:57.080412|    1|agent| Using error configuration 
+2019-08-13 14:10:57.080469|    1|agent| Passing 0 info point gatherer configs to info point registry
+2019-08-13 14:10:57.080490|    2|agent| Initial config update completed
+2019-08-13 14:10:57.080757|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:10:57.080795|    1|agent| Skipping top summary stats request as no new data is available
+2019-08-13 14:10:57.267676|    2|Agent| Scheduler stopped
+2019-08-13 14:10:57.267699|    2|Agent| Cancelled pending http requests
+2019-08-13 14:10:57.272072|    2|agent| Stopping AppDynamics Agent

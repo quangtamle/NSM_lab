@@ -1,0 +1,207 @@
+2019-08-13 14:06:35.489636|    2|httpclient| Not using an HTTP proxy
+2019-08-13 14:06:35.489648|    2|env| Starting AppDynamics Agent 4.5.2.0 (id: )
+2019-08-13 14:06:35.489655|    2|env| Controller: ffavelin@ffavelin.saas.appdynamics.com:443, ssl: 1
+2019-08-13 14:06:35.489660|    2|env| Analytics processor: localhost:9090, ssl: 0
+2019-08-13 14:06:35.489668|    1|agent| Register node property appdynamics.agent.metricLimits: 5000
+2019-08-13 14:06:35.489689|    1|agent| Register node property min-load-per-minute-diagnostic-session-trigger: 10
+2019-08-13 14:06:35.489697|    1|agent| Register node property max-snapshot-reporter-queue-size-kb: 1000
+2019-08-13 14:06:35.489704|    1|agent| Register node property max-error-add-registration-limit: 500
+2019-08-13 14:06:35.489712|    1|agent| Register node property max-async-task-registrations-allowed: 500
+2019-08-13 14:06:35.489724|    1|agent| Register node property max-business-transactions: 50
+2019-08-13 14:06:35.489728|    1|agent| Register node property max-exit-calls-per-snapshot: 2000
+2019-08-13 14:06:35.489731|    1|agent| Register node property max-jdbc-calls-per-snapshot: 500
+2019-08-13 14:06:35.489735|    1|agent| Register node property max-call-elements-per-snapshot: 5000
+2019-08-13 14:06:35.489739|    1|agent| Register node property capture-raw-sql: 0
+2019-08-13 14:06:35.489743|    1|agent| Register node property dev-mode-suspend-cpm: 500
+2019-08-13 14:06:35.489748|    1|agent| Register node property support-thread-addId-chain: 1
+2019-08-13 14:06:35.489756|    1|agent| Register node property max-originating-concurrent-snapshots: 10
+2019-08-13 14:06:35.489763|    1|agent| Register node property max-snapshots-per-minute: 20
+2019-08-13 14:06:35.489769|    1|agent| Register node property max-continuing-concurrent-snapshots: 200
+2019-08-13 14:06:35.489774|    1|agent| Register node property max-continuing-snapshots-per-minute: 100
+2019-08-13 14:06:35.489779|    1|agent| Register node property max-error-snapshots-per-minute: 5
+2019-08-13 14:06:35.489803|    1|agent| Register node property max-discovered-backends: 300
+2019-08-13 14:06:35.489818|    1|agent| Register node property support-federated-app-correlation: 1
+2019-08-13 14:06:35.489960|    1|agent| Register node property enable-instance-monitoring: 0
+2019-08-13 14:06:35.490004|    2|env| Instrumenting process 19677 with working directory /home/vtramier/go/src/appdynamics/extension/example
+2019-08-13 14:06:35.490012|    2|env| Running on OS: Linux (version #60-Ubuntu SMP Tue Jul 2 18:22:20 UTC 2019), CPU architecture x86_64
+2019-08-13 14:06:35.490019|    1|env| Agent type: GOLANG_SDK
+2019-08-13 14:06:35.490024|    2|env| Application name: centrale
+2019-08-13 14:06:35.490030|    2|env| Tier name: centrale1
+2019-08-13 14:06:35.490034|    2|env| Node name: centrale1
+2019-08-13 14:06:35.490084|    1|agent| Added event: timestamp: 1565697995490 type: "APP_SERVER_RESTART" summary: "Agent was re-started, Node: centrale1, Tier: centrale1" notificationSeverity: "INFO"
+2019-08-13 14:06:35.520356|    2|agent| Scheduling new config update request
+2019-08-13 14:06:35.520459|    2|agent| Backend Config 2.0 support disabled, this agent will use legacy backend config
+2019-08-13 14:06:35.520486|    1|agent| UniquehostID from OSInfo is vtramier-ThinkPad-T480
+2019-08-13 14:06:35.527025|    2|httpclient| successfully loaded the default cert file (135 certificates)
+2019-08-13 14:06:36.386101|    2|agent| New Business transaction centrale/centrale1/commonTier of entry point type WEB known id 403641
+2019-08-13 14:06:36.386120|    2|agent| New Business transaction centrale/centrale1/cenrale2 of entry point type WEB known id 403646
+2019-08-13 14:06:36.386128|    2|agent| generating backend identification rules as no backend config received from controller
+2019-08-13 14:06:36.386219|    1|agent| registered backend: parent { id: 22951 } resolutionInfo { exitPointType: "HTTP" properties { name: "APP" value: "centrale" } properties { name: "ID" value: "backend" } exitPointSubtype: "HTTP" }
+2019-08-13 14:06:36.386254|    2|agent| Created backend  of type HTTP/HTTP with properties {APP=centrale ID=backend }
+2019-08-13 14:06:36.386320|    1|agent| resolved backend: parent { id: 22955 version: 0 } resolutionInfo { exitPointType: "CUSTOM" properties { name: "APP" value: "centrale" } properties { name: "ID" value: "cenrale2" } exitPointSubtype: "TIER" } applicationComponentId: 8915 destinationApplicationId: 0
+2019-08-13 14:06:36.386331|    1|agent| Backend 22955 marked as resolved by controller, but was never sent for resolution
+2019-08-13 14:06:36.386354|    2|agent| Created backend  of type CUSTOM/TIER with properties {APP=centrale ID=cenrale2 }
+2019-08-13 14:06:36.386408|    1|agent| backend parent { id: 22951 version: 0 } resolutionInfo { exitPointType: "HTTP" properties { name: "APP" value: "centrale" } properties { name: "ID" value: "backend" } exitPointSubtype: "HTTP" } applicationComponentId: 0 destinationApplicationId: 0 is not yet resolved by controller
+2019-08-13 14:06:36.386444|    1|agent| resolved backend: parent { id: 22954 version: 0 } resolutionInfo { exitPointType: "CUSTOM" properties { name: "APP" value: "common" } properties { name: "ID" value: "commonTier" } exitPointSubtype: "TIER" } applicationComponentId: 0 destinationApplicationId: 2110
+2019-08-13 14:06:36.386454|    1|agent| Backend 22954 marked as resolved by controller, but was never sent for resolution
+2019-08-13 14:06:36.386476|    2|agent| Created backend  of type CUSTOM/TIER with properties {APP=common ID=commonTier }
+2019-08-13 14:06:36.386503|    1|agent| Ignoring unchanged property max-jdbc-calls-per-snapshot: 500
+2019-08-13 14:06:36.386536|    1|agent| Ignoring unchanged property capture-raw-sql: 0
+2019-08-13 14:06:36.386548|    1|agent| Ignoring unchanged property max-business-transactions: 50
+2019-08-13 14:06:36.386559|    1|agent| Ignoring unchanged property min-load-per-minute-diagnostic-session-trigger: 10
+2019-08-13 14:06:36.386580|    1|agent| Ignoring unchanged property enable-instance-monitoring: 0
+2019-08-13 14:06:36.386633|    1|agent| BT centrale/centrale1/cenrale2 will now use snapshot policy: collectingOnDemandSnapshots: false onDemandSnapshotCollectionDurationInMinutes: 0 onDemandSnapshotCollectionRemainingDurationInMinutes: 0 numberOfOnDemandSnapshotsToCollect: 0 collectSnapshotOnSLAViolationEnabled: true onWarningThresholdViolation: true collectOutliersOnlyOnSLAViolation: true maxAttemptsForOutliersOnSLAViolation: 20 onSLAViolationSnapshotCollectionDurationInMinutes: 5 numberOfSnapshotsToCollectOnSLAViolation: 5 occuranceSnapshotCollectionEnabled: false nthOccurance: 100 collectSnapshotForEveryNMinutesEnabled: true minuteFrequency: 10 automaticCollectionEnabled: true automaticSlowVolumePercentageThreshold: 10 automaticErrorVolumePercentageThreshold: 10
+2019-08-13 14:06:36.386680|    1|agent| BT centrale/centrale1/commonTier will now use snapshot policy: collectingOnDemandSnapshots: false onDemandSnapshotCollectionDurationInMinutes: 0 onDemandSnapshotCollectionRemainingDurationInMinutes: 0 numberOfOnDemandSnapshotsToCollect: 0 collectSnapshotOnSLAViolationEnabled: true onWarningThresholdViolation: true collectOutliersOnlyOnSLAViolation: true maxAttemptsForOutliersOnSLAViolation: 20 onSLAViolationSnapshotCollectionDurationInMinutes: 5 numberOfSnapshotsToCollectOnSLAViolation: 5 occuranceSnapshotCollectionEnabled: false nthOccurance: 100 collectSnapshotForEveryNMinutesEnabled: true minuteFrequency: 10 automaticCollectionEnabled: true automaticSlowVolumePercentageThreshold: 10 automaticErrorVolumePercentageThreshold: 10
+2019-08-13 14:06:36.386699|    1|agent| Using error configuration 
+2019-08-13 14:06:36.386768|    1|agent| Passing 0 info point gatherer configs to info point registry
+2019-08-13 14:06:36.386776|    2|agent| Initial config update completed
+2019-08-13 14:06:36.386898|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:06:36.386907|    1|agent| Skipping top summary stats request as no new data is available
+2019-08-13 14:06:36.442538|    2|agent| Found pre-registered Business transaction: name [centrale/centrale1/cenrale2] id [403646]
+2019-08-13 14:06:36.442552|    1|agent| Converted Business transaction from controller: name [centrale/centrale1/cenrale2] id [403646]
+2019-08-13 14:06:36.442562|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:06:36.442573|    1|agent| starting transaction  id: 0x22ae3d0 (bt=WEB:centrale/centrale1/cenrale2)
+2019-08-13 14:06:36.442604|    1|agent| Created exit call 0x22acad0 of type CUSTOM/TIER, category , addKey "", addId -1 for transaction 0x22ae3d0
+2019-08-13 14:06:36.442626|    1|agent| Added property id=cenrale2 to exit call 0x22acad0
+2019-08-13 14:06:36.442635|    1|agent| Added property app=centrale to exit call 0x22acad0
+2019-08-13 14:06:36.442643|    1|agent| Started exit call 0x22acad0 with properties {APP=centrale ID=cenrale2 }
+2019-08-13 14:06:36.442675|    2|agent| Business transaction centrale/centrale1/cenrale2 has exit call to backend cenrale2
+2019-08-13 14:06:36.442896|    2|agent| Found pre-registered Business transaction: name [centrale/centrale1/commonTier] id [403641]
+2019-08-13 14:06:36.442904|    1|agent| Converted Business transaction from controller: name [centrale/centrale1/commonTier] id [403641]
+2019-08-13 14:06:36.442912|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:06:36.442919|    1|agent| starting transaction  id: 0x22b7580 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:06:36.442943|    1|agent| Created exit call 0x22b6e30 of type CUSTOM/TIER, category , addKey "", addId -1 for transaction 0x22b7580
+2019-08-13 14:06:36.442951|    1|agent| Added property app=common to exit call 0x22b6e30
+2019-08-13 14:06:36.442960|    1|agent| Added property id=commonTier to exit call 0x22b6e30
+2019-08-13 14:06:36.442972|    1|agent| Started exit call 0x22b6e30 with properties {APP=common ID=commonTier }
+2019-08-13 14:06:36.442993|    2|agent| Business transaction centrale/centrale1/commonTier has exit call to backend commonTier
+2019-08-13 14:06:36.453416|    1|agent| Stopped exit call 0x22acad0
+2019-08-13 14:06:36.453437|    1|agent| Stopping transaction  id: 0x22ae3d0 (bt=WEB:centrale/centrale1/cenrale2)
+2019-08-13 14:06:36.453766|    1|agent| Stopped exit call 0x22b6e30
+2019-08-13 14:06:36.453780|    1|agent| Stopping transaction  id: 0x22b7580 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:06:36.504006|    1|agent| Found registered transaction: name [centrale/centrale1/cenrale2] id [403646]
+2019-08-13 14:06:36.504032|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:06:36.504044|    1|agent| starting transaction  id: 0x22b7580 (bt=WEB:centrale/centrale1/cenrale2)
+2019-08-13 14:06:36.504077|    1|agent| Created exit call 0x22b6e30 of type CUSTOM/TIER, category , addKey "", addId -1 for transaction 0x22b7580
+2019-08-13 14:06:36.504090|    1|agent| Added property id=cenrale2 to exit call 0x22b6e30
+2019-08-13 14:06:36.504100|    1|agent| Added property app=centrale to exit call 0x22b6e30
+2019-08-13 14:06:36.504110|    1|agent| Started exit call 0x22b6e30 with properties {APP=centrale ID=cenrale2 }
+2019-08-13 14:06:36.504341|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403641]
+2019-08-13 14:06:36.504353|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:06:36.504364|    1|agent| starting transaction  id: 0x22ae3d0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:06:36.504384|    1|agent| Created exit call 0x22acad0 of type CUSTOM/TIER, category , addKey "", addId -1 for transaction 0x22ae3d0
+2019-08-13 14:06:36.504393|    1|agent| Added property app=common to exit call 0x22acad0
+2019-08-13 14:06:36.504402|    1|agent| Added property id=commonTier to exit call 0x22acad0
+2019-08-13 14:06:36.504408|    1|agent| Started exit call 0x22acad0 with properties {APP=common ID=commonTier }
+2019-08-13 14:06:36.514897|    1|agent| Stopped exit call 0x22b6e30
+2019-08-13 14:06:36.514913|    1|agent| Stopping transaction  id: 0x22b7580 (bt=WEB:centrale/centrale1/cenrale2)
+2019-08-13 14:06:36.514996|    1|agent| Stopped exit call 0x22acad0
+2019-08-13 14:06:36.515008|    1|agent| Stopping transaction  id: 0x22ae3d0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:06:36.565287|    1|agent| Found registered transaction: name [centrale/centrale1/cenrale2] id [403646]
+2019-08-13 14:06:36.565356|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:06:36.565405|    1|agent| starting transaction  id: 0x22ae3d0 (bt=WEB:centrale/centrale1/cenrale2)
+2019-08-13 14:06:36.565518|    1|agent| Created exit call 0x22acad0 of type CUSTOM/TIER, category , addKey "", addId -1 for transaction 0x22ae3d0
+2019-08-13 14:06:36.565571|    1|agent| Added property id=cenrale2 to exit call 0x22acad0
+2019-08-13 14:06:36.565615|    1|agent| Added property app=centrale to exit call 0x22acad0
+2019-08-13 14:06:36.565662|    1|agent| Started exit call 0x22acad0 with properties {APP=centrale ID=cenrale2 }
+2019-08-13 14:06:36.566642|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403641]
+2019-08-13 14:06:36.566689|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:06:36.566728|    1|agent| starting transaction  id: 0x22b7580 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:06:36.566811|    1|agent| Created exit call 0x22b6e30 of type CUSTOM/TIER, category , addKey "", addId -1 for transaction 0x22b7580
+2019-08-13 14:06:36.566853|    1|agent| Added property app=common to exit call 0x22b6e30
+2019-08-13 14:06:36.566893|    1|agent| Added property id=commonTier to exit call 0x22b6e30
+2019-08-13 14:06:36.566939|    1|agent| Started exit call 0x22b6e30 with properties {APP=common ID=commonTier }
+2019-08-13 14:06:36.578058|    1|agent| Stopped exit call 0x22acad0
+2019-08-13 14:06:36.578119|    1|agent| Stopping transaction  id: 0x22ae3d0 (bt=WEB:centrale/centrale1/cenrale2)
+2019-08-13 14:06:36.578394|    1|agent| Stopped exit call 0x22b6e30
+2019-08-13 14:06:36.578437|    1|agent| Stopping transaction  id: 0x22b7580 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:06:36.628728|    1|agent| Found registered transaction: name [centrale/centrale1/cenrale2] id [403646]
+2019-08-13 14:06:36.628800|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:06:36.628849|    1|agent| starting transaction  id: 0x22b7580 (bt=WEB:centrale/centrale1/cenrale2)
+2019-08-13 14:06:36.628967|    1|agent| Created exit call 0x22b6e30 of type CUSTOM/TIER, category , addKey "", addId -1 for transaction 0x22b7580
+2019-08-13 14:06:36.629023|    1|agent| Added property id=cenrale2 to exit call 0x22b6e30
+2019-08-13 14:06:36.629074|    1|agent| Added property app=centrale to exit call 0x22b6e30
+2019-08-13 14:06:36.629118|    1|agent| Started exit call 0x22b6e30 with properties {APP=centrale ID=cenrale2 }
+2019-08-13 14:06:36.629991|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403641]
+2019-08-13 14:06:36.630035|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:06:36.630066|    1|agent| starting transaction  id: 0x22ae3d0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:06:36.630164|    1|agent| Created exit call 0x22acad0 of type CUSTOM/TIER, category , addKey "", addId -1 for transaction 0x22ae3d0
+2019-08-13 14:06:36.630196|    1|agent| Added property app=common to exit call 0x22acad0
+2019-08-13 14:06:36.630246|    1|agent| Added property id=commonTier to exit call 0x22acad0
+2019-08-13 14:06:36.630275|    1|agent| Started exit call 0x22acad0 with properties {APP=common ID=commonTier }
+2019-08-13 14:06:36.642117|    1|agent| Stopped exit call 0x22b6e30
+2019-08-13 14:06:36.642200|    1|agent| Stopping transaction  id: 0x22b7580 (bt=WEB:centrale/centrale1/cenrale2)
+2019-08-13 14:06:36.642656|    1|agent| Stopped exit call 0x22acad0
+2019-08-13 14:06:36.642745|    1|agent| Stopping transaction  id: 0x22ae3d0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:06:36.693067|    1|agent| Found registered transaction: name [centrale/centrale1/cenrale2] id [403646]
+2019-08-13 14:06:36.693133|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:06:36.693182|    1|agent| starting transaction  id: 0x22ae3d0 (bt=WEB:centrale/centrale1/cenrale2)
+2019-08-13 14:06:36.693293|    1|agent| Created exit call 0x22acad0 of type CUSTOM/TIER, category , addKey "", addId -1 for transaction 0x22ae3d0
+2019-08-13 14:06:36.693329|    1|agent| Added property id=cenrale2 to exit call 0x22acad0
+2019-08-13 14:06:36.693365|    1|agent| Added property app=centrale to exit call 0x22acad0
+2019-08-13 14:06:36.693397|    1|agent| Started exit call 0x22acad0 with properties {APP=centrale ID=cenrale2 }
+2019-08-13 14:06:36.694202|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403641]
+2019-08-13 14:06:36.694251|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:06:36.694284|    1|agent| starting transaction  id: 0x22b7580 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:06:36.694363|    1|agent| Created exit call 0x22b6e30 of type CUSTOM/TIER, category , addKey "", addId -1 for transaction 0x22b7580
+2019-08-13 14:06:36.694403|    1|agent| Added property app=common to exit call 0x22b6e30
+2019-08-13 14:06:36.694434|    1|agent| Added property id=commonTier to exit call 0x22b6e30
+2019-08-13 14:06:36.694463|    1|agent| Started exit call 0x22b6e30 with properties {APP=common ID=commonTier }
+2019-08-13 14:06:36.705447|    1|agent| Stopped exit call 0x22acad0
+2019-08-13 14:06:36.705479|    1|agent| Stopping transaction  id: 0x22ae3d0 (bt=WEB:centrale/centrale1/cenrale2)
+2019-08-13 14:06:36.705640|    1|agent| Stopped exit call 0x22b6e30
+2019-08-13 14:06:36.705668|    1|agent| Stopping transaction  id: 0x22b7580 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:06:36.755840|    1|agent| Found registered transaction: name [centrale/centrale1/cenrale2] id [403646]
+2019-08-13 14:06:36.755865|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:06:36.755882|    1|agent| starting transaction  id: 0x22b7580 (bt=WEB:centrale/centrale1/cenrale2)
+2019-08-13 14:06:36.755926|    1|agent| Created exit call 0x22b6e30 of type CUSTOM/TIER, category , addKey "", addId -1 for transaction 0x22b7580
+2019-08-13 14:06:36.755943|    1|agent| Added property id=cenrale2 to exit call 0x22b6e30
+2019-08-13 14:06:36.755960|    1|agent| Added property app=centrale to exit call 0x22b6e30
+2019-08-13 14:06:36.755976|    1|agent| Started exit call 0x22b6e30 with properties {APP=centrale ID=cenrale2 }
+2019-08-13 14:06:36.756286|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403641]
+2019-08-13 14:06:36.756311|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:06:36.756323|    1|agent| starting transaction  id: 0x22ae3d0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:06:36.756352|    1|agent| Created exit call 0x22acad0 of type CUSTOM/TIER, category , addKey "", addId -1 for transaction 0x22ae3d0
+2019-08-13 14:06:36.756366|    1|agent| Added property app=common to exit call 0x22acad0
+2019-08-13 14:06:36.756379|    1|agent| Added property id=commonTier to exit call 0x22acad0
+2019-08-13 14:06:36.756393|    1|agent| Started exit call 0x22acad0 with properties {APP=common ID=commonTier }
+2019-08-13 14:06:36.766947|    1|agent| Stopped exit call 0x22b6e30
+2019-08-13 14:06:36.766968|    1|agent| Stopping transaction  id: 0x22b7580 (bt=WEB:centrale/centrale1/cenrale2)
+2019-08-13 14:06:36.767088|    1|agent| Stopped exit call 0x22acad0
+2019-08-13 14:06:36.767105|    1|agent| Stopping transaction  id: 0x22ae3d0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:06:36.817398|    1|agent| Found registered transaction: name [centrale/centrale1/cenrale2] id [403646]
+2019-08-13 14:06:36.817468|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:06:36.817525|    1|agent| starting transaction  id: 0x22ae3d0 (bt=WEB:centrale/centrale1/cenrale2)
+2019-08-13 14:06:36.817654|    1|agent| Created exit call 0x22acad0 of type CUSTOM/TIER, category , addKey "", addId -1 for transaction 0x22ae3d0
+2019-08-13 14:06:36.817709|    1|agent| Added property id=cenrale2 to exit call 0x22acad0
+2019-08-13 14:06:36.817753|    1|agent| Added property app=centrale to exit call 0x22acad0
+2019-08-13 14:06:36.817791|    1|agent| Started exit call 0x22acad0 with properties {APP=centrale ID=cenrale2 }
+2019-08-13 14:06:36.818833|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403641]
+2019-08-13 14:06:36.818867|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:06:36.818901|    1|agent| starting transaction  id: 0x22b7580 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:06:36.818988|    1|agent| Created exit call 0x22b6e30 of type CUSTOM/TIER, category , addKey "", addId -1 for transaction 0x22b7580
+2019-08-13 14:06:36.819022|    1|agent| Added property app=common to exit call 0x22b6e30
+2019-08-13 14:06:36.819055|    1|agent| Added property id=commonTier to exit call 0x22b6e30
+2019-08-13 14:06:36.819086|    1|agent| Started exit call 0x22b6e30 with properties {APP=common ID=commonTier }
+2019-08-13 14:06:36.832280|    1|agent| Stopped exit call 0x22acad0
+2019-08-13 14:06:36.832370|    1|agent| Stopping transaction  id: 0x22ae3d0 (bt=WEB:centrale/centrale1/cenrale2)
+2019-08-13 14:06:36.832682|    1|agent| Stopped exit call 0x22b6e30
+2019-08-13 14:06:36.832723|    1|agent| Stopping transaction  id: 0x22b7580 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:06:36.882959|    1|agent| Found registered transaction: name [centrale/centrale1/cenrale2] id [403646]
+2019-08-13 14:06:36.883004|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:06:36.883051|    1|agent| starting transaction  id: 0x22b7580 (bt=WEB:centrale/centrale1/cenrale2)
+2019-08-13 14:06:36.883129|    1|agent| Created exit call 0x22b6e30 of type CUSTOM/TIER, category , addKey "", addId -1 for transaction 0x22b7580
+2019-08-13 14:06:36.883159|    1|agent| Added property id=cenrale2 to exit call 0x22b6e30
+2019-08-13 14:06:36.883188|    1|agent| Added property app=centrale to exit call 0x22b6e30
+2019-08-13 14:06:36.883215|    1|agent| Started exit call 0x22b6e30 with properties {APP=centrale ID=cenrale2 }
+2019-08-13 14:06:36.883777|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403641]
+2019-08-13 14:06:36.883804|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:06:36.883835|    1|agent| starting transaction  id: 0x22ae3d0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:06:36.883892|    1|agent| Created exit call 0x22acad0 of type CUSTOM/TIER, category , addKey "", addId -1 for transaction 0x22ae3d0
+2019-08-13 14:06:36.883915|    1|agent| Added property app=common to exit call 0x22acad0
+2019-08-13 14:06:36.883939|    1|agent| Added property id=commonTier to exit call 0x22acad0
+2019-08-13 14:06:36.883968|    1|agent| Started exit call 0x22acad0 with properties {APP=common ID=commonTier }
+2019-08-13 14:06:36.895014|    1|agent| Stopped exit call 0x22b6e30
+2019-08-13 14:06:36.895081|    1|agent| Stopping transaction  id: 0x22b7580 (bt=WEB:centrale/centrale1/cenrale2)
+2019-08-13 14:06:36.895380|    1|agent| Stopped exit call 0x22acad0
+2019-08-13 14:06:36.895425|    1|agent| Stopping transaction  id: 0x22ae3d0 (bt=WEB:centrale/centrale1/commonTier)

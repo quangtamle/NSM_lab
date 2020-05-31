@@ -1,0 +1,224 @@
+/*
+ * Copyright (C) 2015 Red Hat, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy ofthe License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specificlanguage governing permissions and
+ * limitations under the License.
+ *
+ */
+
+syntax = "proto3";
+
+package flow;
+
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+import "flow/layers/dns.proto";
+import "flow/layers/dhcpv4.proto";
+import "flow/layers/vrrpv2.proto";
+
+import "filters/filters.proto";
+
+option go_package = "github.com/skydive-project/skydive/flow";
+option (gogoproto.protosizer_all) = true;
+option (gogoproto.sizer_all) = false;
+
+enum FlowProtocol {
+  ETHERNET = 0;
+  IPV4 = 1;
+  TCP = 2;
+  UDP = 3;
+  SCTP = 4;
+  IPV6 = 5;
+  ICMPV4 = 6;
+  ICMPV6 = 7;
+}
+
+message FlowLayer {
+  FlowProtocol Protocol = 1;
+  string A = 3;
+  string B = 4;
+  int64 ID = 5;
+}
+
+message TransportLayer {
+  FlowProtocol Protocol = 1;
+  int64 A = 2;
+  int64 B = 3;
+  int64 ID = 4;
+}
+
+enum FlowFinishType {
+  NOT_FINISHED = 0;
+  TIMEOUT = 1;
+  TCP_FIN = 2;
+  TCP_RST = 3;
+}
+
+enum ICMPType {
+  UNKNOWN = 0;
+  DESTINATION_UNREACHABLE = 1;
+  ECHO = 2;
+  NEIGHBOR = 3;
+  ADDRESS_MASK = 4;
+  INFO = 5;
+  PARAMETER_PROBLEM = 6;
+  REDIRECT = 7;
+  ROUTER = 8;
+  SOURCE_QUENCH = 9;
+  TIME_EXCEEDED = 10;
+  TIMESTAMP = 11;
+  PACKET_TOO_BIG = 12;
+}
+
+message ICMPLayer {
+  ICMPType Type = 1;
+  uint32 Code = 2;
+  uint32 ID = 3;
+}
+
+message FlowMetric {
+  int64 ABPackets = 2;
+  int64 ABBytes = 3;
+  int64 BAPackets = 4;
+  int64 BABytes = 5;
+  int64 Start = 6;
+  int64 Last = 7;
+  int64 RTT = 8;
+}
+
+message RawPacket {
+  int64 Timestamp = 1;
+  int64 Index = 2;
+  bytes Data = 3;
+}
+
+message IPMetric {
+  int64 Fragments = 1;
+  int64 FragmentErrors = 2;
+}
+
+message TCPMetric {
+  int64 ABSynStart = 1;
+  int64 BASynStart = 2;
+  uint32 ABSynTTL = 3;
+  uint32 BASynTTL = 4;
+  int64 ABFinStart = 5;
+  int64 BAFinStart = 6;
+  int64 ABRstStart = 7;
+  int64 BARstStart = 8;
+
+  int64 ABSegmentOutOfOrder = 9;
+  int64 ABSegmentSkipped = 10;
+  int64 ABSegmentSkippedBytes = 11;
+  int64 ABPackets = 12;
+  int64 ABBytes = 13;
+  int64 ABSawStart = 14;
+  int64 ABSawEnd = 15;
+  int64 BASegmentOutOfOrder = 16;
+  int64 BASegmentSkipped = 17;
+  int64 BASegmentSkippedBytes = 18;
+  int64 BAPackets = 19;
+  int64 BABytes = 20;
+  int64 BASawStart = 21;
+  int64 BASawEnd = 22;
+}
+
+message Message {
+  repeated Flow Flows = 1;
+}
+
+message Flow {
+/* Flow Universally Unique IDentifier
+   flow.UUID is unique in the universe, as it should be used as a key of an
+   hashtable. By design 2 different flows, their UUID are always different.
+   flow.UUID can be used as Database Index.
+*/
+  string UUID = 1;
+  string LayersPath = 2;
+
+/* Application is the last layer which is not a payload.
+*/
+  string Application = 3;
+
+/* Data Flow info */
+  FlowLayer Link = 20;
+  FlowLayer Network = 21;
+  TransportLayer Transport = 22;
+  ICMPLayer ICMP = 23;
+
+/* extra layers */
+  layers.DHCPv4 DHCPv4 = 1000;
+  layers.DNS DNS = 1001;
+  layers.VRRPv2 VRRPv2 = 1002;
+
+/* Data Flow Metric info from the 1st layer
+   amount of data between two updates
+*/
+  FlowMetric LastUpdateMetric = 31;
+/* Total amount of data for the whole flow duration */
+  FlowMetric Metric = 32;
+
+/* Metric specific to the TCP and IPs Protocols and optional */
+  TCPMetric TCPMetric = 38;
+  IPMetric IPMetric = 39;
+
+  int64 Start = 10;
+  int64 Last = 11;
+
+/* Flow Tracking IDentifier, from 1st packet bytes
+   flow.TrackingID could be used to identify an unique flow whatever it has
+   been captured on the infrastructure. flow.TrackingID is calculated from
+   the bytes of the first packet of his session.
+   flow.TrackingID can be used as a Tag.
+*/
+  string TrackingID = 50;
+  string L3TrackingID = 51;
+
+/* Flow Parent UUID is used as reference to the parent flow
+   Flow.ParentUUID is the same value that point to his parent flow.UUID
+*/
+  string ParentUUID = 6;
+
+/* Topology info */
+  string NodeTID = 33;
+
+/* Capture info */
+  string CaptureID = 34;
+
+/* raw packets, will not be exported, see Makefile */
+  repeated RawPacket LastRawPackets = 36;
+
+/* number of raw packet captured */
+  int64 RawPacketsCaptured = 37;
+
+/* describes the way the flow was ended (e.g. by RST, FIN) */
+  FlowFinishType FinishType = 60;
+}
+
+message FlowSet {
+  repeated Flow Flows = 1;
+  int64 Start = 2;
+  int64 End = 3;
+}
+
+message FlowSearchReply {
+  FlowSet FlowSet = 1;
+}
+
+message TableQuery {
+  string Type = 1;
+  filters.SearchQuery query = 2;
+}
+
+message TableReply {
+  int32 Status = 1;
+  repeated bytes FlowSetBytes = 2;
+}

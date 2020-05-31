@@ -1,0 +1,2 @@
+statics/js/vendor/*.js linguist-vendored=true
+statics/js/dev/*.js linguist-vendored=true

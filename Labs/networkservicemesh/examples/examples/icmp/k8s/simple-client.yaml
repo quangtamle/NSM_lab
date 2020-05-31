@@ -1,0 +1,34 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+spec:
+  selector:
+    matchLabels:
+      networkservicemesh.io/app: "simple-client"
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        networkservicemesh.io/app: "simple-client"
+    spec:
+      containers:
+        - name: alpine
+          image: alpine:latest
+          command: ['tail', '-f', '/dev/null']
+      initContainers:
+        - name: simple-client
+          image: networkservicemesh/nsc-init:0ea479e6
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: NSC_LABELS
+              value: "app=simple-endpoint"
+            - name: NETWORK_SERVICES
+              value: "icmp-responder"
+          resources:
+            limits:
+              networkservicemesh.io/socket: 1
+metadata:
+  name: "simple-client"
+  namespace: default
+  annotations:
+    ns.networkservicemesh.io: icmp-responder?app=simple-endpoint

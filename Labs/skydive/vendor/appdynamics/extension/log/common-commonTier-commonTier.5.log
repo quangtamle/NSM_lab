@@ -1,0 +1,311 @@
+2019-08-13 14:10:59.470332|    2|httpclient| Not using an HTTP proxy
+2019-08-13 14:10:59.470342|    2|env| Starting AppDynamics Agent 4.5.2.0 (id: )
+2019-08-13 14:10:59.470348|    2|env| Controller: ffavelin@ffavelin.saas.appdynamics.com:443, ssl: 1
+2019-08-13 14:10:59.470351|    2|env| Analytics processor: localhost:9090, ssl: 0
+2019-08-13 14:10:59.470358|    1|agent| Register node property appdynamics.agent.metricLimits: 5000
+2019-08-13 14:10:59.470372|    1|agent| Register node property min-load-per-minute-diagnostic-session-trigger: 10
+2019-08-13 14:10:59.470377|    1|agent| Register node property max-snapshot-reporter-queue-size-kb: 1000
+2019-08-13 14:10:59.470381|    1|agent| Register node property max-error-add-registration-limit: 500
+2019-08-13 14:10:59.470385|    1|agent| Register node property max-async-task-registrations-allowed: 500
+2019-08-13 14:10:59.470396|    1|agent| Register node property max-business-transactions: 50
+2019-08-13 14:10:59.470399|    1|agent| Register node property max-exit-calls-per-snapshot: 2000
+2019-08-13 14:10:59.470402|    1|agent| Register node property max-jdbc-calls-per-snapshot: 500
+2019-08-13 14:10:59.470405|    1|agent| Register node property max-call-elements-per-snapshot: 5000
+2019-08-13 14:10:59.470409|    1|agent| Register node property capture-raw-sql: 0
+2019-08-13 14:10:59.470412|    1|agent| Register node property dev-mode-suspend-cpm: 500
+2019-08-13 14:10:59.470415|    1|agent| Register node property support-thread-addId-chain: 1
+2019-08-13 14:10:59.470420|    1|agent| Register node property max-originating-concurrent-snapshots: 10
+2019-08-13 14:10:59.470424|    1|agent| Register node property max-snapshots-per-minute: 20
+2019-08-13 14:10:59.470427|    1|agent| Register node property max-continuing-concurrent-snapshots: 200
+2019-08-13 14:10:59.470430|    1|agent| Register node property max-continuing-snapshots-per-minute: 100
+2019-08-13 14:10:59.470435|    1|agent| Register node property max-error-snapshots-per-minute: 5
+2019-08-13 14:10:59.470458|    1|agent| Register node property max-discovered-backends: 300
+2019-08-13 14:10:59.470469|    1|agent| Register node property support-federated-app-correlation: 1
+2019-08-13 14:10:59.470582|    1|agent| Register node property enable-instance-monitoring: 0
+2019-08-13 14:10:59.470614|    2|env| Instrumenting process 20806 with working directory /home/vtramier/go/src/appdynamics/extension/example
+2019-08-13 14:10:59.470621|    2|env| Running on OS: Linux (version #60-Ubuntu SMP Tue Jul 2 18:22:20 UTC 2019), CPU architecture x86_64
+2019-08-13 14:10:59.470624|    1|env| Agent type: GOLANG_SDK
+2019-08-13 14:10:59.470628|    2|env| Application name: common
+2019-08-13 14:10:59.470631|    2|env| Tier name: commonTier
+2019-08-13 14:10:59.470634|    2|env| Node name: commonTier
+2019-08-13 14:10:59.470668|    1|agent| Added event: timestamp: 1565698259470 type: "APP_SERVER_RESTART" summary: "Agent was re-started, Node: commonTier, Tier: commonTier" notificationSeverity: "INFO"
+2019-08-13 14:10:59.501000|    2|agent| Scheduling new config update request
+2019-08-13 14:10:59.501044|    2|agent| Backend Config 2.0 support disabled, this agent will use legacy backend config
+2019-08-13 14:10:59.501081|    1|agent| UniquehostID from OSInfo is vtramier-ThinkPad-T480
+2019-08-13 14:10:59.511011|    2|httpclient| successfully loaded the default cert file (135 certificates)
+2019-08-13 14:11:00.466324|    2|agent| New Business transaction app2/tier2/1/commonTier of entry point type WEB known id 403658
+2019-08-13 14:11:00.466398|    2|agent| New Business transaction app1/tier1/1/commonTier of entry point type WEB known id 403598
+2019-08-13 14:11:00.466436|    2|agent| New Business transaction centrale/centrale1/commonTier of entry point type WEB known id 403659
+2019-08-13 14:11:00.466461|    2|agent| generating backend identification rules as no backend config received from controller
+2019-08-13 14:11:00.466647|    1|agent| Ignoring unchanged property max-jdbc-calls-per-snapshot: 500
+2019-08-13 14:11:00.466750|    1|agent| Ignoring unchanged property capture-raw-sql: 0
+2019-08-13 14:11:00.466794|    1|agent| Ignoring unchanged property max-business-transactions: 50
+2019-08-13 14:11:00.466821|    1|agent| Ignoring unchanged property min-load-per-minute-diagnostic-session-trigger: 10
+2019-08-13 14:11:00.466881|    1|agent| Ignoring unchanged property enable-instance-monitoring: 0
+2019-08-13 14:11:00.467082|    1|agent| BT app1/tier1/1/commonTier will now use snapshot policy: collectingOnDemandSnapshots: false onDemandSnapshotCollectionDurationInMinutes: 0 onDemandSnapshotCollectionRemainingDurationInMinutes: 0 numberOfOnDemandSnapshotsToCollect: 0 collectSnapshotOnSLAViolationEnabled: true onWarningThresholdViolation: true collectOutliersOnlyOnSLAViolation: true maxAttemptsForOutliersOnSLAViolation: 20 onSLAViolationSnapshotCollectionDurationInMinutes: 5 numberOfSnapshotsToCollectOnSLAViolation: 5 occuranceSnapshotCollectionEnabled: false nthOccurance: 100 collectSnapshotForEveryNMinutesEnabled: true minuteFrequency: 10 automaticCollectionEnabled: true automaticSlowVolumePercentageThreshold: 10 automaticErrorVolumePercentageThreshold: 10
+2019-08-13 14:11:00.467225|    1|agent| BT app2/tier2/1/commonTier will now use snapshot policy: collectingOnDemandSnapshots: false onDemandSnapshotCollectionDurationInMinutes: 0 onDemandSnapshotCollectionRemainingDurationInMinutes: 0 numberOfOnDemandSnapshotsToCollect: 0 collectSnapshotOnSLAViolationEnabled: true onWarningThresholdViolation: true collectOutliersOnlyOnSLAViolation: true maxAttemptsForOutliersOnSLAViolation: 20 onSLAViolationSnapshotCollectionDurationInMinutes: 5 numberOfSnapshotsToCollectOnSLAViolation: 5 occuranceSnapshotCollectionEnabled: false nthOccurance: 100 collectSnapshotForEveryNMinutesEnabled: true minuteFrequency: 10 automaticCollectionEnabled: true automaticSlowVolumePercentageThreshold: 10 automaticErrorVolumePercentageThreshold: 10
+2019-08-13 14:11:00.467362|    1|agent| BT centrale/centrale1/commonTier will now use snapshot policy: collectingOnDemandSnapshots: false onDemandSnapshotCollectionDurationInMinutes: 0 onDemandSnapshotCollectionRemainingDurationInMinutes: 0 numberOfOnDemandSnapshotsToCollect: 0 collectSnapshotOnSLAViolationEnabled: true onWarningThresholdViolation: true collectOutliersOnlyOnSLAViolation: true maxAttemptsForOutliersOnSLAViolation: 20 onSLAViolationSnapshotCollectionDurationInMinutes: 5 numberOfSnapshotsToCollectOnSLAViolation: 5 occuranceSnapshotCollectionEnabled: false nthOccurance: 100 collectSnapshotForEveryNMinutesEnabled: true minuteFrequency: 10 automaticCollectionEnabled: true automaticSlowVolumePercentageThreshold: 10 automaticErrorVolumePercentageThreshold: 10
+2019-08-13 14:11:00.467426|    1|agent| Using error configuration 
+2019-08-13 14:11:00.467617|    1|agent| Passing 0 info point gatherer configs to info point registry
+2019-08-13 14:11:00.467662|    2|agent| Initial config update completed
+2019-08-13 14:11:00.468087|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:11:00.468139|    1|agent| Skipping top summary stats request as no new data is available
+2019-08-13 14:11:00.607821|    2|agent| Found pre-registered Business transaction: name [app2/tier2/1/commonTier] id [403658]
+2019-08-13 14:11:00.607850|    1|agent| Converted Business transaction from controller: name [app2/tier2/1/commonTier] id [403658]
+2019-08-13 14:11:00.607864|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.607874|    1|agent| starting transaction  id: 0x7f338400aa60 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:00.613998|    1|agent| Stopping transaction  id: 0x7f338400aa60 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:00.641964|    2|agent| Found pre-registered Business transaction: name [centrale/centrale1/commonTier] id [403659]
+2019-08-13 14:11:00.641981|    1|agent| Converted Business transaction from controller: name [centrale/centrale1/commonTier] id [403659]
+2019-08-13 14:11:00.641999|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.642013|    1|agent| starting transaction  id: 0x1192cf0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:00.653084|    1|agent| Stopping transaction  id: 0x1192cf0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:00.664959|    1|agent| Found registered transaction: name [app2/tier2/1/commonTier] id [403658]
+2019-08-13 14:11:00.664989|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.665005|    1|agent| starting transaction  id: 0x7f33780012a0 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:00.670303|    1|agent| Stopping transaction  id: 0x7f33780012a0 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:00.704073|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403659]
+2019-08-13 14:11:00.704087|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.704096|    1|agent| starting transaction  id: 0x11a9ed0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:00.714546|    1|agent| Stopping transaction  id: 0x11a9ed0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:00.721017|    1|agent| Found registered transaction: name [app2/tier2/1/commonTier] id [403658]
+2019-08-13 14:11:00.721033|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.721044|    1|agent| starting transaction  id: 0x1185390 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:00.726348|    1|agent| Stopping transaction  id: 0x1185390 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:00.766244|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403659]
+2019-08-13 14:11:00.766282|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.766311|    1|agent| starting transaction  id: 0x1192cf0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:00.778117|    1|agent| Found registered transaction: name [app2/tier2/1/commonTier] id [403658]
+2019-08-13 14:11:00.778154|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.778200|    1|agent| starting transaction  id: 0x11ad910 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:00.778707|    1|agent| Stopping transaction  id: 0x1192cf0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:00.783856|    1|agent| Stopping transaction  id: 0x11ad910 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:00.830863|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403659]
+2019-08-13 14:11:00.830924|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.830969|    1|agent| starting transaction  id: 0x119ea80 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:00.835915|    1|agent| Found registered transaction: name [app2/tier2/1/commonTier] id [403658]
+2019-08-13 14:11:00.835971|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.836018|    1|agent| starting transaction  id: 0x1185390 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:00.841649|    1|agent| Stopping transaction  id: 0x1185390 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:00.842225|    1|agent| Stopping transaction  id: 0x119ea80 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:00.889800|    2|agent| Found pre-registered Business transaction: name [app1/tier1/1/commonTier] id [403598]
+2019-08-13 14:11:00.889828|    1|agent| Converted Business transaction from controller: name [app1/tier1/1/commonTier] id [403598]
+2019-08-13 14:11:00.889888|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.889940|    1|agent| starting transaction  id: 0x119b340 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:00.894124|    1|agent| Found registered transaction: name [app2/tier2/1/commonTier] id [403658]
+2019-08-13 14:11:00.894198|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.894242|    1|agent| starting transaction  id: 0x1180870 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:00.895934|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403659]
+2019-08-13 14:11:00.895983|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.896039|    1|agent| starting transaction  id: 0x7f33840142a0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:00.897016|    1|agent| Stopping transaction  id: 0x119b340 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:00.899921|    1|agent| Stopping transaction  id: 0x1180870 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:00.907412|    1|agent| Stopping transaction  id: 0x7f33840142a0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:00.948364|    1|agent| Found registered transaction: name [app1/tier1/1/commonTier] id [403598]
+2019-08-13 14:11:00.948386|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.948401|    1|agent| starting transaction  id: 0x7f3384011030 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:00.951423|    1|agent| Found registered transaction: name [app2/tier2/1/commonTier] id [403658]
+2019-08-13 14:11:00.951446|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.951496|    1|agent| starting transaction  id: 0x7f338400aa60 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:00.953801|    1|agent| Stopping transaction  id: 0x7f3384011030 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:00.956821|    1|agent| Stopping transaction  id: 0x7f338400aa60 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:00.958287|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403659]
+2019-08-13 14:11:00.958309|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:00.958327|    1|agent| starting transaction  id: 0x7f33780012a0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:00.968804|    1|agent| Stopping transaction  id: 0x7f33780012a0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.004801|    1|agent| Found registered transaction: name [app1/tier1/1/commonTier] id [403598]
+2019-08-13 14:11:01.004824|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.004842|    1|agent| starting transaction  id: 0x128d890 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.007735|    1|agent| Found registered transaction: name [app2/tier2/1/commonTier] id [403658]
+2019-08-13 14:11:01.007757|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.007775|    1|agent| starting transaction  id: 0x1285e40 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.010177|    1|agent| Stopping transaction  id: 0x128d890 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.013116|    1|agent| Stopping transaction  id: 0x1285e40 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.019948|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403659]
+2019-08-13 14:11:01.019968|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.019980|    1|agent| starting transaction  id: 0x7f338400aa60 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.030533|    1|agent| Stopping transaction  id: 0x7f338400aa60 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.061164|    1|agent| Found registered transaction: name [app1/tier1/1/commonTier] id [403598]
+2019-08-13 14:11:01.061187|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.061206|    1|agent| starting transaction  id: 0x7f3270007e30 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.064024|    1|agent| Found registered transaction: name [app2/tier2/1/commonTier] id [403658]
+2019-08-13 14:11:01.064047|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.064069|    1|agent| starting transaction  id: 0x7f33780012a0 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.066533|    1|agent| Stopping transaction  id: 0x7f3270007e30 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.069405|    1|agent| Stopping transaction  id: 0x7f33780012a0 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.081354|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403659]
+2019-08-13 14:11:01.081367|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.081378|    1|agent| starting transaction  id: 0x1180870 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.091788|    1|agent| Stopping transaction  id: 0x1180870 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.117314|    1|agent| Found registered transaction: name [app1/tier1/1/commonTier] id [403598]
+2019-08-13 14:11:01.117343|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.117359|    1|agent| starting transaction  id: 0x7f3270005cc0 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.120181|    1|agent| Found registered transaction: name [app2/tier2/1/commonTier] id [403658]
+2019-08-13 14:11:01.120197|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.120209|    1|agent| starting transaction  id: 0x7f338400aa60 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.122630|    1|agent| Stopping transaction  id: 0x7f3270005cc0 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.125680|    1|agent| Stopping transaction  id: 0x7f338400aa60 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.142530|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403659]
+2019-08-13 14:11:01.142549|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.142563|    1|agent| starting transaction  id: 0x128d890 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.152980|    1|agent| Stopping transaction  id: 0x128d890 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.173730|    1|agent| Found registered transaction: name [app1/tier1/1/commonTier] id [403598]
+2019-08-13 14:11:01.173749|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.173766|    1|agent| starting transaction  id: 0x119ea80 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.176418|    1|agent| Found registered transaction: name [app2/tier2/1/commonTier] id [403658]
+2019-08-13 14:11:01.176437|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.176453|    1|agent| starting transaction  id: 0x7f33780012a0 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.179074|    1|agent| Stopping transaction  id: 0x119ea80 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.181730|    1|agent| Stopping transaction  id: 0x7f33780012a0 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.203776|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403659]
+2019-08-13 14:11:01.203795|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.203810|    1|agent| starting transaction  id: 0x7f3270006110 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.214247|    1|agent| Stopping transaction  id: 0x7f3270006110 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.230541|    1|agent| Found registered transaction: name [app1/tier1/1/commonTier] id [403598]
+2019-08-13 14:11:01.230557|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.230567|    1|agent| starting transaction  id: 0x7f3390010f80 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.232408|    1|agent| Found registered transaction: name [app2/tier2/1/commonTier] id [403658]
+2019-08-13 14:11:01.232425|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.232442|    1|agent| starting transaction  id: 0x7f3270005610 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.235904|    1|agent| Stopping transaction  id: 0x7f3390010f80 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.237723|    1|agent| Stopping transaction  id: 0x7f3270005610 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.266123|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403659]
+2019-08-13 14:11:01.266175|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.266223|    1|agent| starting transaction  id: 0x7f338c0865e0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.277451|    1|agent| Stopping transaction  id: 0x7f338c0865e0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.288811|    1|agent| Found registered transaction: name [app1/tier1/1/commonTier] id [403598]
+2019-08-13 14:11:01.288867|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.288906|    1|agent| starting transaction  id: 0x7f3270006110 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.291030|    1|agent| Found registered transaction: name [app2/tier2/1/commonTier] id [403658]
+2019-08-13 14:11:01.291093|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.291149|    1|agent| starting transaction  id: 0x7f327000cd00 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.294499|    1|agent| Stopping transaction  id: 0x7f3270006110 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.296947|    1|agent| Stopping transaction  id: 0x7f327000cd00 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.329303|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403659]
+2019-08-13 14:11:01.329342|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.329374|    1|agent| starting transaction  id: 0x7f33840142a0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.340464|    1|agent| Stopping transaction  id: 0x7f33840142a0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.346544|    1|agent| Found registered transaction: name [app1/tier1/1/commonTier] id [403598]
+2019-08-13 14:11:01.346602|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.346646|    1|agent| starting transaction  id: 0x7f3270005610 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.349258|    1|agent| Found registered transaction: name [app2/tier2/1/commonTier] id [403658]
+2019-08-13 14:11:01.349308|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.349353|    1|agent| starting transaction  id: 0x7f327000c1f0 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.354622|    1|agent| Stopping transaction  id: 0x7f3270005610 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.355094|    1|agent| Stopping transaction  id: 0x7f327000c1f0 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.393042|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403659]
+2019-08-13 14:11:01.393093|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.393140|    1|agent| starting transaction  id: 0x7f3384011030 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.404035|    1|agent| Stopping transaction  id: 0x7f3384011030 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.406196|    1|agent| Found registered transaction: name [app1/tier1/1/commonTier] id [403598]
+2019-08-13 14:11:01.406231|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.406259|    1|agent| starting transaction  id: 0x7f338c0a0260 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.407538|    1|agent| Found registered transaction: name [app2/tier2/1/commonTier] id [403658]
+2019-08-13 14:11:01.407572|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.407601|    1|agent| starting transaction  id: 0x7f3384009040 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.411697|    1|agent| Stopping transaction  id: 0x7f338c0a0260 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.412948|    1|agent| Stopping transaction  id: 0x7f3384009040 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.455456|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403659]
+2019-08-13 14:11:01.455477|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.455490|    1|agent| starting transaction  id: 0x7f327000cd00 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.462551|    1|agent| Found registered transaction: name [app1/tier1/1/commonTier] id [403598]
+2019-08-13 14:11:01.462569|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.462585|    1|agent| starting transaction  id: 0x7f338c0933b0 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.463653|    1|agent| Found registered transaction: name [app2/tier2/1/commonTier] id [403658]
+2019-08-13 14:11:01.463668|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.463680|    1|agent| starting transaction  id: 0x119b340 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.465858|    1|agent| Stopping transaction  id: 0x7f327000cd00 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.467860|    1|agent| Stopping transaction  id: 0x7f338c0933b0 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.468899|    1|agent| Stopping transaction  id: 0x119b340 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.516700|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403659]
+2019-08-13 14:11:01.516711|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.516721|    1|agent| starting transaction  id: 0x7f338c0a0260 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.518525|    1|agent| Found registered transaction: name [app1/tier1/1/commonTier] id [403598]
+2019-08-13 14:11:01.518538|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.518551|    1|agent| starting transaction  id: 0x7f3270010ea0 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.519540|    1|agent| Found registered transaction: name [app2/tier2/1/commonTier] id [403658]
+2019-08-13 14:11:01.519552|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.519565|    1|agent| starting transaction  id: 0x7f327000f6c0 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.523760|    1|agent| Stopping transaction  id: 0x7f3270010ea0 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.524754|    1|agent| Stopping transaction  id: 0x7f327000f6c0 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.527030|    1|agent| Stopping transaction  id: 0x7f338c0a0260 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.574559|    1|agent| Found registered transaction: name [app1/tier1/1/commonTier] id [403598]
+2019-08-13 14:11:01.574583|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.574600|    1|agent| starting transaction  id: 0x7f3270007e30 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.575596|    1|agent| Found registered transaction: name [app2/tier2/1/commonTier] id [403658]
+2019-08-13 14:11:01.575616|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.575638|    1|agent| starting transaction  id: 0x7f33900153f0 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.577844|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403659]
+2019-08-13 14:11:01.577857|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.577870|    1|agent| starting transaction  id: 0x1185390 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.580759|    1|agent| Stopping transaction  id: 0x7f3270007e30 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.580975|    1|agent| Stopping transaction  id: 0x7f33900153f0 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.588202|    1|agent| Stopping transaction  id: 0x1185390 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.632925|    1|agent| Found registered transaction: name [app1/tier1/1/commonTier] id [403598]
+2019-08-13 14:11:01.632982|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.633028|    1|agent| starting transaction  id: 0x11ac130 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.634891|    1|agent| Found registered transaction: name [app2/tier2/1/commonTier] id [403658]
+2019-08-13 14:11:01.634945|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.634996|    1|agent| starting transaction  id: 0x1283fb0 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.638814|    1|agent| Stopping transaction  id: 0x11ac130 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.640932|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403659]
+2019-08-13 14:11:01.640990|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.641039|    1|agent| starting transaction  id: 0x7f338c0a0bf0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.641615|    1|agent| Stopping transaction  id: 0x1283fb0 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.652352|    1|agent| Stopping transaction  id: 0x7f338c0a0bf0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.691558|    1|agent| Found registered transaction: name [app1/tier1/1/commonTier] id [403598]
+2019-08-13 14:11:01.691615|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.691667|    1|agent| starting transaction  id: 0x7f3270042710 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.693391|    1|agent| Found registered transaction: name [app2/tier2/1/commonTier] id [403658]
+2019-08-13 14:11:01.693422|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.693452|    1|agent| starting transaction  id: 0x7f33900195e0 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.697466|    1|agent| Stopping transaction  id: 0x7f3270042710 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.699290|    1|agent| Stopping transaction  id: 0x7f33900195e0 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.704603|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403659]
+2019-08-13 14:11:01.704658|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.704706|    1|agent| starting transaction  id: 0x11aba80 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.715983|    1|agent| Stopping transaction  id: 0x11aba80 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.749871|    1|agent| Found registered transaction: name [app1/tier1/1/commonTier] id [403598]
+2019-08-13 14:11:01.749933|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.749983|    1|agent| starting transaction  id: 0x7f3270006ba0 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.752021|    1|agent| Found registered transaction: name [app2/tier2/1/commonTier] id [403658]
+2019-08-13 14:11:01.752075|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.752115|    1|agent| starting transaction  id: 0x7f3384012cc0 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.755751|    1|agent| Stopping transaction  id: 0x7f3270006ba0 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.757929|    1|agent| Stopping transaction  id: 0x7f3384012cc0 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.767429|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403659]
+2019-08-13 14:11:01.767462|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.767489|    1|agent| starting transaction  id: 0x7f3270009250 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.778053|    1|agent| Stopping transaction  id: 0x7f3270009250 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.806877|    1|agent| Found registered transaction: name [app1/tier1/1/commonTier] id [403598]
+2019-08-13 14:11:01.806902|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.806915|    1|agent| starting transaction  id: 0x7f3384009040 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.808761|    1|agent| Found registered transaction: name [app2/tier2/1/commonTier] id [403658]
+2019-08-13 14:11:01.808773|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.808782|    1|agent| starting transaction  id: 0x7f3270042cb0 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.812346|    1|agent| Stopping transaction  id: 0x7f3384009040 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.814073|    1|agent| Stopping transaction  id: 0x7f3270042cb0 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.828843|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403659]
+2019-08-13 14:11:01.828878|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.828894|    1|agent| starting transaction  id: 0x7f3270006ba0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.839305|    1|agent| Stopping transaction  id: 0x7f3270006ba0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.863098|    1|agent| Found registered transaction: name [app1/tier1/1/commonTier] id [403598]
+2019-08-13 14:11:01.863115|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.863129|    1|agent| starting transaction  id: 0x7f327000c3a0 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.864826|    1|agent| Found registered transaction: name [app2/tier2/1/commonTier] id [403658]
+2019-08-13 14:11:01.864843|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.864873|    1|agent| starting transaction  id: 0x7f3384011570 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.869131|    1|agent| Stopping transaction  id: 0x7f327000c3a0 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.870133|    1|agent| Stopping transaction  id: 0x7f3384011570 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.890080|    1|agent| Found registered transaction: name [centrale/centrale1/commonTier] id [403659]
+2019-08-13 14:11:01.890096|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.890110|    1|agent| starting transaction  id: 0x7f3384012cc0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.900476|    1|agent| Stopping transaction  id: 0x7f3384012cc0 (bt=WEB:centrale/centrale1/commonTier)
+2019-08-13 14:11:01.919885|    1|agent| Found registered transaction: name [app1/tier1/1/commonTier] id [403598]
+2019-08-13 14:11:01.919901|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.919914|    1|agent| starting transaction  id: 0x7f3384009040 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.920785|    1|agent| Found registered transaction: name [app2/tier2/1/commonTier] id [403658]
+2019-08-13 14:11:01.920801|    1|agent| sessionType 2 lastMinuteSnapshotCount 0 snapshotsPerMinute 0 
+2019-08-13 14:11:01.920814|    1|agent| starting transaction  id: 0x7f327000a370 (bt=WEB:app2/tier2/1/commonTier)
+2019-08-13 14:11:01.925216|    1|agent| Stopping transaction  id: 0x7f3384009040 (bt=WEB:app1/tier1/1/commonTier)
+2019-08-13 14:11:01.926055|    1|agent| Stopping transaction  id: 0x7f327000a370 (bt=WEB:app2/tier2/1/commonTier)

@@ -1,0 +1,206 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VMNAME = ENV.fetch("VMNAME", "dev")
+MEMORY = ENV.fetch("MEMORY", "4096")
+PREPARE_BOX = ENV.fetch("PREPARE_BOX", "") == "true" ? true : false
+PROVISION_BOX = ENV.fetch("PROVISION_BOX", ENV.fetch("PREPARE_BOX", "")) == "true" ? true : false
+PRIVATE_IP = ENV.fetch("PRIVATE_IP", "192.168.10.10")
+
+if PREPARE_BOX and Vagrant::Util::Platform.windows? then
+  require 'vagrant-vbguest'
+end
+
+DEVMODE_ROOT = "../.."
+GOPATH = "/home/vagrant/go"
+
+SKYDIVE_SYNC_FOLDER = ENV.fetch("SKYDIVE_SYNC_FOLDER", "false") == "true" ? true : false
+SKYDIVE_GITHUB = "github.com/skydive-project/skydive"
+SKYDIVE_DIR = "/src/#{SKYDIVE_GITHUB}"
+SKYDIVE_HOST = ENV.has_key?("GOPATH") ? ENV.fetch("GOPATH") + SKYDIVE_DIR : DEVMODE_ROOT
+SKYDIVE_GUEST = GOPATH + SKYDIVE_DIR
+
+ANSIBLE_DIR = "/contrib/ansible"
+ANSIBLE_HOST = DEVMODE_ROOT + ANSIBLE_DIR
+ANSIBLE_GUEST = "/tmp" + ANSIBLE_DIR
+
+$skydive_extra_config = {
+  "http.ws.pong_timeout" => 10,
+  "agent.topology.netlink.metrics_update" => 5,
+  "analyzer.listen" => "0.0.0.0:8082",
+  "analyzer.flow.backend" => "elasticsearch",
+  "analyzer.topology.backend" => "elasticsearch",
+  "storage.elasticsearch.host" => "127.0.0.1:9200"
+}
+
+$skydive_git_clone = <<SCRIPT
+sudo dnf -y install git
+mkdir -p #{SKYDIVE_GUEST}
+cd #{SKYDIVE_GUEST}
+git clone https://#{SKYDIVE_GITHUB} .
+SCRIPT
+
+$guest_additions_script = <<SCRIPT
+sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf -y install kernel kernel-devel VirtualBox-guest-additions akmods
+latest=`rpm -q kernel-devel --qf '%{BUILDTIME} %{version}-%{release}.%{arch}\n' | sort -n -k 1 | tail -n 1 | awk '{print $2}'`
+sudo akmods --kernels $latest
+SCRIPT
+
+$vagrant_insecure_key_script = <<SCRIPT
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6NF8iallvQVp22WDkTkyrtvp9eWW6A8YVr+kz4TjGYe7gHzIw+niNltGEFHzD8+v1I2YJ6oXevct1YeS0o9HZyN1Q9qgCgzUFtdOKLv6IedplqoPkcmF0aYet2PkEDo3MlTBckFXPITAMzF8dJSIFo9D8HfdOV0IAdx4O7PtixWKn5y2hMNG0zQPyUecp4pzC6kivAIhyfHilFR61RGL+GPXQ2MWZWFYbAGjyiYJnAmCP3NOTd0jMZEnDkbUvxhMmBYSdETk1rRgm+R4LOzFUGaHqHDLKLX+FIPKcF96hrucXzcWyLbIbEgE98OHlnVYCzRdK8jlqm8tehUc9c9WhQ== vagrant insecure public key" >> ~/.ssh/authorized_keys
+SCRIPT
+
+$write_motd_script = <<SCRIPT
+cat > /etc/motd <<'EOF'
+                                  :##############;`
+                             `'###';:::;';;;;;;'''+###`
+                           ##+'';;:::::::::::;';;;''''+##
+                        `##:,,,,,,,,,,:::'+################
+                       ##:,,,,,,,,,,,,,+#+`:';::,,,,....:;+#
+                     .#',,,,,,,,,,,,,+#,,';;::::,,,,..,;:` `
+                   .##';;;;;;:::::::#+,:.,;;:::::;,
+                  ##'::::,,,,,,,,,:#,'       ,            '
+                .#',.,,,,,,,,,,,,++`'                     `
+               ,#;.,,,,,,,,,,,,,#,`;                     :
+              .#:.,,,,,,,,,,,,,#;`;                      ,
+              #;,,,,,,,,,,,,,.'#`;                      .
+             #',,,,,,,,,,,,,,,#``           `           ;
+            #+';:::;;'''''''''#``           ,
+           #'''';;:::,,::::::#``'           :          +
+          #':,``.,:::::::::,'#`,            ;
+         #':`,:::::::::::::.#```            +         #
+        ++:.:::::::::::::::,#``             #
+        #:`:::::::::::::::::#``             @        #
+       +':::::::::::::::::.:#``             #
+       #;:::::::::::::::::`:#``             '       '
+       #::::::::::::::::::;'#```            ;       `
+       #::::::::;''''''''';;#```            ,      ,
+       #';''''';;;;;;;;;;;;'#``.            .      ,
+       #';;,`,:;;;;;;;;;;;;:#``;            `     `
+       #;`:;;;;;;;;;;;;;;;;,#``:                  ;
+       #;:;;;;;;;;;;;;;;;;;.+;``
+       #;;;;;;;;;;;;;;;;;;;:'#``,                +
+       #':;;;;;;;;;;;;;;;;;;:#``'
+       :+;;;;;;;;;;;;;;;;;;;`'#`;               #
+        #+;;;;;;;;;;;;;:::,,,;#`.             ,:
+         #+';;;;;;;;'''''++####.              '@@
+          +############+':`      #         `  +@
+            `                      `#         @
+                `,'@+:`               `#   `,`
+                          `,'@+:`         .@@@+
+                                    `:'@@ #@@@@.
+                                          #@@@@;
+                                          .@@@#,
+                                           ,#+,
+
+# Welcome to the Skydive development image
+#
+# To go to the Skydive sources, use:
+cd #{SKYDIVE_GUEST}
+#
+# To build Skydive, use:
+make
+# To run tests, use:
+make test
+make functional
+
+EOF
+SCRIPT
+
+$setup_cleanup = <<SCRIPT
+sudo /home/vagrant/go/src/github.com/skydive-project/skydive/scripts/ci/cleanup.sh init
+cat >> ~/.bash_profile <<'EOF'
+export WORKSPACE=/home/vagrant/go
+alias cleanup="(sudo /home/vagrant/go/src/github.com/skydive-project/skydive/scripts/ci/cleanup.sh snapshot; sudo /home/vagrant/go/src/github.com/skydive-project/skydive/scripts/ci/cleanup.sh cleanup) &> /dev/null"
+EOF
+SCRIPT
+
+def fedora_box(override, type)
+  major = "29"
+  override.vm.box = "fedora/#{major}-cloud-base"
+end
+
+def synced_folder(override, type, host, guest)
+  if type == "virtualbox" and Vagrant::Util::Platform.windows? then
+    override.vm.synced_folder host, guest, type: "virtualbox", user: "vagrant", group: "vagrant"
+  else
+    override.vm.synced_folder host, guest, type: "nfs", nfs_udp: false
+  end
+end
+
+def dev_synced_folders(override, type)
+    if SKYDIVE_SYNC_FOLDER then
+      synced_folder(override, type, SKYDIVE_HOST, SKYDIVE_GUEST)
+    end
+    if PROVISION_BOX then
+      synced_folder(override, type, ANSIBLE_HOST, ANSIBLE_GUEST)
+    end
+end
+
+Vagrant.configure(2) do |config|
+  config.vm.define VMNAME do |dev|
+    dev.vm.hostname = "dev"
+    dev.vm.synced_folder ".", "/vagrant", disabled: true
+    dev.vm.box = "skydive/skydive-dev"
+
+    if PREPARE_BOX then
+      dev.vm.provision "python-for-ansible", type: "shell", inline: "sudo yum -y install python2 python-yaml libselinux-python"
+      if not SKYDIVE_SYNC_FOLDER then
+        dev.vm.provision "skygive-git-clone", type: "shell", privileged: false, inline: $skydive_git_clone
+      end
+      dev.vm.provision "shared-folders", type: "shell", inline: "sudo chown vagrant:vagrant #{GOPATH}/src #{GOPATH}/src/github.com #{GOPATH}/src/github.com/skydive-project"
+      dev.vm.provision "write-motd", type: "shell", inline: $write_motd_script
+    end
+
+    if PROVISION_BOX then
+      dev.vm.provision :ansible_local do |ansible|
+        ansible_extra_vars = {
+          "skydive_extra_config" => $skydive_extra_config,
+          "skydive_fabric_default_interface" => "eth0"
+        }
+        if ENV.fetch("SKYDIVE_RELEASE", "") != "" then
+          ansible_extra_vars["skydive_release"] = ENV.fetch("SKYDIVE_RELEASE")
+        end
+
+        ansible.install = true
+        ansible.provisioning_path = ANSIBLE_GUEST
+        ansible.playbook = "devmode.yml"
+        ansible.extra_vars = ansible_extra_vars
+        ansible.groups = {
+          "dev" => "dev",
+        }
+        ansible.limit = "all"
+        ansible.verbose = true
+      end
+      dev.vm.provision "cleanup-init", type: "shell", inline: $setup_cleanup, privileged: false
+    end
+
+    dev.vm.provider :virtualbox do |vb, override|
+      vb.gui = false
+      vb.memory = MEMORY
+      override.vm.network "private_network", ip: PRIVATE_IP
+      dev_synced_folders(override, "virtualbox")
+
+      if PREPARE_BOX then
+        fedora_box(override, "virtualbox")
+        override.vm.provision "guest-additions", type: "shell", inline: $guest_additions_script
+
+        require 'vagrant-reload'
+        override.vm.provision :reload
+      end
+    end
+
+    dev.vm.provider :libvirt do |domain, override|
+      domain.memory = MEMORY
+      domain.graphics_type = "none"
+      override.vm.network "private_network", ip: PRIVATE_IP
+      dev_synced_folders(override, "nfs")
+
+      if PREPARE_BOX then
+        fedora_box(override, "libvirt")
+        override.vm.provision "vagrant-insecure-key", type: "shell", privileged: false, inline: $vagrant_insecure_key_script
+      end
+    end
+  end
+end

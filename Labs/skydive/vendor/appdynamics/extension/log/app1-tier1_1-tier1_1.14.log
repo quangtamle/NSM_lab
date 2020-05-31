@@ -1,0 +1,93 @@
+2019-08-13 14:05:15.199219|    2|httpclient| Not using an HTTP proxy
+2019-08-13 14:05:15.199244|    2|env| Starting AppDynamics Agent 4.5.2.0 (id: )
+2019-08-13 14:05:15.199255|    2|env| Controller: ffavelin@ffavelin.saas.appdynamics.com:443, ssl: 1
+2019-08-13 14:05:15.199265|    2|env| Analytics processor: localhost:9090, ssl: 0
+2019-08-13 14:05:15.199280|    1|agent| Register node property appdynamics.agent.metricLimits: 5000
+2019-08-13 14:05:15.199316|    1|agent| Register node property min-load-per-minute-diagnostic-session-trigger: 10
+2019-08-13 14:05:15.199323|    1|agent| Register node property max-snapshot-reporter-queue-size-kb: 1000
+2019-08-13 14:05:15.199331|    1|agent| Register node property max-error-add-registration-limit: 500
+2019-08-13 14:05:15.199337|    1|agent| Register node property max-async-task-registrations-allowed: 500
+2019-08-13 14:05:15.199363|    1|agent| Register node property max-business-transactions: 50
+2019-08-13 14:05:15.199372|    1|agent| Register node property max-exit-calls-per-snapshot: 2000
+2019-08-13 14:05:15.199379|    1|agent| Register node property max-jdbc-calls-per-snapshot: 500
+2019-08-13 14:05:15.199385|    1|agent| Register node property max-call-elements-per-snapshot: 5000
+2019-08-13 14:05:15.199389|    1|agent| Register node property capture-raw-sql: 0
+2019-08-13 14:05:15.199394|    1|agent| Register node property dev-mode-suspend-cpm: 500
+2019-08-13 14:05:15.199400|    1|agent| Register node property support-thread-addId-chain: 1
+2019-08-13 14:05:15.199407|    1|agent| Register node property max-originating-concurrent-snapshots: 10
+2019-08-13 14:05:15.199412|    1|agent| Register node property max-snapshots-per-minute: 20
+2019-08-13 14:05:15.199420|    1|agent| Register node property max-continuing-concurrent-snapshots: 200
+2019-08-13 14:05:15.199426|    1|agent| Register node property max-continuing-snapshots-per-minute: 100
+2019-08-13 14:05:15.199433|    1|agent| Register node property max-error-snapshots-per-minute: 5
+2019-08-13 14:05:15.199495|    1|agent| Register node property max-discovered-backends: 300
+2019-08-13 14:05:15.199523|    1|agent| Register node property support-federated-app-correlation: 1
+2019-08-13 14:05:15.199767|    1|agent| Register node property enable-instance-monitoring: 0
+2019-08-13 14:05:15.199857|    2|env| Instrumenting process 18469 with working directory /home/vtramier/go/src/appdynamics/extension/example
+2019-08-13 14:05:15.199869|    2|env| Running on OS: Linux (version #60-Ubuntu SMP Tue Jul 2 18:22:20 UTC 2019), CPU architecture x86_64
+2019-08-13 14:05:15.199876|    1|env| Agent type: GOLANG_SDK
+2019-08-13 14:05:15.199884|    2|env| Application name: app1
+2019-08-13 14:05:15.199890|    2|env| Tier name: tier1/1
+2019-08-13 14:05:15.199895|    2|env| Node name: tier1/1
+2019-08-13 14:05:15.199991|    1|agent| Added event: timestamp: 1565697915199 type: "APP_SERVER_RESTART" summary: "Agent was re-started, Node: tier1/1, Tier: tier1/1" notificationSeverity: "INFO"
+2019-08-13 14:05:15.230457|    2|agent| Scheduling new config update request
+2019-08-13 14:05:15.230483|    2|agent| Backend Config 2.0 support disabled, this agent will use legacy backend config
+2019-08-13 14:05:15.230504|    1|agent| UniquehostID from OSInfo is vtramier-ThinkPad-T480
+2019-08-13 14:05:15.237338|    2|httpclient| successfully loaded the default cert file (135 certificates)
+2019-08-13 14:05:16.436100|    2|agent| New Business transaction app1/tier1/1/commonTier of entry point type WEB known id 403595
+2019-08-13 14:05:16.436117|    2|agent| New Business transaction app1/tier1/1/tier1/2 of entry point type WEB known id 403596
+2019-08-13 14:05:16.436124|    2|agent| generating backend identification rules as no backend config received from controller
+2019-08-13 14:05:16.436201|    1|agent| registered backend: parent { id: 22950 } resolutionInfo { exitPointType: "HTTP" properties { name: "APP" value: "centrale" } properties { name: "ID" value: "backend" } exitPointSubtype: "HTTP" }
+2019-08-13 14:05:16.436227|    2|agent| Created backend  of type HTTP/HTTP with properties {APP=centrale ID=backend }
+2019-08-13 14:05:16.436338|    1|agent| resolved backend: parent { id: 22949 version: 0 } resolutionInfo { exitPointType: "CUSTOM" properties { name: "APP" value: "app1" } properties { name: "ID" value: "tier1/2" } exitPointSubtype: "TIER" } applicationComponentId: 8910 destinationApplicationId: 0
+2019-08-13 14:05:16.436348|    1|agent| Backend 22949 marked as resolved by controller, but was never sent for resolution
+2019-08-13 14:05:16.436363|    2|agent| Created backend  of type CUSTOM/TIER with properties {APP=app1 ID=tier1/2 }
+2019-08-13 14:05:16.436407|    1|agent| backend parent { id: 22950 version: 0 } resolutionInfo { exitPointType: "HTTP" properties { name: "APP" value: "centrale" } properties { name: "ID" value: "backend" } exitPointSubtype: "HTTP" } applicationComponentId: 0 destinationApplicationId: 0 is not yet resolved by controller
+2019-08-13 14:05:16.436435|    1|agent| resolved backend: parent { id: 22948 version: 0 } resolutionInfo { exitPointType: "CUSTOM" properties { name: "APP" value: "common" } properties { name: "ID" value: "commonTier" } exitPointSubtype: "TIER" } applicationComponentId: 0 destinationApplicationId: 2110
+2019-08-13 14:05:16.436443|    1|agent| Backend 22948 marked as resolved by controller, but was never sent for resolution
+2019-08-13 14:05:16.436460|    2|agent| Created backend  of type CUSTOM/TIER with properties {APP=common ID=commonTier }
+2019-08-13 14:05:16.436499|    1|agent| Ignoring unchanged property max-jdbc-calls-per-snapshot: 500
+2019-08-13 14:05:16.436526|    1|agent| Ignoring unchanged property capture-raw-sql: 0
+2019-08-13 14:05:16.436535|    1|agent| Ignoring unchanged property max-business-transactions: 50
+2019-08-13 14:05:16.436543|    1|agent| Ignoring unchanged property min-load-per-minute-diagnostic-session-trigger: 10
+2019-08-13 14:05:16.436557|    1|agent| Ignoring unchanged property enable-instance-monitoring: 0
+2019-08-13 14:05:16.436600|    1|agent| BT app1/tier1/1/tier1/2 will now use snapshot policy: collectingOnDemandSnapshots: false onDemandSnapshotCollectionDurationInMinutes: 0 onDemandSnapshotCollectionRemainingDurationInMinutes: 0 numberOfOnDemandSnapshotsToCollect: 0 collectSnapshotOnSLAViolationEnabled: true onWarningThresholdViolation: true collectOutliersOnlyOnSLAViolation: true maxAttemptsForOutliersOnSLAViolation: 20 onSLAViolationSnapshotCollectionDurationInMinutes: 5 numberOfSnapshotsToCollectOnSLAViolation: 5 occuranceSnapshotCollectionEnabled: false nthOccurance: 100 collectSnapshotForEveryNMinutesEnabled: true minuteFrequency: 10 automaticCollectionEnabled: true automaticSlowVolumePercentageThreshold: 10 automaticErrorVolumePercentageThreshold: 10
+2019-08-13 14:05:16.436631|    1|agent| BT app1/tier1/1/commonTier will now use snapshot policy: collectingOnDemandSnapshots: false onDemandSnapshotCollectionDurationInMinutes: 0 onDemandSnapshotCollectionRemainingDurationInMinutes: 0 numberOfOnDemandSnapshotsToCollect: 0 collectSnapshotOnSLAViolationEnabled: true onWarningThresholdViolation: true collectOutliersOnlyOnSLAViolation: true maxAttemptsForOutliersOnSLAViolation: 20 onSLAViolationSnapshotCollectionDurationInMinutes: 5 numberOfSnapshotsToCollectOnSLAViolation: 5 occuranceSnapshotCollectionEnabled: false nthOccurance: 100 collectSnapshotForEveryNMinutesEnabled: true minuteFrequency: 10 automaticCollectionEnabled: true automaticSlowVolumePercentageThreshold: 10 automaticErrorVolumePercentageThreshold: 10
+2019-08-13 14:05:16.436645|    1|agent| Using error configuration 
+2019-08-13 14:05:16.436709|    1|agent| Passing 0 info point gatherer configs to info point registry
+2019-08-13 14:05:16.436716|    2|agent| Initial config update completed
+2019-08-13 14:05:16.436822|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:05:16.436835|    1|agent| Skipping top summary stats request as no new data is available
+2019-08-13 14:05:21.440390|    1|agent| Scheduling new object registration request
+2019-08-13 14:05:21.453307|    2|httpclient| successfully loaded the default cert file (135 certificates)
+2019-08-13 14:05:21.455314|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:05:26.441573|    2|agent| Scheduling new metric registration request
+2019-08-13 14:05:26.441625|    1|agent| scheduling registration for metric BTM|Backends|Component:{[UNRESOLVED][22950]}|Calls per Minute
+2019-08-13 14:05:26.441648|    1|agent| scheduling registration for metric BTM|Backends|Component:8910|Calls per Minute
+2019-08-13 14:05:26.441664|    1|agent| scheduling registration for metric BTM|Backends|Component:{[UNRESOLVED][22950]}|Errors per Minute
+2019-08-13 14:05:26.441678|    1|agent| scheduling registration for metric BTM|Backends|Component:{[UNRESOLVED][22950]}|Average Response Time (ms)
+2019-08-13 14:05:26.441693|    1|agent| scheduling registration for metric BTM|Backends|Component:8910|Errors per Minute
+2019-08-13 14:05:26.441709|    1|agent| scheduling registration for metric BTM|Backends|Component:8910|Average Response Time (ms)
+2019-08-13 14:05:26.441759|    1|agent| scheduling registration for metric BTM|Backends|App:2110|Calls per Minute
+2019-08-13 14:05:26.441776|    1|agent| scheduling registration for metric BTM|Backends|App:2110|Errors per Minute
+2019-08-13 14:05:26.441797|    1|agent| scheduling registration for metric BTM|Backends|App:2110|Average Response Time (ms)
+2019-08-13 14:05:26.474702|    2|httpclient| successfully loaded the default cert file (135 certificates)
+2019-08-13 14:05:26.475240|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:05:27.080641|    1|agent| registered metric BTM|Backends|Component:{[UNRESOLVED][22950]}|Calls per Minute with id 12347654 (0x7f5fb0018560)
+2019-08-13 14:05:27.080656|    1|agent| registered metric BTM|Backends|Component:8910|Calls per Minute with id 12347628 (0x7f5fb0018c50)
+2019-08-13 14:05:27.080664|    1|agent| registered metric BTM|Backends|Component:{[UNRESOLVED][22950]}|Errors per Minute with id 12347655 (0x7f5fb0018460)
+2019-08-13 14:05:27.080670|    1|agent| registered metric BTM|Backends|Component:{[UNRESOLVED][22950]}|Average Response Time (ms) with id 12347653 (0x7f5fb0019400)
+2019-08-13 14:05:27.080676|    1|agent| registered metric BTM|Backends|Component:8910|Errors per Minute with id 12347629 (0x7f5fb00167c0)
+2019-08-13 14:05:27.080682|    1|agent| registered metric BTM|Backends|Component:8910|Average Response Time (ms) with id 12347627 (0x7f5fb0016670)
+2019-08-13 14:05:27.080688|    1|agent| registered metric BTM|Backends|App:2110|Calls per Minute with id 12347625 (0x7f5fb0016f50)
+2019-08-13 14:05:27.080693|    1|agent| registered metric BTM|Backends|App:2110|Errors per Minute with id 12347626 (0x7f5fb00169a0)
+2019-08-13 14:05:27.080700|    1|agent| registered metric BTM|Backends|App:2110|Average Response Time (ms) with id 12347624 (0x7f5fb0019450)
+2019-08-13 14:05:31.456518|    1|agent| Skipping object registration request as no new objects were defined
+2019-08-13 14:05:31.475702|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:05:36.479871|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:05:41.460369|    1|agent| Skipping object registration request as no new objects were defined
+2019-08-13 14:05:41.480615|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:05:46.440385|    1|agent| Skipping analytics data request as no new data is available
+2019-08-13 14:05:46.440517|    1|agent| Skipping uploading agent logs since there are not any to upload
+2019-08-13 14:05:46.481712|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:05:51.464338|    1|agent| Skipping object registration request as no new objects were defined
+2019-08-13 14:05:51.482763|    1|agent| Skipping snapshot data request as no new snapshots were created

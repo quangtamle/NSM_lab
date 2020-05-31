@@ -1,0 +1,95 @@
+syntax = "proto3";
+
+package registry;
+
+import "github.com/golang/protobuf@v1.3.1/ptypes/empty/empty.proto";
+import "github.com/golang/protobuf@v1.3.1/ptypes/timestamp/timestamp.proto";
+
+message NetworkServiceEndpoint {
+    string network_service_name = 1;
+    string payload = 2;
+    string network_service_manager_name = 3;
+    string endpoint_name = 4;
+    map<string, string> labels = 5;
+    string state = 6;
+}
+
+message NetworkService {
+    string name = 1;
+    string payload = 2;
+    repeated Match matches = 3;
+}
+
+message Match {
+    map<string, string> source_selector = 1;
+    repeated Destination routes = 2;
+}
+
+message Destination {
+    map<string, string> destination_selector = 1;
+    uint32 weight = 2;
+}
+
+message NetworkServiceManager {
+    string name = 1;
+    string url = 2;
+    google.protobuf.Timestamp last_seen = 3;
+    string state = 4;
+}
+
+message RemoveNSERequest {
+    string endpoint_name = 1;
+}
+
+message FindNetworkServiceRequest {
+    string network_service_name = 1;
+}
+message FindNetworkServiceResponse {
+    string payload = 1;
+    NetworkService network_service = 2;
+    map<string, NetworkServiceManager> network_service_managers = 3;
+    repeated NetworkServiceEndpoint network_service_endpoints = 4;
+}
+
+message NSERegistration {
+    NetworkService network_service = 1;
+    NetworkServiceManager network_service_manager = 2;
+    NetworkServiceEndpoint networkservice_endpoint = 3;
+}
+
+service NetworkServiceRegistry {
+    rpc RegisterNSE (NSERegistration) returns (NSERegistration);
+    rpc RemoveNSE (RemoveNSERequest) returns (google.protobuf.Empty);
+}
+
+service NetworkServiceDiscovery {
+    rpc FindNetworkService (FindNetworkServiceRequest) returns (FindNetworkServiceResponse);
+}
+
+message NetworkServiceEndpointList {
+    repeated NetworkServiceEndpoint network_service_endpoints = 1;
+}
+
+service NsmRegistry {
+    rpc RegisterNSM (NetworkServiceManager) returns (NetworkServiceManager);
+    rpc GetEndpoints (google.protobuf.Empty) returns (NetworkServiceEndpointList);
+}
+
+message ClusterConfiguration {
+    string podSubnet = 1;
+    string serviceSubnet = 2;
+}
+
+message SubnetExtendingResponse {
+    enum SubnetType {
+        POD = 0;
+        SERVICE = 1;
+    }
+    SubnetType type = 1;
+    string subnet = 2;
+}
+
+service ClusterInfo {
+    rpc GetClusterConfiguration(google.protobuf.Empty) returns (ClusterConfiguration);
+    rpc MonitorSubnets(google.protobuf.Empty) returns (stream SubnetExtendingResponse);
+}

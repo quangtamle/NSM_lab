@@ -1,0 +1,132 @@
+2019-08-13 14:13:26.990746|    2|httpclient| Not using an HTTP proxy
+2019-08-13 14:13:26.990773|    2|env| Starting AppDynamics Agent 4.5.2.0 (id: )
+2019-08-13 14:13:26.990779|    2|env| Controller: ffavelin@ffavelin.saas.appdynamics.com:443, ssl: 1
+2019-08-13 14:13:26.990784|    2|env| Analytics processor: localhost:9090, ssl: 0
+2019-08-13 14:13:26.990792|    1|agent| Register node property appdynamics.agent.metricLimits: 5000
+2019-08-13 14:13:26.990808|    1|agent| Register node property min-load-per-minute-diagnostic-session-trigger: 10
+2019-08-13 14:13:26.990813|    1|agent| Register node property max-snapshot-reporter-queue-size-kb: 1000
+2019-08-13 14:13:26.990818|    1|agent| Register node property max-error-add-registration-limit: 500
+2019-08-13 14:13:26.990822|    1|agent| Register node property max-async-task-registrations-allowed: 500
+2019-08-13 14:13:26.990833|    1|agent| Register node property max-business-transactions: 50
+2019-08-13 14:13:26.990836|    1|agent| Register node property max-exit-calls-per-snapshot: 2000
+2019-08-13 14:13:26.990840|    1|agent| Register node property max-jdbc-calls-per-snapshot: 500
+2019-08-13 14:13:26.990843|    1|agent| Register node property max-call-elements-per-snapshot: 5000
+2019-08-13 14:13:26.990847|    1|agent| Register node property capture-raw-sql: 0
+2019-08-13 14:13:26.990850|    1|agent| Register node property dev-mode-suspend-cpm: 500
+2019-08-13 14:13:26.990854|    1|agent| Register node property support-thread-addId-chain: 1
+2019-08-13 14:13:26.990859|    1|agent| Register node property max-originating-concurrent-snapshots: 10
+2019-08-13 14:13:26.990862|    1|agent| Register node property max-snapshots-per-minute: 20
+2019-08-13 14:13:26.990866|    1|agent| Register node property max-continuing-concurrent-snapshots: 200
+2019-08-13 14:13:26.990869|    1|agent| Register node property max-continuing-snapshots-per-minute: 100
+2019-08-13 14:13:26.990874|    1|agent| Register node property max-error-snapshots-per-minute: 5
+2019-08-13 14:13:26.990902|    1|agent| Register node property max-discovered-backends: 300
+2019-08-13 14:13:26.990914|    1|agent| Register node property support-federated-app-correlation: 1
+2019-08-13 14:13:26.991023|    1|agent| Register node property enable-instance-monitoring: 0
+2019-08-13 14:13:26.991057|    2|env| Instrumenting process 21977 with working directory /home/vtramier/go/src/appdynamics/extension/example
+2019-08-13 14:13:26.991062|    2|env| Running on OS: Linux (version #60-Ubuntu SMP Tue Jul 2 18:22:20 UTC 2019), CPU architecture x86_64
+2019-08-13 14:13:26.991065|    1|env| Agent type: GOLANG_SDK
+2019-08-13 14:13:26.991068|    2|env| Application name: centrale
+2019-08-13 14:13:26.991071|    2|env| Tier name: backend
+2019-08-13 14:13:26.991075|    2|env| Node name: backend
+2019-08-13 14:13:26.991114|    1|agent| Added event: timestamp: 1565698406991 type: "APP_SERVER_RESTART" summary: "Agent was re-started, Node: backend, Tier: backend" notificationSeverity: "INFO"
+2019-08-13 14:13:27.021348|    2|agent| Scheduling new config update request
+2019-08-13 14:13:27.021429|    2|agent| Backend Config 2.0 support disabled, this agent will use legacy backend config
+2019-08-13 14:13:27.021450|    1|agent| UniquehostID from OSInfo is vtramier-ThinkPad-T480
+2019-08-13 14:13:27.029199|    2|httpclient| successfully loaded the default cert file (135 certificates)
+2019-08-13 14:13:27.987593|    2|agent| generating backend identification rules as no backend config received from controller
+2019-08-13 14:13:27.987900|    1|agent| registered backend: parent { id: 22951 } resolutionInfo { exitPointType: "HTTP" properties { name: "APP" value: "centrale" } properties { name: "ID" value: "backend" } exitPointSubtype: "HTTP" }
+2019-08-13 14:13:27.987996|    2|agent| Created backend  of type HTTP/HTTP with properties {APP=centrale ID=backend }
+2019-08-13 14:13:27.988207|    1|agent| resolved backend: parent { id: 22955 version: 0 } resolutionInfo { exitPointType: "CUSTOM" properties { name: "APP" value: "centrale" } properties { name: "ID" value: "cenrale2" } exitPointSubtype: "TIER" } applicationComponentId: 8915 destinationApplicationId: 0
+2019-08-13 14:13:27.988244|    1|agent| Backend 22955 marked as resolved by controller, but was never sent for resolution
+2019-08-13 14:13:27.988350|    2|agent| Created backend  of type CUSTOM/TIER with properties {APP=centrale ID=cenrale2 }
+2019-08-13 14:13:27.988546|    1|agent| backend parent { id: 22951 version: 0 } resolutionInfo { exitPointType: "HTTP" properties { name: "APP" value: "centrale" } properties { name: "ID" value: "backend" } exitPointSubtype: "HTTP" } applicationComponentId: 0 destinationApplicationId: 0 is not yet resolved by controller
+2019-08-13 14:13:27.988676|    1|agent| resolved backend: parent { id: 22954 version: 0 } resolutionInfo { exitPointType: "CUSTOM" properties { name: "APP" value: "common" } properties { name: "ID" value: "commonTier" } exitPointSubtype: "TIER" } applicationComponentId: 0 destinationApplicationId: 2110
+2019-08-13 14:13:27.988708|    1|agent| Backend 22954 marked as resolved by controller, but was never sent for resolution
+2019-08-13 14:13:27.988783|    2|agent| Created backend  of type CUSTOM/TIER with properties {APP=common ID=commonTier }
+2019-08-13 14:13:27.988875|    1|agent| Ignoring unchanged property max-jdbc-calls-per-snapshot: 500
+2019-08-13 14:13:27.988974|    1|agent| Ignoring unchanged property capture-raw-sql: 0
+2019-08-13 14:13:27.989012|    1|agent| Ignoring unchanged property max-business-transactions: 50
+2019-08-13 14:13:27.989046|    1|agent| Ignoring unchanged property min-load-per-minute-diagnostic-session-trigger: 10
+2019-08-13 14:13:27.989110|    1|agent| Ignoring unchanged property enable-instance-monitoring: 0
+2019-08-13 14:13:27.989181|    1|agent| Using error configuration 
+2019-08-13 14:13:27.989246|    1|agent| Passing 0 info point gatherer configs to info point registry
+2019-08-13 14:13:27.989273|    2|agent| Initial config update completed
+2019-08-13 14:13:27.989545|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:13:27.989579|    1|agent| Skipping top summary stats request as no new data is available
+2019-08-13 14:13:32.993618|    1|agent| Scheduling new object registration request
+2019-08-13 14:13:33.003780|    2|httpclient| successfully loaded the default cert file (135 certificates)
+2019-08-13 14:13:33.004056|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:13:37.991693|    2|agent| Scheduling new metric registration request
+2019-08-13 14:13:37.991852|    1|agent| scheduling registration for metric BTM|Backends|Component:{[UNRESOLVED][22951]}|Calls per Minute
+2019-08-13 14:13:37.991895|    1|agent| scheduling registration for metric BTM|Backends|App:2110|Average Response Time (ms)
+2019-08-13 14:13:37.991937|    1|agent| scheduling registration for metric BTM|Backends|Component:{[UNRESOLVED][22951]}|Errors per Minute
+2019-08-13 14:13:37.991973|    1|agent| scheduling registration for metric BTM|Backends|Component:{[UNRESOLVED][22951]}|Average Response Time (ms)
+2019-08-13 14:13:37.992012|    1|agent| scheduling registration for metric BTM|Backends|Component:8915|Calls per Minute
+2019-08-13 14:13:37.992168|    1|agent| scheduling registration for metric BTM|Backends|Component:8915|Errors per Minute
+2019-08-13 14:13:37.992214|    1|agent| scheduling registration for metric BTM|Backends|Component:8915|Average Response Time (ms)
+2019-08-13 14:13:37.992245|    1|agent| scheduling registration for metric BTM|Backends|App:2110|Calls per Minute
+2019-08-13 14:13:37.992272|    1|agent| scheduling registration for metric BTM|Backends|App:2110|Errors per Minute
+2019-08-13 14:13:38.019144|    2|httpclient| successfully loaded the default cert file (135 certificates)
+2019-08-13 14:13:38.019584|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:13:38.617291|    1|agent| registered metric BTM|Backends|Component:{[UNRESOLVED][22951]}|Calls per Minute with id 12348700 (0x7fc928011ec0)
+2019-08-13 14:13:38.617309|    1|agent| registered metric BTM|Backends|App:2110|Average Response Time (ms) with id 12348692 (0x7fc928012e90)
+2019-08-13 14:13:38.617317|    1|agent| registered metric BTM|Backends|Component:{[UNRESOLVED][22951]}|Errors per Minute with id 12348703 (0x7fc928011dc0)
+2019-08-13 14:13:38.617324|    1|agent| registered metric BTM|Backends|Component:{[UNRESOLVED][22951]}|Average Response Time (ms) with id 12348698 (0x7fc928012d90)
+2019-08-13 14:13:38.617330|    1|agent| registered metric BTM|Backends|Component:8915|Calls per Minute with id 12348701 (0x7fc928010840)
+2019-08-13 14:13:38.617336|    1|agent| registered metric BTM|Backends|Component:8915|Errors per Minute with id 12348704 (0x7fc928010a60)
+2019-08-13 14:13:38.617343|    1|agent| registered metric BTM|Backends|Component:8915|Average Response Time (ms) with id 12348699 (0x7fc92800fcb0)
+2019-08-13 14:13:38.617348|    1|agent| registered metric BTM|Backends|App:2110|Calls per Minute with id 12348694 (0x7fc9280105e0)
+2019-08-13 14:13:38.617354|    1|agent| registered metric BTM|Backends|App:2110|Errors per Minute with id 12348696 (0x7fc928010ef0)
+2019-08-13 14:13:43.008370|    1|agent| Skipping object registration request as no new objects were defined
+2019-08-13 14:13:43.020561|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:13:48.024648|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:13:53.009951|    1|agent| Skipping object registration request as no new objects were defined
+2019-08-13 14:13:53.025127|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:13:57.994339|    1|agent| Skipping analytics data request as no new data is available
+2019-08-13 14:13:57.994380|    1|agent| Skipping uploading agent logs since there are not any to upload
+2019-08-13 14:13:58.025630|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:14:00.002684|    1|agent| Sending metric data to controller
+2019-08-13 14:14:00.035583|    2|httpclient| successfully loaded the default cert file (135 certificates)
+2019-08-13 14:14:03.012937|    1|agent| Skipping object registration request as no new objects were defined
+2019-08-13 14:14:03.026128|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:14:08.028312|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:14:13.017401|    1|agent| Skipping object registration request as no new objects were defined
+2019-08-13 14:14:13.028571|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:14:18.032312|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:14:23.020690|    1|agent| Skipping object registration request as no new objects were defined
+2019-08-13 14:14:23.032866|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:14:27.032931|    2|agent| Scheduling new config update request
+2019-08-13 14:14:27.055310|    2|httpclient| successfully loaded the default cert file (135 certificates)
+2019-08-13 14:14:27.989733|    2|agent| Sending event data to controller
+2019-08-13 14:14:27.989776|    1|agent| Reporting 1 application events for the current time window
+2019-08-13 14:14:28.001204|    2|httpclient| successfully loaded the default cert file (135 certificates)
+2019-08-13 14:14:28.001536|    1|agent| Aggregating runtime statistics for business transactions
+2019-08-13 14:14:28.001548|    1|agent| Skipping analytics data request as no new data is available
+2019-08-13 14:14:28.001552|    1|agent| Skipping uploading agent logs since there are not any to upload
+2019-08-13 14:14:28.033698|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:14:28.387000|    1|agent| resolved backend: parent { id: 22955 version: 0 } resolutionInfo { exitPointType: "CUSTOM" properties { name: "APP" value: "centrale" } properties { name: "ID" value: "cenrale2" } exitPointSubtype: "TIER" } applicationComponentId: 8915 destinationApplicationId: 0
+2019-08-13 14:14:28.387059|    1|agent| Backend 22955 marked as resolved by controller, but was never sent for resolution
+2019-08-13 14:14:28.387336|    1|agent| backend parent { id: 22951 version: 0 } resolutionInfo { exitPointType: "HTTP" properties { name: "APP" value: "centrale" } properties { name: "ID" value: "backend" } exitPointSubtype: "HTTP" } applicationComponentId: 0 destinationApplicationId: 0 is not yet resolved by controller
+2019-08-13 14:14:28.387436|    1|agent| resolved backend: parent { id: 22954 version: 0 } resolutionInfo { exitPointType: "CUSTOM" properties { name: "APP" value: "common" } properties { name: "ID" value: "commonTier" } exitPointSubtype: "TIER" } applicationComponentId: 0 destinationApplicationId: 2110
+2019-08-13 14:14:28.387454|    1|agent| Backend 22954 marked as resolved by controller, but was never sent for resolution
+2019-08-13 14:14:28.387596|    1|agent| Using error configuration 
+2019-08-13 14:14:28.387816|    1|agent| Passing 0 info point gatherer configs to info point registry
+2019-08-13 14:14:33.025728|    1|agent| Skipping object registration request as no new objects were defined
+2019-08-13 14:14:33.033868|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:14:38.023920|    1|agent| Skipping metric registration as no new metrics were defined
+2019-08-13 14:14:38.034080|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:14:43.030498|    1|agent| Skipping object registration request as no new objects were defined
+2019-08-13 14:14:43.034748|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:14:48.036361|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:14:53.030955|    1|agent| Skipping object registration request as no new objects were defined
+2019-08-13 14:14:53.037266|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:14:58.004333|    1|agent| Skipping analytics data request as no new data is available
+2019-08-13 14:14:58.004358|    1|agent| Skipping uploading agent logs since there are not any to upload
+2019-08-13 14:14:58.037514|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:15:00.037626|    1|agent| Sending metric data to controller
+2019-08-13 14:15:00.083412|    2|httpclient| successfully loaded the default cert file (135 certificates)
+2019-08-13 14:15:03.032319|    1|agent| Skipping object registration request as no new objects were defined
+2019-08-13 14:15:03.038471|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:15:08.040612|    1|agent| Skipping snapshot data request as no new snapshots were created
+2019-08-13 14:15:13.033593|    1|agent| Skipping object registration request as no new objects were defined
+2019-08-13 14:15:13.040801|    1|agent| Skipping snapshot data request as no new snapshots were created

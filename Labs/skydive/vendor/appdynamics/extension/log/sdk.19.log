@@ -1,0 +1,14 @@
+2019-08-13 14:05:14.006620|    2|Agent| Initializing AppDynamics Native SDK 4.5.2.0
+2019-08-13 14:05:14.006653|    2|Agent| Platform endpoint configuration: ControllerInfo { host=ffavelin.saas.appdynamics.com, port=443, account=ffavelin, ssl=true, sslCertificateDir=, sslCertificateFile= }
+2019-08-13 14:05:14.006668|    2|Agent| Creating default agent tenant: AgentInfo[GOLANG_SDK] { app=centrale, tier=Agent, node=Agent }
+2019-08-13 14:05:14.026587|    2|Agent| Creating agent tenant tier2/2 with: AgentInfo[GOLANG_SDK] { app=app2, tier=tier2/2, node=tier2/2 }
+2019-08-13 14:05:14.045025|    2|Agent| Creating agent tenant tier2/1 with: AgentInfo[GOLANG_SDK] { app=app2, tier=tier2/1, node=tier2/1 }
+2019-08-13 14:05:14.059416|    2|Agent| Creating agent tenant cenrale2 with: AgentInfo[GOLANG_SDK] { app=centrale, tier=cenrale2, node=cenrale2 }
+2019-08-13 14:05:14.072407|    2|Agent| Creating agent tenant tier1/2 with: AgentInfo[GOLANG_SDK] { app=app1, tier=tier1/2, node=tier1/2 }
+2019-08-13 14:05:14.087760|    2|Agent| Creating agent tenant centrale1 with: AgentInfo[GOLANG_SDK] { app=centrale, tier=centrale1, node=centrale1 }
+2019-08-13 14:05:14.104090|    2|Agent| Creating agent tenant tier1/1 with: AgentInfo[GOLANG_SDK] { app=app1, tier=tier1/1, node=tier1/1 }
+2019-08-13 14:05:14.121864|    2|Agent| Creating agent tenant backend with: AgentInfo[GOLANG_SDK] { app=centrale, tier=backend, node=backend }
+2019-08-13 14:05:14.143098|    2|Agent| Waiting for agents to be ready
+2019-08-13 14:05:14.143109|    1|Agent| waitUntilReady: waiting 1000ms for 8 agents
+2019-08-13 14:05:15.143739|    2|Agent| Waited 1000ms, but not every agent was ready -- proceeding, but some BTs may be skipped
+2019-08-13 14:05:15.144027|    4|Agent| appd_backend_add: E_INVALID: validation failed for backend backend

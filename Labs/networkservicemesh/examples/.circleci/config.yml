@@ -1,0 +1,259 @@
+version: 2.1
+jobs:
+  sanity-check:
+    resource_class: medium+
+    working_directory: ~/project/examples
+    docker:
+      - image: circleci/golang
+    steps:
+      - checkout
+      - run:
+          command: |
+            git clone https://github.com/networkservicemesh/networkservicemesh.git ../networkservicemesh
+      - run:
+          name:
+          command: |
+            sudo apt-get install yamllint python3-pkg-resources
+            ./.circleci/install-shellcheck.sh
+      - run: yamllint -c .yamllint.yml $(git ls-files '*.yaml' '*.yml')
+      - run:
+          name: Go build
+          command: go build ./...
+      - run:
+          name: Install golangci-lint
+          command: |
+            export GOLANGCI_LINT_VER=1.16.0
+            wget https://github.com/golangci/golangci-lint/releases/download/v${GOLANGCI_LINT_VER}/golangci-lint-${GOLANGCI_LINT_VER}-linux-amd64.tar.gz
+            tar -xvf golangci-lint-${GOLANGCI_LINT_VER}-linux-amd64.tar.gz
+            sudo mv golangci-lint-${GOLANGCI_LINT_VER}-linux-amd64/golangci-lint /usr/local/bin/
+      - run:
+          name: Lint examples
+          command: |
+            make lint-all
+    environment:
+      GO111MODULE: 'on'
+
+  build:
+    working_directory: ~/project/examples
+    docker:
+      - image: circleci/golang
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run:
+          command: |
+            git clone https://github.com/networkservicemesh/networkservicemesh.git ../networkservicemesh
+      - run:
+          command: |
+            export COMMIT="${CIRCLE_SHA1:8:8}"
+            export TAG="${COMMIT}"
+            make build-all
+
+  push:
+    parameters:
+      example:
+        type: string
+    working_directory: ~/project/examples
+    docker:
+      - image: circleci/golang
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run:
+          command: |
+            git clone https://github.com/networkservicemesh/networkservicemesh.git ../networkservicemesh
+      - run:
+          command: |
+            export COMMIT="${CIRCLE_SHA1:8:8}"
+            export TAG="${COMMIT}"
+            make build-all
+      - run:
+          name: Push << parameters.example >> containers
+          command: |
+            make k8s-<< parameters.example >>-push
+
+  test:
+    parameters:
+      example:
+        type: string
+      description:
+        type: string
+      nsmbranch:
+        type: string
+        default: "master"
+      nightly:
+        type: string
+        default: "false"
+    machine:
+      enabled: true
+      docker_layer_caching: true
+    working_directory: ~/project/examples
+    steps:
+      - run:
+          name: Update go to 1.12
+          working_directory: /tmp
+          command: |
+            wget https://dl.google.com/go/go1.12.linux-amd64.tar.gz
+            sudo rm -rf /usr/local/go
+            sudo tar -C /usr/local -xzf go1.12.linux-amd64.tar.gz
+      - run:
+          name: Install kubectl
+          command: |
+            curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+            chmod +x kubectl
+            sudo mv kubectl /usr/local/bin/
+      - run:
+          name: Install kind
+          command: |
+            GO111MODULE="on" go get -u sigs.k8s.io/kind@master
+            kind version
+      - checkout
+      - run:
+          name: Patch go.mod
+          command: |
+            if [ "<< parameters.nightly >>" == "true" ]; then
+              mv go.mod go.mod.orig
+              grep -v github.com/networkservicemesh/networkservicemesh go.mod.orig > go.mod
+            fi
+      - run:
+          name: Clone NSM
+          command: |
+            git clone --single-branch --branch << parameters.nsmbranch >> https://github.com/networkservicemesh/networkservicemesh.git ../networkservicemesh
+      - run:
+          name: Start kind
+          command: |
+            make kind-start
+            echo 'export KUBECONFIG="$(kind get kubeconfig-path --name="nsm")"' >> $BASH_ENV
+      - run:
+          name: Wait for kind to settle
+          command: |
+            kubectl wait -n kube-system --timeout=150s --for condition=Ready --all pods
+      - run:
+          name: Build << parameters.example >> images
+          command: |
+            make k8s-<< parameters.example >>-save
+      - run:
+          name: NSM infra deploy
+          command: |
+            make k8s-admission-webhook-save k8s-nsmgr-save k8s-vppagent-dataplane-save
+            CLUSTER_RULES_PREFIX=kind make k8s-admission-webhook-deploy k8s-nsmgr-deploy k8s-vppagent-dataplane-deploy
+            kubectl wait -n nsm-system --timeout=150s --for condition=Ready --all pods
+      - run:
+          name: << parameters.description >> deploy
+          command: |
+            make k8s-<< parameters.example >>-load-images k8s-<< parameters.example >>-deploy
+            kubectl wait -n default --timeout=150s --for condition=Ready --all pods
+      - run:
+          name: << parameters.description >> check
+          command: |
+            make k8s-<< parameters.example >>-check
+            make k8s-<< parameters.example >>-delete
+      - run:
+          name: Dump cluster state
+          when: always
+          command: |
+            kubectl get nodes --all-namespaces
+            kubectl get pods -o wide --all-namespaces
+            kubectl describe pods --all-namespaces
+    environment:
+      CLUSTER_RULES_PREFIX: "kind"
+
+workflows:
+  version: 2
+  build-and-test:
+    jobs:
+      - sanity-check
+      - build:
+          requires:
+            - sanity-check
+      - test:
+          name: "Test Envoy"
+          example: "envoy_interceptor"
+          description: "Envoy interceptor"
+          requires:
+            - sanity-check
+      - test:
+          name: "Test ICMP"
+          example: "icmp"
+          description: "Simple ICMP"
+          requires:
+            - sanity-check
+      - test:
+          name: "Test Proxy"
+          example: "proxy"
+          description: "Proxy"
+          requires:
+            - sanity-check
+      - test:
+          name: "Test VPP ICMP"
+          example: "vpp-icmp"
+          description: "VPP ICMP"
+          requires:
+            - sanity-check
+      - test:
+          name: "Test Secure Intranet"
+          example: "secure-intranet"
+          description: "Secure Intranet"
+          requires:
+            - sanity-check
+  nightly-test:
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - test:
+          name: "Test Envoy"
+          example: "envoy_interceptor"
+          description: "Envoy interceptor"
+          nightly: "true"
+      - push:
+          name: "Push Envoy"
+          example: "envoy_interceptor"
+          requires:
+            - "Test Envoy"
+      - test:
+          name: "Test ICMP"
+          example: "icmp"
+          description: "Simple ICMP"
+          nightly: "true"
+      - push:
+          name: "Push ICMP"
+          example: "icmp"
+          requires:
+            - "Test ICMP"
+      - test:
+          name: "Test Proxy"
+          example: "proxy"
+          description: "Proxy"
+          nightly: "true"
+      - push:
+          name: "Push Proxy"
+          example: "proxy"
+          requires:
+            - "Test Proxy"
+      - test:
+          name: "Test VPP ICMP"
+          example: "vpp-icmp"
+          description: "VPP ICMP"
+          nightly: "true"
+      - push:
+          name: "Push VPP ICMP"
+          example: "vpp-icmp"
+          requires:
+            - "Test VPP ICMP"
+      - test:
+          name: "Test Secure Intranet"
+          example: "secure-intranet"
+          description: "Secure Intranet"
+          nightly: "true"
+      - push:
+          name: "Push Secure Intranet"
+          example: "secure-intranet"
+          requires:
+            - "Test Secure Intranet"

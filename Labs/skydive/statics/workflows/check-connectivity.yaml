@@ -1,0 +1,42 @@
+---
+UUID: "85757b38-6e21-11e8-b42d-28d2442e1329"
+Name: "CheckConnectivity"
+Description: "Test connectivity between two interfaces"
+Parameters:
+  - Name: source
+    Description: Source node
+    Type: node
+  - Name: destination
+    Description: Destination node
+    Type: node
+Source: |
+    function CheckConnectivity(from, to) {
+      var result = {}
+
+      try {
+        var capture = new Capture();
+        capture.GremlinQuery = "G.V().Has('TID', '" + from + "').ShortestPathTo(Metadata('TID', '" + to + "'))";
+
+        var packetInjection = new PacketInjection();
+        packetInjection.Src = "G.V().Has('TID', '" + from + "')"
+        packetInjection.Dst = "G.V().Has('TID', '" + to + "')"
+        packetInjection.Type = "icmp4"
+        packetInjection.ICMPID = Math.floor(Math.random() * 1000);
+        packetInjection.Count = 5
+
+        capture = client.captures.create(capture)
+        sleep(1000)
+        client.packetInjections.create(packetInjection)
+        sleep(1000)
+
+        var flows = client.G.Flows().Has("ICMP.ID", packetInjection.ICMPID).result()
+        result["Connectivity"] = flows.length > 0 && flows[0].Metric.ABPackets > 0 && flows[0].Metric.BAPackets > 0
+        result["Flows"] = flows
+      } catch (e) {
+        console.log(e)
+        result["Error"] = JSON.stringify(e)
+      }
+      if (capture && capture.UUID) client.captures.delete(capture.UUID)
+
+      return result
+    }

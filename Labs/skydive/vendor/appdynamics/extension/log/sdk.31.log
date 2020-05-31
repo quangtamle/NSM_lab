@@ -1,0 +1,11 @@
+2019-08-13 14:09:02.449895|    2|Agent| Initializing AppDynamics Native SDK 4.5.2.0
+2019-08-13 14:09:02.449911|    2|Agent| Platform endpoint configuration: ControllerInfo { host=ffavelin.saas.appdynamics.com, port=443, account=ffavelin, ssl=true, sslCertificateDir=, sslCertificateFile= }
+2019-08-13 14:09:02.449917|    2|Agent| Creating default agent tenant: AgentInfo[GOLANG_SDK] { app=centrale, tier=Agent, node=Agent }
+2019-08-13 14:09:02.467727|    2|Agent| Creating agent tenant tier1/1 with: AgentInfo[GOLANG_SDK] { app=app1, tier=tier1/1, node=tier1/1 }
+2019-08-13 14:09:02.504461|    2|Agent| Creating agent tenant cenrale2 with: AgentInfo[GOLANG_SDK] { app=centrale, tier=cenrale2, node=cenrale2 }
+2019-08-13 14:09:02.539001|    2|Agent| Creating agent tenant centrale1 with: AgentInfo[GOLANG_SDK] { app=centrale, tier=centrale1, node=centrale1 }
+2019-08-13 14:09:02.580679|    2|Agent| Creating agent tenant tier2/1 with: AgentInfo[GOLANG_SDK] { app=app2, tier=tier2/1, node=tier2/1 }
+2019-08-13 14:09:02.620392|    2|Agent| Waiting for agents to be ready
+2019-08-13 14:09:02.620402|    1|Agent| waitUntilReady: waiting 1000ms for 5 agents
+2019-08-13 14:09:03.620606|    2|Agent| Waited 1000ms, but not every agent was ready -- proceeding, but some BTs may be skipped
+2019-08-13 14:09:03.620914|    4|Agent| appd_backend_add: E_INVALID: validation failed for backend backend

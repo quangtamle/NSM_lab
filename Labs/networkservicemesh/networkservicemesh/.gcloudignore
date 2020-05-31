@@ -1,0 +1,20 @@
+# Ignore all
+*
+
+# ... except these
+!controllers/**
+!controlplane/**
+!dataplane/**
+!docker/**
+!test/applications/**
+!side-cars/**
+!go.mod
+!go.sum
+!k8s/**
+!pkg/**
+!sdk/**
+!utils/**
+!vendor/**
+!build/**
+!scripts/**
+scripts/vagrant/
