@@ -9,7 +9,7 @@
     "browserify": "^16.2.3",
     "lodash.defaultsdeep": "^4.6.0",
     "najax": "1.0.3",
-    "qs": "^6.2.0",
+    "qs": "^6.7.3",
     "typescript": "^2.7.1",
     "vue-form-generator": "^2.2.2"
   },
